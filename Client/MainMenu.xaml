@@ -5,6 +5,7 @@
     xmlns:local="using:Client"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:interop="using:Windows.UI.Xaml.Interop"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -27,7 +28,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Margin="20" Background="LightGray">
+        <Grid Margin="20,20,10,10" Background="LightGray">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
@@ -44,9 +45,9 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="name" HorizontalAlignment="Center"/>
-                    <TextBlock Text="filler2" HorizontalAlignment="Center"/>
-                    <TextBlock Text="filler3" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Navn" HorizontalAlignment="Center" Margin="10"/>
+                    <TextBlock Text="Ansatte nummer" HorizontalAlignment="Center" Margin="10"/>
+                    <TextBlock Text="Tilknyttet station(er)" HorizontalAlignment="Center" Margin="10"/>
                 </StackPanel>
             </Grid>
 
@@ -58,53 +59,66 @@
 
                 <Grid.Resources>
                     <Style TargetType="TextBlock">
-                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                        <Setter Property="Margin" Value="0,20,0,0"/>
-                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                        <Setter Property="FontSize" Value="16"/>
                     </Style>
+                    
+                    <Style TargetType="TextBox">
+                        <Setter Property="Margin" Value="0,6,0,0"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Width" Value="200"/>
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Setter Property=""/>
+                    </Style>
+                    
                 </Grid.Resources>
 
                 <StackPanel>
                     <TextBlock Text="Tlf nummer: "/>
-                    <TextBlock Text="filler2"/>
-                    <TextBlock Text="filler3"/>
-                    <TextBlock Text="filler2"/>
+                    <TextBlock Text="E-mail"/>
+                    <TextBlock Text="Adressse"/>
+                    <TextBlock Text=""/>
                     <TextBlock Text="filler3"/>
                     <TextBlock Text="filler2"/>
                     <TextBlock Text="filler3"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="12345678"/>
-                    <TextBlock Text="filler"/>
-                    <TextBlock Text="filler3"/>
-                    <TextBlock Text="filler"/>
-                    <TextBlock Text="filler3"/>
-                    <TextBlock Text="filler"/>
-                    <TextBlock Text="filler3"/>
+                    <TextBox PlaceholderText="Nummer"/>
+                    <TextBox/>
+                    <TextBox/>
+                    <TextBox/>
+                    <TextBox/>
+                    <TextBox/>
                 </StackPanel>
 
                 <Button Name="Edit" Content="Rediger" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             </Grid>
         </Grid>
 
-        <Grid Margin="20" Background="LightGray" Grid.Column="1">
+        <Grid Margin="10,20,20,10" Background="LightGray" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
+            <Line Grid.Column="1" X1="0" X2="0" Y1="0" Y2="50000" Stroke="Black" StrokeThickness="1" Margin="0,10,0,10"/>
+
             <StackPanel>
                 <TextBlock Text="Time info" FontSize="20" Margin="10,5,0,0" TextDecorations="Underline" Height="auto" Width="auto"/>
                 <TextBlock Text="HMM" Margin="20"/>
-                <Button Margin="20" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Content="Check ind" Width="150" Height="50" Click="Button_Click"/>
             </StackPanel>
+
+            <Button Margin="20" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Content="Check ind" Width="230" Height="70"/>
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+
+                <Line Grid.Row="1" X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
 
                 <StackPanel>
                     <TextBlock Text="Næste 3 vagter" HorizontalAlignment="Center" Margin="0,20,0,0"/>
@@ -125,7 +139,7 @@
 
         </Grid>
 
-        <Grid Margin="20" Background="LightGray" Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Margin="20,10,20,20" Background="LightGray" Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>

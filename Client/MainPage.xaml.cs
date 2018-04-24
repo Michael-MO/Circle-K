@@ -26,5 +26,10 @@ namespace Client
         {
             this.InitializeComponent();
         }
+
+        private void MainMenu(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu), null);
+        }
     }
 }

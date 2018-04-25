@@ -10,7 +10,7 @@
 
     <Page.Resources>
         <Style TargetType="Button">
-            <Setter Property="Width" Value="90" />
+            <Setter Property="Width" Value="auto" />
             <Setter Property="Background" Value="#0099FF" />
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
@@ -33,6 +33,9 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+
+            <Line Grid.Column="1" X1="0" X2="0" Y1="0" Y2="50000" Stroke="Black" StrokeThickness="1" Margin="0,10,0,10"/>
+            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*"/>
@@ -40,12 +43,12 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel>
-                    <TextBlock Text="Bruger info" FontSize="20" Margin="10,5,0,0" TextDecorations="Underline" Height="auto" Width="auto"/>
-                    <Image Margin="20" HorizontalAlignment="Center" Width="150" Height="200"/>
+                    <TextBlock Text="Bruger info" FontSize="20" Margin="10,5,0,0" Height="auto" Width="auto"/>
+                    <PersonPicture ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Margin="20"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1">
-                    <TextBlock Text="Navn" HorizontalAlignment="Center" Margin="10"/>
+                    <TextBlock Text="Navn" HorizontalAlignment="Center" Margin="10,0,10,10"/>
                     <TextBlock Text="Ansatte nummer" HorizontalAlignment="Center" Margin="10"/>
                     <TextBlock Text="Tilknyttet station(er)" HorizontalAlignment="Center" Margin="10"/>
                 </StackPanel>
@@ -56,20 +59,22 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
+                
+                
 
                 <Grid.Resources>
                     <Style TargetType="TextBlock">
                         <Setter Property="HorizontalAlignment" Value="Right"/>
-                        <Setter Property="Margin" Value="0,10,0,0"/>
+                        <Setter Property="Margin" Value="0,10,0,6"/>
                         <Setter Property="FontSize" Value="16"/>
                     </Style>
                     
                     <Style TargetType="TextBox">
-                        <Setter Property="Margin" Value="0,6,0,0"/>
-                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Margin" Value="10,6,0,0"/>
+                        <Setter Property="Height" Value="15"/>
                         <Setter Property="Width" Value="200"/>
                         <Setter Property="IsEnabled" Value="False"/>
-                        <Setter Property=""/>
+                        <Setter Property="HorizontalAlignment" Value="Left"/>
                     </Style>
                     
                 </Grid.Resources>
@@ -80,14 +85,13 @@
                     <TextBlock Text="Adressse"/>
                     <TextBlock Text=""/>
                     <TextBlock Text="filler3"/>
-                    <TextBlock Text="filler2"/>
                     <TextBlock Text="filler3"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <TextBox PlaceholderText="Nummer"/>
-                    <TextBox/>
-                    <TextBox/>
+                    <TextBox PlaceholderText="E-mail"/>
+                    <TextBox PlaceholderText="Adresse"/>
                     <TextBox/>
                     <TextBox/>
                     <TextBox/>
@@ -106,11 +110,22 @@
             <Line Grid.Column="1" X1="0" X2="0" Y1="0" Y2="50000" Stroke="Black" StrokeThickness="1" Margin="0,10,0,10"/>
 
             <StackPanel>
-                <TextBlock Text="Time info" FontSize="20" Margin="10,5,0,0" TextDecorations="Underline" Height="auto" Width="auto"/>
-                <TextBlock Text="HMM" Margin="20"/>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="0,20,0,0"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                    </Style>
+                </StackPanel.Resources>
+                
+                
+                <TextBlock Text="Time info" FontSize="20" Margin="10,5,0,0" Height="auto" Width="auto" HorizontalAlignment="Left"/>
+                <TextBlock Text="Needs to be done"/>
+                <TextBlock Text="Dato/ tid start slut vagt"/>
+                <TextBlock Text="Dato/ tid for checkin"/>
             </StackPanel>
 
-            <Button Margin="20" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Content="Check ind" Width="230" Height="70"/>
+            <Button Margin="20" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Content="Check ind" Width="175" Height="70"/>
 
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -118,10 +133,9 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Line Grid.Row="1" X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
-
                 <StackPanel>
                     <TextBlock Text="Næste 3 vagter" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                    <Line X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
                     <Line Width="auto"/>
                     <ListView>
 
@@ -130,6 +144,7 @@
 
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="sidste 3 vagter" HorizontalAlignment="Center"/>
+                    <Line X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
                     <Line Width="auto"/>
                     <ListView>
 
@@ -141,9 +156,51 @@
 
         <Grid Margin="20,10,20,20" Background="LightGray" Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+
+            <Line Grid.Column="1" X1="0" X2="0" Y1="0" Y2="50000" Stroke="Black" StrokeThickness="1" Margin="0,10,0,10"/>
+
+            <StackPanel>
+                <TextBlock Text="Statestik over lønperiode" FontSize="20" Margin="10,5,0,0" Height="auto" Width="auto"/>
+                <ListView>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,0.5" Width="1000" Margin="5,0,5,0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="TODO dato"/>
+                            <TextBlock Text="TODO Tid"/>
+                        </StackPanel>
+                    </Border>
+                </ListView>
+            </StackPanel>
+            
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Margin" Value="30,30,0,0"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="HorizontalAlignment" Value="left"/>
+                    </Style>
+                </Grid.Resources>
+
+                <StackPanel>
+                    <TextBlock Text="TODO timer med aften tillæg"/>
+                    <TextBlock Text="TODO timer med søn tillæg"/>
+                    <TextBlock Text="TODO timer uden tillæg"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="Genemsnitlig løn"/>
+                    <TextBlock Text="2 kr." FontSize="18"/>
+                </StackPanel>
+                
+            </Grid>
         </Grid>
 
     </Grid>

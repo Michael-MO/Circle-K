@@ -199,7 +199,8 @@
                     <TextBlock Text="Genemsnitlig løn"/>
                     <TextBlock Text="2 kr." FontSize="18"/>
                 </StackPanel>
-                
+
+                <Line Grid.Row="1" X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
             </Grid>
         </Grid>
 

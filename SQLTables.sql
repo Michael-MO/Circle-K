@@ -1,40 +1,40 @@
 use CircleKDB;
 
-CREATE TABLE Employee(
-	EmployeeNo		INT(20)        NOT NULL PRIMARY KEY,
-	Name			VARCHAR(70),
-	Title			VARCHAR(20),
-	Address			VARCHAR(70),
-	PostalCode		INT(4)         NOT NULL,
-	PhoneNo			VARCHAR(15),
-	Mail			VARCHAR(255),
-	IsActive		BIT            NOT NULL,
-	Username		INT(20)        NOT NULL,
-	Password		VARCHAR(255)   NOT NULL,
-	AccessLevel		VARCHAR(20),
+CREATE TABLE City (
+     PostalCode     INT IDENTITY(1,1) PRIMARY KEY,
+     City           VARCHAR(40)
+);
 
-	FOREIGN KEY (PostalCode) REFERENCES City (PostalCode)
+CREATE TABLE Employee(
+     EmployeeNo     INT IDENTITY(1,1) PRIMARY KEY,
+     Name           VARCHAR(70),
+     Title          VARCHAR(20),
+     Address        VARCHAR(70),
+     PostalCode     INT NOT NULL,
+     PhoneNo        VARCHAR(15),
+     Mail           VARCHAR(255),
+     IsActive       BIT NOT NULL,
+     UserName       INT NOT NULL,
+     UserPassword   VARCHAR(255) NOT NULL,
+     AccessLevel    VARCHAR(20),
+
+     FOREIGN KEY (PostalCode) REFERENCES City (PostalCode)
 );
 
 CREATE TABLE Station(
-	StationNo		INT            NOT NULL PRIMARY KEY,
-	PhoneNo			VARCHAR(15),
-	Address			VARCHAR(70),
-	PostalCode		INT(4)         NOT NULL,
+	StationNo      INT IDENTITY(1,1) PRIMARY KEY,
+     PhoneNo        VARCHAR(15),
+     Address        VARCHAR(70),
+     PostalCode     INT NOT NULL,
 
-	FOREIGN KEY (PostalCode) REFERENCES City (PostalCode)
+     FOREIGN KEY (PostalCode) REFERENCES City (PostalCode)
 );
 
 CREATE TABLE Master (
-	MasterID		INT            NOT NULL PRIMARY KEY,
-	EmployeeNo		INT(20)
-	StationNo		INT
+     MasterID       INT IDENTITY(1,1) PRIMARY KEY,
+     EmployeeNo     INT NOT NULL,
+     StationNo      INT NOT NULL,
 
-	FOREIGN KEY (EmployeeNo) REFERENCES Employee (EmployeeNo)
-	FOREIGN KEY (StationNo)  REFERENCES Station (StationNo)
-);
-
-CREATE TABLE City (
-	PostalCode		INT(4)         NOT NULL PRIMARY KEY,
-	City			VARCHAR(40)
+     FOREIGN KEY (EmployeeNo) REFERENCES Employee (EmployeeNo),
+     FOREIGN KEY (StationNo)  REFERENCES Station (StationNo)
 );

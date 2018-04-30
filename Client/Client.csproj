@@ -98,6 +98,8 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Collection\EmployeeCollection.cs" />
+    <Compile Include="Model\Collection\StationCollection.cs" />
     <Compile Include="Model\Domain\Employee.cs" />
     <Compile Include="Model\Domain\Station.cs" />
     <Compile Include="Model\Domain\User.cs" />

@@ -26,15 +26,5 @@ namespace Client.Views.App
         {
             this.InitializeComponent();
         }
-
-        private void MainMenu(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainMenu), null);
-        }
-
-        private void Login(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(Login), null);
-        }
     }
 }

@@ -24,7 +24,7 @@ namespace Client
     {
         public Login()
         {
-            this.InitializeComponent();
+            //this.InitializeComponent();
         }
     }
 }

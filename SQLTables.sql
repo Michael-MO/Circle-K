@@ -1,8 +1,8 @@
 use CircleKDB;
 
 CREATE TABLE City (
-     PostalCode     INT IDENTITY(1,1) PRIMARY KEY,
-     City           VARCHAR(40)
+     PostalCode     INT PRIMARY KEY,
+     Name           VARCHAR(40)
 );
 
 CREATE TABLE Employee(
@@ -22,7 +22,7 @@ CREATE TABLE Employee(
 );
 
 CREATE TABLE Station(
-	StationNo      INT IDENTITY(1,1) PRIMARY KEY,
+	 StationNo      INT IDENTITY(1,1) PRIMARY KEY,
      PhoneNo        VARCHAR(15),
      Address        VARCHAR(70),
      PostalCode     INT NOT NULL,

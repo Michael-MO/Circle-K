@@ -19,7 +19,7 @@
 
 
         <NavigationView    
-                x:Name="NavView"
+            
                 ContinuumNavigationTransitionInfo.IsEntranceElement="True"        
                 Header="Circle K"
                 Background="{ThemeResource SystemControlAcrylicWindowBrush}"

@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Client
+namespace Client.Views.Domain
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -24,7 +24,12 @@ namespace Client
     {
         public Login()
         {
-            //this.InitializeComponent();
+            this.InitializeComponent();
+        }
+
+        private void MainPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Views.App.MainPage), null);
         }
     }
 }

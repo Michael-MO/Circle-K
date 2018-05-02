@@ -84,16 +84,12 @@
                     <TextBlock Text="E-mail"/>
                     <TextBlock Text="Adressse"/>
                     <TextBlock Text=""/>
-                    <TextBlock Text="filler3"/>
-                    <TextBlock Text="filler3"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <TextBox PlaceholderText="Nummer"/>
                     <TextBox PlaceholderText="E-mail"/>
                     <TextBox PlaceholderText="Adresse"/>
-                    <TextBox/>
-                    <TextBox/>
                     <TextBox/>
                 </StackPanel>
 
@@ -183,7 +179,7 @@
 
                 <Grid.Resources>
                     <Style TargetType="TextBlock">
-                        <Setter Property="Margin" Value="30,30,0,0"/>
+                        <Setter Property="Margin" Value="30,20,0,0"/>
                         <Setter Property="FontSize" Value="16"/>
                         <Setter Property="HorizontalAlignment" Value="left"/>
                     </Style>
@@ -195,9 +191,11 @@
                     <TextBlock Text="TODO timer uden tillæg"/>
                 </StackPanel>
 
+                <Line Grid.Row="1" X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
+
                 <StackPanel Grid.Row="1">
                     <TextBlock Text="Genemsnitlig løn"/>
-                    <TextBlock Text="2 kr." FontSize="18"/>
+                    <TextBlock Text="2 kr." FontSize="20"/>
                 </StackPanel>
 
             </Grid>

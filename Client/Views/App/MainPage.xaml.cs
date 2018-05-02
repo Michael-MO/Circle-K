@@ -25,7 +25,7 @@ namespace Client.Views.App
         public MainPage()
         {
             this.InitializeComponent();
-            
+            AppFrame.Navigate(typeof(Views.Domain.MainMenu));
         }
 
     }

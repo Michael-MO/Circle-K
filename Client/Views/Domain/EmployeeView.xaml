@@ -39,6 +39,16 @@
             </StackPanel>
 
 
+            <StackPanel
+                Name="Plus_symbol_Row">
+
+                <Button
+                    Content="Add another search parameter"/>
+
+
+
+            </StackPanel>
+
 
 
             <StackPanel
@@ -49,13 +59,13 @@
                 <TextBlock
                     Name="Select_Items_Listview"
                     Text="Antal valgte brugere">
-                    
+
                 </TextBlock>
 
                 <Button
                     Name="Write_Message"
                     Content="Skriv Besked">
-                    
+
                 </Button>
 
                 <Button
@@ -91,13 +101,19 @@
         </StackPanel>
 
 
+
+
+
         <StackPanel
             Name="Origanizer_Right_Vertical_Stackpanel"
             Orientation="Vertical"
             Margin="10,0,0,0"
             Grid.Column="1"
+            Grid.Row="0"
             Grid.RowSpan="2"
             VerticalAlignment="Top">
+
+
 
             <StackPanel
                 Name="Selected_item_Details"
@@ -128,15 +144,14 @@
                             PlaceholderText="Indtast adresse"/>
 
                 </StackPanel>
-
-                <StackPanel Name="Field_Employee_Phone"
+                <StackPanel x:Name="Field_Employee_Phone"
                         Orientation="Horizontal">
 
                     <TextBlock
                             VerticalAlignment="Center"
                             Text="Telefon Nr."/>
                     <TextBox
-                            Text="Setup box"
+                            Text=""
                             PlaceholderText="Indtast telefon Nr."/>
 
                 </StackPanel>
@@ -148,7 +163,7 @@
                             VerticalAlignment="Center"
                             Text="Email"/>
                     <TextBox
-                            Text="Setup box"
+                            Text=""
                             PlaceholderText="Indtast Email"/>
                 </StackPanel>
 
@@ -159,7 +174,7 @@
                             VerticalAlignment="Center"
                             Text="Titel"/>
                     <TextBox
-                            Text="Setup box"
+                            Text=""
                             PlaceholderText="Indtast titel"/>
                 </StackPanel>
 
@@ -170,7 +185,7 @@
                             VerticalAlignment="Center"
                             Text="Antal vagttimer i sidste lønperiode"/>
                     <TextBox
-                            Text="Setup box"
+                            Text=""
                             PlaceholderText="Manglende data"/>
                 </StackPanel>
 
@@ -181,7 +196,7 @@
                             VerticalAlignment="Center"
                             Text="Antal vagttimer i nuværdende lønperiode"/>
                     <TextBox
-                            Text="Setup box"
+                            Text=""
                             PlaceholderText="Manglende data"/>
                 </StackPanel>
 
@@ -197,4 +212,5 @@
 
 
     </Grid>
+
 </Page>

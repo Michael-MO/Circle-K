@@ -25,6 +25,7 @@ namespace Client.Views.App
         public MainPage()
         {
             this.InitializeComponent();
+            
         }
 
     }

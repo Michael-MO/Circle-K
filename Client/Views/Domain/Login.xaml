@@ -34,7 +34,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel>
-                <Image/>
+                <Image />
                 <TextBlock FontSize="25" Text="Login her" Margin="20,250,0,0"/>
                 <TextBlock Text="Bruger navn" Margin="20,30,20,0"/>
                 <TextBox PlaceholderText="Bruger navn" Margin="20,0,20,0"/>

@@ -4,21 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.ViewModels.Controller
+namespace Client
 {
     class CreateController : Employee
     {
 
-        private override bool CanExecute()
-        {
-        }
-
-        private override void Execute()
+        CreateController()
+            base: ()
         {
 
         }
-
-
 
 
     }

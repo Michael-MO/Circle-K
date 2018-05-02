@@ -4,18 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Client.ViewModels.Controller
+namespace Client
 {
-    class UpdateController : Employee
+    class UpdateController
     {
-
-        private override bool CanExecute()
-        {
-        }
-
-        private override void Execute()
-        {
-
-        }
     }
 }

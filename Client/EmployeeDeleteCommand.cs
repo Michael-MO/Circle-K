@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Client
 {
-    class CreateCommandBase<T>
+    class EmployeeDeleteCommand
     {
-        private
-
     }
 }

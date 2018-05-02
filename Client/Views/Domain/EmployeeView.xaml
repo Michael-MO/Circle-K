@@ -9,5 +9,192 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Name="Organizer_Left_Vertical_Stackpanel"
+            Orientation="Vertical"
+            Margin="0,0,10,0"
+            Grid.RowSpan="2">
+
+            <StackPanel
+                Name="Search_Stackpanel"
+                Orientation="Horizontal">
+
+                <ComboBox>
+
+                </ComboBox>
+
+                <AutoSuggestBox>
+
+                </AutoSuggestBox>
+
+            </StackPanel>
+
+
+
+
+            <StackPanel
+                Name="Buttom_Stackpanel"
+                Orientation="Horizontal"
+                >
+
+                <TextBlock
+                    Name="Select_Items_Listview"
+                    Text="Antal valgte brugere">
+                    
+                </TextBlock>
+
+                <Button
+                    Name="Write_Message"
+                    Content="Skriv Besked">
+                    
+                </Button>
+
+                <Button
+                    Name="Create_Employee"
+                    Content="Opret bruger">
+
+                </Button>
+
+                <Button
+                    Name="Update_Employee"
+                    Content="Rediger bruger">
+
+                </Button>
+
+                <Button
+                    Name="Delete_Employee"
+                    Content="Slet bruger">
+
+                </Button>
+
+            </StackPanel>
+
+            <ListView
+                MinHeight="700"
+                Background="Azure"
+                VerticalAlignment="Stretch"
+                ShowsScrollingPlaceholders="True"
+                IsItemClickEnabled="False"
+                IsSwipeEnabled="False"
+                CanDragItems="False"
+                SelectionMode="Multiple"/>
+
+        </StackPanel>
+
+
+        <StackPanel
+            Name="Origanizer_Right_Vertical_Stackpanel"
+            Orientation="Vertical"
+            Margin="10,0,0,0"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            VerticalAlignment="Top">
+
+            <StackPanel
+                Name="Selected_item_Details"
+                Background="Brown">
+
+
+                <StackPanel Name="Field_Employee_Name"
+                        Orientation="Horizontal">
+
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Navn"/>
+                    <TextBox
+                            Text=""
+                            PlaceholderText="Indtast navn"/>
+
+                </StackPanel>
+
+
+                <StackPanel Name="field_Employee_Address"
+                        Orientation="Horizontal">
+
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Adresse"/>
+                    <TextBox
+                            Text=""
+                            PlaceholderText="Indtast adresse"/>
+
+                </StackPanel>
+
+                <StackPanel Name="Field_Employee_Phone"
+                        Orientation="Horizontal">
+
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Telefon Nr."/>
+                    <TextBox
+                            Text="Setup box"
+                            PlaceholderText="Indtast telefon Nr."/>
+
+                </StackPanel>
+
+
+                <StackPanel Name="field_Emploee_Email"
+                        Orientation="Horizontal">
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Email"/>
+                    <TextBox
+                            Text="Setup box"
+                            PlaceholderText="Indtast Email"/>
+                </StackPanel>
+
+
+                <StackPanel Name="field_Emploee_Title"
+                        Orientation="Horizontal">
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Titel"/>
+                    <TextBox
+                            Text="Setup box"
+                            PlaceholderText="Indtast titel"/>
+                </StackPanel>
+
+
+                <StackPanel Name="field_Emploee_Hours_Previous_Period"
+                        Orientation="Horizontal">
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Antal vagttimer i sidste lønperiode"/>
+                    <TextBox
+                            Text="Setup box"
+                            PlaceholderText="Manglende data"/>
+                </StackPanel>
+
+
+                <StackPanel Name="field_Emploee_Hours_Current_Period"
+                        Orientation="Horizontal">
+                    <TextBlock
+                            VerticalAlignment="Center"
+                            Text="Antal vagttimer i nuværdende lønperiode"/>
+                    <TextBox
+                            Text="Setup box"
+                            PlaceholderText="Manglende data"/>
+                </StackPanel>
+
+
+
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+
+
     </Grid>
 </Page>

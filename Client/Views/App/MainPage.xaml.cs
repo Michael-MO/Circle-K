@@ -26,5 +26,6 @@ namespace Client.Views.App
         {
             this.InitializeComponent();
         }
+
     }
 }

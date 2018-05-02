@@ -18,8 +18,8 @@
 
 
 
-        <NavigationView
-                
+        <NavigationView    
+                x:Name="NavView"
                 ContinuumNavigationTransitionInfo.IsEntranceElement="True"        
                 Header="Circle K"
                 Background="{ThemeResource SystemControlAcrylicWindowBrush}"
@@ -35,17 +35,17 @@
                 ExitDisplayModeOnAccessKeyInvoked="False">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Globe" Content="Hovedsiden" Tag="File"/>
+                <NavigationViewItem Icon="Globe" Content="Hovedsiden" Tag="MainMenu"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Icon="People" Content="Ansatte" Tag="OpenEmployeeView"/>
                 <NavigationViewItem Icon="Preview" Content="Lønseddel" Tag="OpenCustomerView"/>
             </NavigationView.MenuItems>
 
-            <Frame x:Name="AppFrame" >
+            <Frame x:Name="AppFrame">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
-                        <NavigationThemeTransition/>
-                    </TransitionCollection>
+                        <NavigationThemeTransition />
+                    </TransitionCollection> 
                 </Frame.ContentTransitions>
             </Frame>
         </NavigationView>

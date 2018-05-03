@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Client.DataTransformations.PersistentData.EmployeePersistentData;
+using Client.DataTransformations.ViewData;
 
 namespace Client.Model.Catalog
 {
@@ -37,7 +39,7 @@ namespace Client.Model.Catalog
 
 
 
-            }
+            };
         }
 
         public override EmployeePersistentData CreatePersistentDataObject(Model.Domain.Employee obj)
@@ -49,11 +51,10 @@ namespace Client.Model.Catalog
 
 
 
-            }
+            };
         }
 
-        public override Model.Domain.Employee CreateDomainObjectFromFromPersistentDataObject(
-            EmployeePersistentData pdObj)
+        public override Model.Domain.Employee CreateDomainObjectFromFromPersistentDataObject(EmployeePersistentData pdObj)
         {
             return new Model.Domain.Employee
             (
@@ -63,11 +64,6 @@ namespace Client.Model.Catalog
 
             );
         }
-
-
-
-
-
 
     }
 }

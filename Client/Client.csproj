@@ -137,7 +137,32 @@
       <Version>6.0.8</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="AddOns">
+      <HintPath>bin\x86\Debug\AddOns.dll</HintPath>
+    </Reference>
+    <Reference Include="Commands">
+      <HintPath>bin\x86\Debug\Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Controllers">
+      <HintPath>bin\x86\Debug\Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Data">
+      <HintPath>bin\x86\Debug\Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSources">
+      <HintPath>bin\x86\Debug\DataSources.dll</HintPath>
+    </Reference>
+    <Reference Include="Extensions">
+      <HintPath>bin\x86\Debug\Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Model">
+      <HintPath>bin\x86\Debug\Model.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModel">
+      <HintPath>bin\x86\Debug\ViewModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

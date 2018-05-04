@@ -18,8 +18,8 @@ namespace Client.Model.Domain
         private bool _isActive;
 
         public Employee(string title, string name, string address, string phoneNumber, string email,
-            int employeeNumber, string station, bool isActive, string accessLevel, string username, string password)
-            : base(accessLevel, username, password)
+            int employeeNumber, string station, bool isActive, string accessLevel, string username, string password, int key)
+            : base(accessLevel, username, password, key)
         {
             _title = title;
             _name = name;

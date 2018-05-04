@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Configeration\App\AppConfig.cs" />
     <Compile Include="DataTransformations\Base\PersistentDataAppBase.cs" />
     <Compile Include="DataTransformations\Base\ViewDataAppBase.cs" />
     <Compile Include="DataTransformations\PersistentData\EmployeePersistentData\EmployeePersistentData.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Base\CatalogAppBase.cs" />
     <Compile Include="Model\Catalog\EmployeeCatalog.cs" />
     <Compile Include="Model\Collection\EmployeeCollection.cs" />
     <Compile Include="Model\Collection\StationCollection.cs" />

@@ -20,8 +20,8 @@ namespace Client.Configeration.App
     {
         SetupAppImages("..\\..\\..\\Assets\\App\\");
         SetupDomainImages("..\\..\\..\\Assets\\Images\\");
-        appFrame.Navigate(typeof(FileView));
-        ((AppViewModel)MainPage.DataContext).SetAppFrame(appFrame);
+        appFrame.Navigate(typeof(MainMenuView));
+        ((AppViewModel)Login.DataContext).SetAppFrame(appFrame);
     }
 
     public static void SetupAppImages(string prefix)

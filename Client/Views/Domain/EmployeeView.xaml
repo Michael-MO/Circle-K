@@ -118,9 +118,7 @@
             Orientation="Vertical"
             Margin="10,0,0,0"
             Grid.Row="0"
-            Grid.RowSpan="2"
             Grid.Column="0"
-            Grid.ColumnSpan="0"
             VerticalAlignment="Top">
 
                 <StackPanel
@@ -208,10 +206,7 @@
             <StackPanel
                 x:Name="Origanizer_Right_Grid_Vertical_Stackpanel_Right"
                 Orientation="Vertical"
-                Margin="0,0,0,0"
-                Grid.Row="0"
                 Grid.Column="1"
-                Grid.ColumnSpan="0"
                 VerticalAlignment="Top">
 
 

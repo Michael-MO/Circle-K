@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Client.Model.Base;
+using Client.Model.App;
 
 namespace Client.Model.Domain
 {
-    public abstract class User
+    public abstract class User : DomainAppBase
     {
         protected string _accessLevel;
         protected string _username;
@@ -14,7 +16,8 @@ namespace Client.Model.Domain
 
 
 
-        protected User(string accessLevel, string username, string password)
+        protected User(string accessLevel, string username, string password, int key) 
+            : base(key)
         {
             _accessLevel = accessLevel;
             _username = username;

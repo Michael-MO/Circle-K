@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Client.DataTransformations.PersistentData;
 using Client.DataTransformations.PersistentData.EmployeePersistentData;
 using Client.DataTransformations.ViewData;
+using Client.Model.Base;
 
 namespace Client.Model.Catalog
 {
@@ -18,12 +20,18 @@ namespace Client.Model.Catalog
         {
             return new Model.Domain.Employee
             (
-                //Implementation 
-
-
-
-
-
+                vdObj.Title,
+                vdObj.Name,
+                vdObj.Address,
+                vdObj.PhoneNumber,
+                vdObj.Email,
+                vdObj.EmployeeNumber,
+                vdObj.Station,
+                vdObj.IsActive,
+                vdObj.AccessLevel,
+                vdObj.Username,
+                vdObj.Password,
+                vdObj.Key
 
             );
         }
@@ -34,8 +42,12 @@ namespace Client.Model.Catalog
             return new EmployeeViewData
             {
                 //Implementation
-
-
+                Key = obj.Key,
+                Title = obj.Title.TrimEnd(' '),
+                Name = obj.Name.TrimEnd(' '),
+                Address = obj.Address.TrimEnd(' '),
+                Email = obj.Email.TrimEnd(' '),
+                Station = obj.Station.TrimEnd(' ')
 
 
 
@@ -48,18 +60,36 @@ namespace Client.Model.Catalog
             {
                 //Implementation
 
+                Key = obj.Key,
+                Title = obj.Title,
+                Name = obj.Name,
+                Address = obj.Address,
+                Email = obj.Email,
+                Station = obj.Station
 
-
+                //NOTICE! -  possibly add rest of the propperties
 
             };
         }
 
-        public override Model.Domain.Employee CreateDomainObjectFromFromPersistentDataObject(EmployeePersistentData pdObj)
+        public override Model.Domain.Employee CreateDomainObjectFromPersistentDataObject(EmployeePersistentData pdObj)
         {
             return new Model.Domain.Employee
             (
-                //Implementation
 
+
+                pdObj.Title,
+                pdObj.Name,
+                pdObj.Address,
+                pdObj.PhoneNumber,
+                pdObj.Email,
+                pdObj.EmployeeNumber,
+                pdObj.Station,
+                pdObj.IsActive,
+                pdObj.AccessLevel,
+                pdObj.Username,
+                pdObj.Password,
+                pdObj.Key
 
 
             );

@@ -12,7 +12,7 @@ using Client.Configeration.App;
 
 namespace Client.Model.Base
 {
-    public abstract CatalogAppBase<TDomainData, TViewData, TPersistentData> : RestApiPersistableCatalogAsync<TDomainData, TViewData, TPersistentData>
+    public abstract class CatalogAppBase<TDomainData, TViewData, TPersistentData> : RestApiPersistableCatalogAsync<TDomainData, TViewData, TPersistentData>
     where TViewData : class, IStorable, ICopyable, new()
     where TDomainData : class, IStorable
     where TPersistentData : IStorable

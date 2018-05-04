@@ -24,6 +24,7 @@ namespace Client.ViewModel.App
         {
             _selectedMenuItem = null;
             NavigationCommands = new Dictionary<string, ICommand>();
+            AddCommands();
         }
 
         public NavigationViewItem SelectedMenuItem

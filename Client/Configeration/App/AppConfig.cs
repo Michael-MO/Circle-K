@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using AddOns.Images.Implementation;
 using AddOns.Images.Interfaces;
+using Client.ViewModel.App;
+using Client.Views.Domain;
 using Extensions.AddOns.Implementation;
 //using Client.ViewModel.App; //uncomment when Nav-view is inplementet
 //using Client.View.App; // uncomment when Nav-view is inplementet
@@ -14,14 +16,15 @@ namespace Client.Configeration.App
 {
     public class AppConfig
     {
-    // public static String ServerURL = ""; // insert url for server here 
+     public static String ServerURL = ""; // insert url for server here 
 
     public static void Setup(Page mainPage, Frame appFrame)
     {
         SetupAppImages("..\\..\\..\\Assets\\App\\");
         SetupDomainImages("..\\..\\..\\Assets\\Images\\");
-        appFrame.Navigate(typeof(MainMenuView));
-        ((AppViewModel)Login.DataContext).SetAppFrame(appFrame);
+        appFrame.Navigate(typeof(MainMenu));
+        ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
+
     }
 
     public static void SetupAppImages(string prefix)

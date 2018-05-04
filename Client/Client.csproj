@@ -95,18 +95,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
+
     <Compile Include="Configeration\App\AppConfig.cs" />
     <Compile Include="DataTransformations\Base\PersistentDataAppBase.cs" />
     <Compile Include="DataTransformations\Base\ViewDataAppBase.cs" />
     <Compile Include="DataTransformations\PersistentData\EmployeePersistentData\EmployeePersistentData.cs" />
     <Compile Include="DataTransformations\ViewData\EmployeeViewData.cs" />
-    <Compile Include="MainPage.xaml.cs">
-=======
+    <Compile Include="MainPage.xaml.cs"/>
+
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
     <Compile Include="Views\App\MainPage.xaml.cs">
->>>>>>> Nav-View
+
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Base\CatalogAppBase.cs" />
@@ -177,7 +177,7 @@
       <Version>6.0.8</Version>
     </PackageReference>
   </ItemGroup>
-<<<<<<< HEAD
+
   <ItemGroup>
     <Reference Include="AddOns">
       <HintPath>bin\x86\Debug\AddOns.dll</HintPath>
@@ -204,8 +204,7 @@
       <HintPath>bin\x86\Debug\ViewModel.dll</HintPath>
     </Reference>
   </ItemGroup>
-=======
->>>>>>> Nav-View
+
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

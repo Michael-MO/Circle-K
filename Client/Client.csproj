@@ -104,6 +104,9 @@
     <Compile Include="Model\Base\DomainAppBase.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
+    <Compile Include="ViewModel\Base\DataViewModelAppBase.cs" />
+    <Compile Include="ViewModel\Base\PageViewModelAppBase.cs" />
+    <Compile Include="ViewModel\Data\EmployeeDetailsViewModel.cs" />
     <Compile Include="ViewModel\Page\CreateEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\DeleteEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\EmployeePageVM.cs" />
@@ -195,7 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns">
-
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
     </Reference>
     <Reference Include="Commands">
@@ -218,7 +220,6 @@
     </Reference>
     <Reference Include="ViewModel">
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
-
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

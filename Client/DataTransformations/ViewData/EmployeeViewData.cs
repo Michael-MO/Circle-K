@@ -20,7 +20,7 @@ namespace Client.DataTransformations.ViewData
         public string Station { get; set; }
         public bool IsActive { get; set; }
 
-        public string ImageKey { get; set; }
+        public int ImageKey { get; set; }
 
         public string AccessLevel { get; set; }
 
@@ -44,6 +44,7 @@ namespace Client.DataTransformations.ViewData
             AccessLevel = "(ikke angivet endnu)";
             Username = "(ikke angivet endnu)";
             Password = "(ikke angivet endnu)";
+            ImageKey = NullKey;
         }
     }
 }

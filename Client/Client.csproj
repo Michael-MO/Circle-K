@@ -104,6 +104,10 @@
     <Compile Include="Model\Base\DomainAppBase.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModel\App\AppViewModel.cs" />
+    <Compile Include="ViewModel\Page\CreateEmployeePageVM.cs" />
+    <Compile Include="ViewModel\Page\DeleteEmployeePageVM.cs" />
+    <Compile Include="ViewModel\Page\EmployeePageVM.cs" />
+    <Compile Include="ViewModel\Page\UpdateEmployeePageVM.cs" />
     <Compile Include="Views\App\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -126,6 +130,12 @@
     </Compile>
     <Compile Include="Views\Domain\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\PayCheckView.xaml.cs">
+      <DependentUpon>PayCheckView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Domain\TimeCardView.xaml.cs">
+      <DependentUpon>TimeCardView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +179,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Domain\PayCheckView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\TimeCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -177,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns">
+<<<<<<< HEAD
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
     </Reference>
     <Reference Include="Commands">
@@ -199,6 +218,30 @@
     </Reference>
     <Reference Include="ViewModel">
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
+=======
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
+    </Reference>
+    <Reference Include="Commands">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
+    </Reference>
+    <Reference Include="Controllers">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
+    </Reference>
+    <Reference Include="Data">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
+    </Reference>
+    <Reference Include="DataSources">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\DataSources.dll</HintPath>
+    </Reference>
+    <Reference Include="Extensions">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Model">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
+    </Reference>
+    <Reference Include="ViewModel">
+      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
+>>>>>>> eb9b5a7f70e7bed38fbb23c43838cd7d5c1c1d05
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

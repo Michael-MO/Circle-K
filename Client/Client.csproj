@@ -195,7 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns">
-<<<<<<< HEAD
+
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
     </Reference>
     <Reference Include="Commands">
@@ -218,30 +218,7 @@
     </Reference>
     <Reference Include="ViewModel">
       <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
-=======
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
-    </Reference>
-    <Reference Include="Commands">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
-    </Reference>
-    <Reference Include="Controllers">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
-    </Reference>
-    <Reference Include="Data">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
-    </Reference>
-    <Reference Include="DataSources">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\DataSources.dll</HintPath>
-    </Reference>
-    <Reference Include="Extensions">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="Model">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
-    </Reference>
-    <Reference Include="ViewModel">
-      <HintPath>..\..\..\..\..\..\..\..\VS_Opgaver\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
->>>>>>> eb9b5a7f70e7bed38fbb23c43838cd7d5c1c1d05
+
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

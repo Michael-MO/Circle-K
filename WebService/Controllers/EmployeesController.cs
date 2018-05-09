@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -19,7 +20,7 @@ namespace WebService.Controllers
         // GET: api/Employees
         public IQueryable<Employee> GetEmployees()
         {
-            return db.Employees.Include(x => x.City);
+            return db.Employees;
         }
 
         // GET: api/Employees/5

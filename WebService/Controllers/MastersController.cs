@@ -19,7 +19,7 @@ namespace WebService.Controllers
         // GET: api/Masters
         public IQueryable<Master> GetMasters()
         {
-            return db.Masters.Include(x => x.Employee).Include(x => x.Station);
+            return db.Masters;
         }
 
         // GET: api/Masters/5

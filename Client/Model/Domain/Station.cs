@@ -35,7 +35,10 @@ namespace Client.Model.Domain
             get { return _address; }
         }
 
-
+        public override string ToString()
+        {
+            return $"{PhoneNumber}";
+        }
 
 
 

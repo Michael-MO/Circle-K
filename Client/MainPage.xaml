@@ -7,7 +7,60 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.DataContext>
+        <local:TestCollection />
+    </Page.DataContext>
 
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Background="#ddd">
+            <ListView ItemsSource="{Binding Collection}"
+                      Margin="5">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding EmployeeNo}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding Name}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding Title}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding Address}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding PhoneNo}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding Mail}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding IsActive}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                            <TextBlock Text="{Binding AccessLevel}"
+                                   FontSize="20"
+                                   HorizontalAlignment="Left"
+                                   Margin="10" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Page>

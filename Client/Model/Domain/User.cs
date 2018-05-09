@@ -8,17 +8,15 @@ namespace Client.Model.Domain
 {
     public abstract class User
     {
+        protected string _userName;
+        protected string _userPassword;
         protected string _accessLevel;
-        protected string _username;
-        protected string _password;
 
-
-
-        protected User(string accessLevel, string username, string password)
+        protected User(string userName, string userPassword, string accessLevel)
         {
+            _userName = userName;
+            _userPassword = userPassword;
             _accessLevel = accessLevel;
-            _username = username;
-            _password = password;
         }
 
         public string AccessLevel
@@ -26,14 +24,14 @@ namespace Client.Model.Domain
             get { return _accessLevel; }
         }
 
-        public string Username
+        public string UserName
         {
-            get { return _username; }
+            get { return _userName; }
         }
 
-        public string Password
+        public string UserPassword
         {
-            get { return _password; }
+            get { return _userPassword; }
         }
 
 

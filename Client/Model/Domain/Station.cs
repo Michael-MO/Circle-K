@@ -9,38 +9,19 @@ namespace Client.Model.Domain
 {
     public class Station
     {
-        //Insancefields er redundant hvis de ikke bruges til noget.
-        private string _phoneNumber;
-        private string _stationNumber;
-        private string _address;
 
-        public Station(string phoneNumber, string stationNumber, string address)
+        public Station(string stationNo, string phoneNo, string address)
+
         {
-            _phoneNumber = phoneNumber;
-            _stationNumber = stationNumber;
-            _address = address;
+            StationNo = stationNo;
+            PhoneNo = phoneNo;
+            Address = address;
         }
 
-        public string PhoneNumber
-        {
-            get { return _phoneNumber; }
-        }
+        public string StationNo { get; set; }
 
-        public string StationNumber
-        {
-            get { return _stationNumber; }
-        }
+        public string PhoneNo { get; set; }
 
-        public string Address
-        {
-            get { return _address; }
-        }
-
-
-
-
-
-
-
+        public string Address { get; set; }
     }
 }

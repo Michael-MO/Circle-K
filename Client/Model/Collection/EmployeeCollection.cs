@@ -33,6 +33,5 @@ namespace Client.Model.Collection
         {
             get { return _collection; }
         }
-
     }
 }

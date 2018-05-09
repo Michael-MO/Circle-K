@@ -20,23 +20,22 @@ namespace Client.Model.Catalog
         {
             return new Model.Domain.Employee
             (
+                vdObj.EmployeeNo,
                 vdObj.Title,
                 vdObj.Name,
                 vdObj.Address,
-                vdObj.PhoneNumber,
-                vdObj.Email,
-                vdObj.EmployeeNumber,
+                vdObj.PostalCode,
+                vdObj.PhoneNo,
+                vdObj.Mail,
                 vdObj.Station,
                 vdObj.IsActive,
-                vdObj.AccessLevel,
                 vdObj.Username,
                 vdObj.Password,
+                vdObj.AccessLevel,
                 vdObj.Key
-
             );
         }
-
-
+        
         public override EmployeeViewData CreateViewDataObject(Model.Domain.Employee obj)
         {
             return new EmployeeViewData
@@ -46,11 +45,7 @@ namespace Client.Model.Catalog
                 Title = obj.Title.TrimEnd(' '),
                 Name = obj.Name.TrimEnd(' '),
                 Address = obj.Address.TrimEnd(' '),
-                Email = obj.Email.TrimEnd(' '),
-                Station = obj.Station.TrimEnd(' ')
-
-
-
+                Mail = obj.Mail.TrimEnd(' ')
             };
         }
 
@@ -59,16 +54,13 @@ namespace Client.Model.Catalog
             return new EmployeePersistentData
             {
                 //Implementation
-
                 Key = obj.Key,
                 Title = obj.Title,
                 Name = obj.Name,
                 Address = obj.Address,
-                Email = obj.Email,
+                Mail = obj.Mail,
                 Station = obj.Station
-
                 //NOTICE! -  possibly add rest of the propperties
-
             };
         }
 
@@ -76,24 +68,20 @@ namespace Client.Model.Catalog
         {
             return new Model.Domain.Employee
             (
-
-
+                pdObj.EmployeeNo,
                 pdObj.Title,
                 pdObj.Name,
                 pdObj.Address,
-                pdObj.PhoneNumber,
-                pdObj.Email,
-                pdObj.EmployeeNumber,
+                pdObj.PostalCode,
+                pdObj.PhoneNo,
+                pdObj.Mail,
                 pdObj.Station,
                 pdObj.IsActive,
-                pdObj.AccessLevel,
                 pdObj.Username,
                 pdObj.Password,
+                pdObj.AccessLevel,
                 pdObj.Key
-
-
             );
         }
-
     }
 }

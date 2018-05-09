@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Client.Views.Domain.CreateEmployee"
+    x:Class="Client.Views.Domain.UpdateView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Client.Views.Domain"
@@ -24,7 +24,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -50,8 +50,9 @@
             <PersonPicture Margin="0,40,0,0" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="300" Height="300"/>
             <Button Margin="85,20,0,0" Content="Vælg bilede"/>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="1">
+            <TextBlock Text="Person Info" FontSize="20" HorizontalAlignment="Left" Margin="20,17,0,0"/>
             <TextBlock Text="Navn"/>
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
@@ -62,13 +63,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn"/>
+            <TextBox PlaceholderText="Navn" Margin="10,51,0,0"/>
             <TextBox PlaceholderText="Tlf nummer"/>
             <TextBox PlaceholderText="Adresse"/>
             <TextBox PlaceholderText="E-mail"/>
             <TextBox PlaceholderText="Fødselsdato"/>
             <TextBox PlaceholderText="Stations nummer"/>
-            <TextBlock Text="Personale nummer" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBlock Text="Personale nummer" HorizontalAlignment="Left" Margin="10,9,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -90,6 +91,5 @@
             <TextBox PlaceholderText="Filler4"/>
             <TextBox PlaceholderText="Filler5"/>
         </StackPanel>
-
     </Grid>
 </Page>

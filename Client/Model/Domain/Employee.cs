@@ -8,7 +8,6 @@ namespace Client.Model.Domain
 {
     public class Employee : User
     {
-
         public Employee(
             int employeeNo,
             string title,
@@ -24,7 +23,6 @@ namespace Client.Model.Domain
             string accessLevel,
             int key)
             : base(userName, userPassword, accessLevel, key)
-
         {
             EmployeeNo = employeeNo;
             Title = title;

@@ -6,65 +6,48 @@ using System.Threading.Tasks;
 
 namespace Client.Model.Domain
 {
-    public class Employee: User
+    public class Employee : User
     {
-        private string _title;
-        private string _name;
-        private string _address;
-        private string _phoneNumber;
-        private string _email;
-        private int _employeeNumber;
-        private string _station;
-        private bool _isActive;
-
-        public Employee(string title, string name, string address, string phoneNumber, string email,
-            int employeeNumber, string station, bool isActive, string accessLevel, string username, string password, int key)
-            : base(accessLevel, username, password, key)
+        public Employee(
+            int employeeNo,
+            string title,
+            string name,
+            string address,
+            int postalCode,
+            string phoneNo,
+            string mail,
+            bool isActive,
+            string userName,
+            string userPassword,
+            string accessLevel,
+            int key)
+            : base(userName, userPassword, accessLevel, key)
         {
-            _title = title;
-            _name = name;
-            _address = address;
-            _phoneNumber = phoneNumber;
-            _email = email;
-            _employeeNumber = employeeNumber;
-            _station = station;
-            _isActive = isActive;
+            EmployeeNo = employeeNo;
+            Title = title;
+            Name = name;
+            Address = address;
+            PostalCode = postalCode;
+            PhoneNo = phoneNo;
+            Mail = mail;
+            IsActive = isActive;
         }
 
-        public string Title
-        {
-            get { return _title; }
-        }
+        public int EmployeeNo { get; set; }
 
-        public string Name
-        {
-            get { return _name; }
-        }
-        public string Address
-        {
-            get { return _address; }
-        }
-        public string PhoneNumber
-        {
-            get { return _phoneNumber; }
-        }
-        public string Email
-        {
-            get { return _email; }
-        }
-        public int EmployeeNumber
-        {
-            get { return _employeeNumber; }
-        }
-        public string Station
-        {
-            get { return _station; }
-        }
-        public bool IsActive
-        {
-            get { return _isActive; }
-        }
+        public string Name { get; set; }
 
+        public string Title { get; set; }
+
+        public string Address { get; set; }
+
+        public int PostalCode { get; set; }
+
+        public string PhoneNo { get; set; }
+
+        public string Mail { get; set; }
+
+        public bool IsActive { get; set; }
 
         public void ChangeTitle(string title) //, this.accesslevel) //sørg for at få denne refference til employee objektets accesslevel fra user classen 
         {
@@ -72,8 +55,5 @@ namespace Client.Model.Domain
             // ChangeAccesslevel(Employee obj, accessLevel (wished to change to)); //call the other method with 
 
         }
-
-
-
     }
 }

@@ -16,31 +16,30 @@ namespace Client.Configeration.App
 {
     public class AppConfig
     {
-     public static String ServerURL = ""; // insert url for server here 
+        public static String ServerURL = "http://localhost:55985"; // insert url for server here 
 
-    public static void Setup(Page mainPage, Frame appFrame)
-    {
-        SetupAppImages("..\\..\\..\\Assets\\App\\");
-        SetupDomainImages("..\\..\\..\\Assets\\Images\\");
-        appFrame.Navigate(typeof(MainMenu));
-        ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
+        public static void Setup(Page mainPage, Frame appFrame)
+        {
+            SetupAppImages("..\\..\\..\\Assets\\App\\");
+            SetupDomainImages("..\\..\\..\\Assets\\Images\\");
+            appFrame.Navigate(typeof(MainMenu));
+            ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
 
+        }
+
+        public static void SetupAppImages(string prefix)
+        {
+            ServiceProvider.Images.SetAppImageSource(AppImageType.NotFound, prefix + "NotSet.jpg");
+            ServiceProvider.Images.SetAppImageSource(AppImageType.Logo, prefix + "Logo120x60.jpg");
+        }
+
+        private static void SetupDomainImages(string preface)
+        {
+            List<IImage> imageList = new List<IImage>();
+
+            //Tilføj billede fra domæne klasser. Se Pers eksempel
+
+            ServiceProvider.Images.SetImages(imageList);
+        }
     }
-
-    public static void SetupAppImages(string prefix)
-    {
-        ServiceProvider.Images.SetAppImageSource(AppImageType.NotFound, prefix + "NotSet.jpg");
-        ServiceProvider.Images.SetAppImageSource(AppImageType.Logo, prefix + "Logo120x60.jpg");
-    }
-
-    private static void SetupDomainImages(string preface)
-    {
-        List<IImage> imageList = new List<IImage>();
-
-        //Tilføj billede fra domæne klasser. Se Pers eksempel
-
-        ServiceProvider.Images.SetImages(imageList);
-    }
-
-}
 }

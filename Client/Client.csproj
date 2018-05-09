@@ -140,6 +140,8 @@
     <Compile Include="Views\Domain\TimeCardView.xaml.cs">
       <DependentUpon>TimeCardView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WebAPI\IWebAPIAsync.cs" />
+    <Compile Include="WebAPI\WebAPIAsync.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

@@ -134,6 +134,9 @@
     <Compile Include="Views\Domain\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Domain\UpdateView.xaml.cs">
+      <DependentUpon>UpdateView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Domain\PayCheckView.xaml.cs">
       <DependentUpon>PayCheckView.xaml</DependentUpon>
     </Compile>
@@ -183,6 +186,8 @@
     <Page Include="Views\Domain\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Domain\UpdateView.xaml">
     </Page>
     <Page Include="Views\Domain\PayCheckView.xaml">
       <SubType>Designer</SubType>

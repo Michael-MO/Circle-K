@@ -60,7 +60,6 @@ namespace Client.Model.Collection
         public Dictionary<int, Employee> Collection
         {
             get { return _collection; }
-            set { _collection = value; }
         }
     }
 }

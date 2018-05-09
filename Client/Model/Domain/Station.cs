@@ -9,6 +9,7 @@ namespace Client.Model.Domain
 {
     public class Station
     {
+        //Insancefields er redundant hvis de ikke bruges til noget.
         private string _phoneNumber;
         private string _stationNumber;
         private string _address;

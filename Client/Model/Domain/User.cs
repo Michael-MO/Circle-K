@@ -10,6 +10,7 @@ namespace Client.Model.Domain
 {
     public abstract class User : DomainAppBase
     {
+        //Insancefields er redundant hvis de ikke bruges til noget.
         protected string _accessLevel;
         protected string _username;
         protected string _password;

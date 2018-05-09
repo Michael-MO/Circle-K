@@ -14,7 +14,7 @@ namespace Client.ViewModel.Page
 {
     public class EmployeePageVM : PageViewModelAppBase<EmployeeViewData>
     {
-        public EmployeePageVM() : base(DomainModel.Catalogs.Employees, new List<string> {""}, new List<string> {""})
+        public EmployeePageVM() : base(DomainModel.Catalogs.Employees, new List<string> {"Name"}, new List<string> {"123"})
         {
         }
 

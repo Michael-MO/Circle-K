@@ -8,6 +8,7 @@ namespace Client.Model.Domain
 {
     public class Employee: User
     {
+        //Insancefields er redundant hvis de ikke bruges til noget.
         private string _title;
         private string _name;
         private string _address;

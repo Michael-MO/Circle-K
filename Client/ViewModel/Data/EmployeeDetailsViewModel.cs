@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
+using Client.Model.Domain;
 using Client.ViewModel.Base;
 
 namespace Client.ViewModel.Data
@@ -36,20 +37,20 @@ namespace Client.ViewModel.Data
 
         public string PhoneNumber
         {
-            get { return DataObject.PhoneNumber; }
+            get { return DataObject.PhoneNo; }
             set
             {
-                DataObject.PhoneNumber = value;
+                DataObject.PhoneNo = value;
                 OnPropertyChanged();
             }
         }
 
         public string EMail
         {
-            get { return DataObject.Email; }
+            get { return DataObject.Mail; }
             set
             {
-                DataObject.Email = value;
+                DataObject.Mail = value;
                 OnPropertyChanged();
             }
         }
@@ -57,10 +58,10 @@ namespace Client.ViewModel.Data
 
         public int EmployeeNumber
         {
-            get { return DataObject.EmployeeNumber; }
+            get { return DataObject.EmployeeNo; }
         }
 
-        public string Station
+        public List<Station> Station
         {
             get { return DataObject.Station; }
             set

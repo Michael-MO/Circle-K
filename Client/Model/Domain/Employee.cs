@@ -16,6 +16,7 @@ namespace Client.Model.Domain
             int postalCode,
             string phoneNo,
             string mail,
+            List<Station> station,
             bool isActive,
             string userName,
             string userPassword,
@@ -30,6 +31,7 @@ namespace Client.Model.Domain
             PostalCode = postalCode;
             PhoneNo = phoneNo;
             Mail = mail;
+            Station = station;
             IsActive = isActive;
         }
 
@@ -47,13 +49,14 @@ namespace Client.Model.Domain
 
         public string Mail { get; set; }
 
+        public List<Station> Station { get; set; }
+
         public bool IsActive { get; set; }
 
         public void ChangeTitle(string title) //, this.accesslevel) //sørg for at få denne refference til employee objektets accesslevel fra user classen 
         {
             // check - compare dictionary <string (title forstås her), list<title (en komplet liste over alle titler)>>
             // ChangeAccesslevel(Employee obj, accessLevel (wished to change to)); //call the other method with 
-
         }
     }
 }

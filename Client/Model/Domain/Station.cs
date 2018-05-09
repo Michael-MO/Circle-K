@@ -9,7 +9,9 @@ namespace Client.Model.Domain
 {
     public class Station
     {
+
         public Station(string stationNo, string phoneNo, string address)
+
         {
             StationNo = stationNo;
             PhoneNo = phoneNo;

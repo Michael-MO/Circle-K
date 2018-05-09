@@ -206,8 +206,6 @@
             <StackPanel
                 x:Name="Origanizer_Right_Grid_Vertical_Stackpanel_Right"
                 Orientation="Vertical"
-                Margin="0,0,0,0"
-                Grid.Row="0"
                 Grid.Column="1"
                 VerticalAlignment="Top">
 

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Client.Configeration.App;
 using Client.ViewModel.App;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -26,9 +27,7 @@ namespace Client.Views.App
         public MainPage()
         {
             this.InitializeComponent();
-            ((AppViewModel) this.DataContext).MainAppFrame = AppFrame;
-            ((AppViewModel)this.DataContext).AddCommands();
-            AppFrame.Navigate(typeof(Views.Domain.MainMenu));
+            AppConfig.Setup(this, AppFrame);
         }
 
     }

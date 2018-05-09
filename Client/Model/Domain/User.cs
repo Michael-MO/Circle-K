@@ -10,34 +10,19 @@ namespace Client.Model.Domain
 {
     public abstract class User : DomainAppBase
     {
-        protected string _accessLevel;
-        protected string _username;
-        protected string _password;
-
-
-
         protected User(string accessLevel, string username, string password, int key) 
             : base(key)
         {
-            _accessLevel = accessLevel;
-            _username = username;
-            _password = password;
+            AccessLevel = accessLevel;
+            Username = username;
+            Password = password;
         }
 
-        public string AccessLevel
-        {
-            get { return _accessLevel; }
-        }
+        public string AccessLevel { get; set; }
 
-        public string Username
-        {
-            get { return _username; }
-        }
+        public string Username { get; set; }
 
-        public string Password
-        {
-            get { return _password; }
-        }
+        public string Password { get; set; }
 
 
         // Method for setting accesslevel
@@ -45,7 +30,6 @@ namespace Client.Model.Domain
             // Kan kun give adgangsniveau lavere end ens eget niveau
             // Gøres ved at man ændre "title" i employee classen, som så ændre accessLevel her
             // Se Daniel billede på telefon
-
 
         protected void ChangeAccesslevel(Employee employee, string accessLevel)
         {

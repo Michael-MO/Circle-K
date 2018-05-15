@@ -10,9 +10,16 @@ namespace Client.ViewModel.Page
     class DeleteEmployeePageVM : EmployeePageVM
     {
 
+        
+
+
+
         protected override void SetupInitialViewState()
         {
             ViewStateService.ViewState = CRUDStates.UpdateState;
         }
+
+        //method to set employee _isActive = false
+
     }
 }

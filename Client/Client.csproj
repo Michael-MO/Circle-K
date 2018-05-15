@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configeration\App\AppConfig.cs" />
+    <Compile Include="CreateEmployeeCommand.cs" />
     <Compile Include="DataTransformations\Base\PersistentDataAppBase.cs" />
     <Compile Include="DataTransformations\Base\ViewDataAppBase.cs" />
     <Compile Include="DataTransformations\PersistentData\EmployeePersistentData\EmployeePersistentData.cs" />

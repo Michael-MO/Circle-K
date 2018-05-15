@@ -17,9 +17,9 @@ using ViewModel.Page.Implementation;
 
 namespace Client.ViewModel.Page
 {
-    public class CreateEmployeePageVM : EmployeePageVM
+    public class CreateEmployeePageVM : EmployeePageVM 
     {
-        private IDataWrapper<EmployeeViewData> _Connection; 
+        private IDataWrapper<EmployeeViewData> _Connection;
 
         public CreateEmployeePageVM()
         {
@@ -32,6 +32,7 @@ namespace Client.ViewModel.Page
             ViewStateService.ViewState = CRUDStates.CreateState;
         }
 
+        
         
     }
 }

@@ -20,7 +20,7 @@ namespace Client.ViewModel.Page
 
         public override IDataWrapper<EmployeeViewData> CreateDataViewModel(EmployeeViewData obj)
         {
-            return new EmployeeDetailsViewModel(obj);
+            return new EmployeeDataViewModel(obj);
         }
     }
 }

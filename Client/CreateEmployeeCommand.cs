@@ -12,8 +12,8 @@ namespace Client
 {
     class CreateEmployeeCommand : CreateCommandBase<EmployeeDataViewModel>
     {
-        public CreateEmployeeCommand(IDataWrapper<EmployeeDataViewModel> source, ICatalog<EmployeeDataViewModel> target, Func<bool> condition) : 
-            base(source, target, condition)
+        public CreateEmployeeCommand(IDataWrapper<EmployeeDataViewModel> source, ICatalog<EmployeeDataViewModel> target, Func<bool> condition)
+            : base(source, target, condition)
         {
         }
     }

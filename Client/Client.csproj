@@ -106,7 +106,7 @@
     <Compile Include="ViewModel\App\AppViewModel.cs" />
     <Compile Include="ViewModel\Base\DataViewModelAppBase.cs" />
     <Compile Include="ViewModel\Base\PageViewModelAppBase.cs" />
-    <Compile Include="ViewModel\Data\EmployeeDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Data\EmployeeDataViewModel.cs" />
     <Compile Include="ViewModel\Page\CreateEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\DeleteEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\EmployeePageVM.cs" />

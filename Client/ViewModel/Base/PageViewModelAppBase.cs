@@ -28,6 +28,7 @@ namespace Client.ViewModel.Base
             {
                 UpdateFontWeights();
                 OnPropertyChanged(nameof(MenuFontWeights));
+                
             };
         }
 

@@ -5,7 +5,12 @@
     xmlns:local="using:Client.Views.Domain"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:page="using:Client.ViewModel.Page"
     mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <page:CreateEmployeePageVM/>
+    </Page.DataContext>
 
     <Page.Resources>
         <Style TargetType="Button">
@@ -14,6 +19,7 @@
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
             <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="20"/>
         </Style>
     </Page.Resources>
 
@@ -47,8 +53,8 @@
         </Grid.Resources>
 
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <PersonPicture Margin="0,40,0,0" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="300" Height="300"/>
-            <Button Margin="85,20,0,0" Content="Vælg bilede"/>
+            <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
+            <Button Margin="10,20,0,0" Content="Vælg bilede"/>
         </StackPanel>
         
         <StackPanel Grid.Row="1">
@@ -62,13 +68,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn"/>
-            <TextBox PlaceholderText="Tlf nummer"/>
-            <TextBox PlaceholderText="Adresse"/>
-            <TextBox PlaceholderText="E-mail"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer"/>
-            <TextBlock Text="Personale nummer" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
+            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -90,6 +96,12 @@
             <TextBox PlaceholderText="Filler4"/>
             <TextBox PlaceholderText="Filler5"/>
         </StackPanel>
+        
+        <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="Opret Employee"  IsEnabled="{Binding ControlStates[CreateControl].Enabled}" Command="{Binding DataCommand[CreateCommand]}"/>
+            <Button Content="Annuller"/>
+        </StackPanel>
+
 
     </Grid>
 </Page>

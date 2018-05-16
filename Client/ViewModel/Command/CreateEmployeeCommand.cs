@@ -8,9 +8,9 @@ using Commands.Implementation;
 using Data.Transformed.Interfaces;
 using Model.Interfaces;
 
-namespace Client
+namespace Client.ViewModel.Command
 {
-    class CreateEmployeeCommand : CreateCommandBase<EmployeeDataViewModel>
+    public class CreateEmployeeCommand : CreateCommandBase<EmployeeDataViewModel>
     {
         public CreateEmployeeCommand(IDataWrapper<EmployeeDataViewModel> source, ICatalog<EmployeeDataViewModel> target, Func<bool> condition)
             : base(source, target, condition)

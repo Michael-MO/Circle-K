@@ -15,7 +15,7 @@ namespace Client.ViewModel.Command
         public DeleteEmployeeCommand(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
             : base(source, target, condition)
         {
-
+            
         }
     }
 }

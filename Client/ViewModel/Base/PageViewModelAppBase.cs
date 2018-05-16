@@ -54,7 +54,7 @@ namespace Client.ViewModel.Base
             get { return base.ItemSelected; }
 
             set
-            {
+            {   
                 base.ItemSelected = value;
                 ItemSelectedInstance = base.ItemSelected;
             }

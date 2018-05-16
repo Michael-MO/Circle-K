@@ -9,7 +9,7 @@ using Client.ViewModel.Base;
 
 namespace Client.ViewModel.Data
 {
-    class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
+    public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
         {

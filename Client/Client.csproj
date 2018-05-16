@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configeration\App\AppConfig.cs" />
+    <Compile Include="CreateEmployeeCommand.cs" />
     <Compile Include="DataTransformations\Base\PersistentDataAppBase.cs" />
     <Compile Include="DataTransformations\Base\ViewDataAppBase.cs" />
     <Compile Include="DataTransformations\PersistentData\EmployeePersistentData\EmployeePersistentData.cs" />
@@ -106,7 +107,7 @@
     <Compile Include="ViewModel\App\AppViewModel.cs" />
     <Compile Include="ViewModel\Base\DataViewModelAppBase.cs" />
     <Compile Include="ViewModel\Base\PageViewModelAppBase.cs" />
-    <Compile Include="ViewModel\Data\EmployeeDetailsViewModel.cs" />
+    <Compile Include="ViewModel\Data\EmployeeDataViewModel.cs" />
     <Compile Include="ViewModel\Page\CreateEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\DeleteEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\EmployeePageVM.cs" />

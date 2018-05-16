@@ -26,5 +26,10 @@ namespace Client.Views.Domain
         {
             this.InitializeComponent();
         }
+
+        private void CreateView(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CreateEmployee), null);
+        }
     }
 }

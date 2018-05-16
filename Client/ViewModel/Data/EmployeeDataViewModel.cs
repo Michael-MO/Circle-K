@@ -9,9 +9,9 @@ using Client.ViewModel.Base;
 
 namespace Client.ViewModel.Data
 {
-    class EmployeeDetailsViewModel : DataViewModelAppBase<EmployeeViewData>
+    public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
-        public EmployeeDetailsViewModel(EmployeeViewData obj) : base(obj, "Employees")
+        public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
         {
         }
 

@@ -8,11 +8,11 @@ using Commands.Implementation;
 using Data.Transformed.Interfaces;
 using Model.Interfaces;
 
-namespace Client.ViewModel.Command
+namespace Client.ViewModel.Controller
 {
-    public class DeleteEmployeeCommand : DeleteCommandBase<EmployeeViewData>
+    public class DeleteEmployeeController : DeleteCommandBase<EmployeeViewData>
     {
-        public DeleteEmployeeCommand(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
+        public DeleteEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
             : base(source, target, condition)
         {
             

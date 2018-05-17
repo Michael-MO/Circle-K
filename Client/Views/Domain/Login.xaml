@@ -55,5 +55,7 @@
             <Image Source="ms-appx:///Assets/sunset.jpg"/>
             <Image Source="ms-appx:///Assets/valley.jpg"/>
         </FlipView>
+
+
     </Grid>
 </Page>

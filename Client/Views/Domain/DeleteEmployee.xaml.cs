@@ -20,16 +20,11 @@ namespace Client.Views.Domain
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class EmployeeView : Page
+    public sealed partial class DeleteEmployee : Page
     {
-        public EmployeeView()
+        public DeleteEmployee()
         {
             this.InitializeComponent();
-        }
-
-        private void CreateView(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(CreateEmployee), null);
         }
     }
 }

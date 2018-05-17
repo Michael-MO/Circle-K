@@ -8,9 +8,14 @@
     xmlns:page="using:Client.ViewModel.Page"
     mc:Ignorable="d">
 
+    
 
+    <Page.DataContext>
+        <page:EmployeePageVM/>
+    </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -24,34 +29,33 @@
 
         <Line VerticalAlignment="Bottom" Grid.ColumnSpan="2" X1="0" X2="50000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
 
-        <StackPanel Name="Search_Stackpanel" Orientation="Horizontal" Grid.Row="0">
+        <StackPanel Name="Search_Stackpanel" Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center">
 
-                    <ComboBox Width="200" Margin="10,30,0,0">
-                        
-                    </ComboBox>
-                
-                    <AutoSuggestBox Width="200" Margin="10,30,10,0">
+            <ComboBox Width="200" Margin="10,10,0,10">
 
-                    </AutoSuggestBox>
-                <Button Content="Add another search parameter"/>
+            </ComboBox>
 
-            </StackPanel>
+            <AutoSuggestBox Width="200" Margin="10">
 
-        <StackPanel Grid.RowSpan="2" Grid.Row="1">
-        <StackPanel  VerticalAlignment="Top" Name="Buttom_Stackpanel" Orientation="Horizontal" Grid.Row="1">
-
-            <Border BorderThickness="1" BorderBrush="Black" Height="32" Width="32" Margin="20,10,0,10">
-            <TextBlock Name="Select_Items_Listview" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Border>
-
-                <Button Name="Write_Message" Content="Skriv Besked" Margin="10"/>
-            <Button Name="Create_Employee" Content="Opret bruger" Margin="10" />
-            <Button Name="Update_Employee" Content="Rediger bruger" Margin="10"/>
-            <Button Name="Delete_Employee" Content="Slet bruger" Margin="10"/>
+            </AutoSuggestBox>
+            <Button Content="Add another search parameter"/>
         </StackPanel>
 
-        <ListView Margin="10,0,10,10" BorderThickness="1" BorderBrush="Black"
-            MinHeight="750"
+        <StackPanel Grid.RowSpan="2" Grid.Row="1">
+            <StackPanel  VerticalAlignment="Top" Name="Buttom_Stackpanel" Orientation="Horizontal" Grid.Row="1">
+
+                <Border BorderThickness="1" BorderBrush="Black" Height="32" Width="32" Margin="10,10,0,10">
+                    <TextBlock Name="Select_Items_Listview" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Border>
+
+                <Button Name="Write_Message" Content="Skriv Besked" Margin="10,10,0,10"/>
+                <Button Name="Create_Employee" Content="Opret bruger" Margin="10,10,0,10" Click="CreateView"/>
+                <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10"/>
+                <Button Name="Delete_Employee" Content="Slet bruger" Margin="10,10,0,10"/>
+            </StackPanel>
+
+            <ListView Margin="10,0,10,10" BorderThickness="1" BorderBrush="Black"
+            MinHeight="550"
             Background="LightGray"
             VerticalAlignment="Stretch"
             ShowsScrollingPlaceholders="True"
@@ -63,10 +67,10 @@
 
 
 
-        </ListView>
+            </ListView>
         </StackPanel>
 
-        <Grid Grid.Column="1" Grid.Row="1">
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -110,5 +114,22 @@
         </Grid>
 
     </Grid>
-
+        <Popup Height="600" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" IsOpen="True">
+            <Border BorderThickness="1" BorderBrush="Black" Background="LightGray">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Fyring af ansat"/>
+                    <ComboBox Width="350">
+                        <x:String>Kontrakt udløbet</x:String>
+                        <x:String>Fyret grundt brud på kontrakt</x:String>
+                        <x:String>Andre grunde</x:String>
+                    </ComboBox>
+                    <TextBox PlaceholderText="Beskrivelse her" Text="" Width="350" MinWidth="300" Height="300" TextWrapping="Wrap"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Slet"/>
+                        <Button Content="Annuller"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+    </Grid>
 </Page>

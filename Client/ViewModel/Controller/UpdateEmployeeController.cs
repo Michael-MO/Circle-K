@@ -1,20 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
-using Commands.Implementation;
 using Data.Transformed.Interfaces;
 using Model.Interfaces;
+using Controllers.Implementation;
 
 namespace Client.ViewModel.Controller
 {
-    public class UpdateEmployeeController : UpdateCommandBase<EmployeeViewData>
+    public class UpdateEmployeeController : CRUDControllerBase<EmployeeViewData>
     {
         public UpdateEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
-            : base(source, target, condition)
+            : base(source, target)
         {
+        }
+
+        public override void Run()
+        {
+            EmployeeViewData updateObj = Source.DataObject.Copy() as EmployeeViewData;
+            Target.Update(updateObj, Source.DataObject.Key);
         }
     }
 }

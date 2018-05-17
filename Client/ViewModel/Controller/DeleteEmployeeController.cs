@@ -1,21 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
-using Commands.Implementation;
+using Controllers.Implementation;
 using Data.Transformed.Interfaces;
 using Model.Interfaces;
 
 namespace Client.ViewModel.Controller
 {
-    public class DeleteEmployeeController : DeleteCommandBase<EmployeeViewData>
+    public class DeleteEmployeeController : CRUDControllerBase<EmployeeViewData>
     {
         public DeleteEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
-            : base(source, target, condition)
+            : base(source, target)
         {
-            
+        }
+        
+        // Create a New Object of 'ReasonForRemoval', Which Associates the Reason and the Employee.
+        // This is an Alternative to Having a 'Reason' Property in the Employee Object.
+
+        // new ReasonForRemoval();
+        // PER!!?
+
+        public override void Run()
+        {
+            EmployeeViewData updateObj = Source.DataObject.Copy() as EmployeeViewData;
+            updateObj.IsActive = false;
+            Target.Update(updateObj, Source.DataObject.Key);
         }
     }
 }

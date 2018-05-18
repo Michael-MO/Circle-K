@@ -28,6 +28,10 @@ namespace Client.DataTransformations.ViewData
 
         public bool IsActive { get; set; }
 
+        public DateTime DeletionDate { get; set; }
+
+        public string TerminationReason { get; set; }
+
         public int ImageKey { get; set; }
 
         public string Username { get; set; }
@@ -48,6 +52,8 @@ namespace Client.DataTransformations.ViewData
             // EmployeeNo = ; //CHANGE THIS <-- this is an random generated automaticly assigned int  
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller ej
+            DeletionDate = DateTime.Parse("");
+            TerminationReason = "(ikke angivet endnu)";
             AccessLevel = "(ikke angivet endnu)";
             Username = "(ikke angivet endnu)";
             Password = "(ikke angivet endnu)";

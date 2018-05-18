@@ -17,7 +17,7 @@ namespace Client.ViewModel.Controller
         {
             EmployeeViewData updateObj = Source.DataObject;
             updateObj.IsActive = false;
-            updateObj.DeletionDate = DateTime.Now.AddYears(5);
+            // updateObj.DeletionDate = DateTime.Now.AddYears(5);
             Target.Update(updateObj, Source.DataObject.Key);
         }
     }

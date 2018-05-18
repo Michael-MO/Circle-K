@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
+using Client.DataTransformations.ViewData;
 using Data.InMemory.Interfaces;
 using Data.Transformed.Interfaces;
 using Extensions.Commands.Interfaces;
@@ -56,7 +57,7 @@ namespace Client.ViewModel.Base
             set
             {   
                 base.ItemSelected = value;
-                ItemSelectedInstance = base.ItemSelected;
+                 ItemSelectedInstance = base.ItemSelected;
             }
         }
     }

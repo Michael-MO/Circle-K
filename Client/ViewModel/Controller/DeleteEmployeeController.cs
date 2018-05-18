@@ -19,6 +19,10 @@ namespace Client.ViewModel.Controller
         // new ReasonForRemoval();
         // PER!!?
 
+
+        // make sure to set date from now to 5 years forward
+        // have a terminationDate instance string that date time can manipulate
+
         public override void Run()
         {
             EmployeeViewData updateObj = Source.DataObject.Copy() as EmployeeViewData;

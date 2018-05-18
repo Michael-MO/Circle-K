@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
 using Client.Model.App;
-using Client.Model.Catalog;
 using Client.ViewModel.Controller;
 using Commands.Implementation;
 using Data.Transformed.Interfaces;
@@ -27,7 +26,7 @@ namespace Client.ViewModel.Page
             _deleteEmployeeController = new DeleteEmployeeController(_deleteInstance, DomainModel.Instance.Employees, CanDoDelete);
         }
 
-        public IDataWrapper<EmployeeViewData> DeleteInstance
+        public IDataWrapper<EmployeeViewData> DeleteInstance    
         {
             get { return _deleteInstance; }
         }

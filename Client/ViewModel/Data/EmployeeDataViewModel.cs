@@ -101,5 +101,26 @@ namespace Client.ViewModel.Data
             }
         }
 
+        public string Password
+        {
+            get
+            { return DataObject.Password; }
+            set
+            {
+                DataObject.Password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Username
+        {
+            get { return DataObject.Username; }
+            set
+            {
+                DataObject.Username = value;
+                OnPropertyChanged();
+            }
+        }
+
     }
 }

@@ -11,6 +11,7 @@ namespace Client.ViewModel.Controller
         public DeleteEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
             : base(source, target)
         {
+                
         }
         
         // Create a New Object of 'ReasonForRemoval', Which Associates the Reason and the Employee.

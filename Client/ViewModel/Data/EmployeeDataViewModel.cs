@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
 using Client.Model.Domain;
 using Client.ViewModel.Base;
+using Client.ViewModel.Exceptions;
 
 namespace Client.ViewModel.Data
 {
     public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
+
+
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
         {
+            
         }
 
         public string Name
@@ -40,8 +45,19 @@ namespace Client.ViewModel.Data
             get { return DataObject.PhoneNo; }
             set
             {
-                DataObject.PhoneNo = value;
-                OnPropertyChanged();
+                if (value != default(string))
+                {
+                    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
+                    {
+                        InvalidFieldException ex = new InvalidFieldException();
+                        throw ex;
+                    }
+                    else
+                    {
+                        DataObject.PhoneNo = value;
+                        OnPropertyChanged();
+                    }
+                }
             }
         }
 

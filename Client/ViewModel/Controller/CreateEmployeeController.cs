@@ -18,18 +18,17 @@ namespace Client.ViewModel.Controller
         public override void Run()
         {
 
-            //string PW = GeneratePW();
+            string PW = GeneratePW();
 
-            //Source.DataObject.Password = PW;
+            Source.DataObject.Password = PW;
 
-            //if (SendMail(PW) == true)
-            //{
-            //    Target.Create(Source.DataObject);
-            //}
 
-            
+
+            if (SendMail(PW) == true)
+            {
+                Target.Create(Source.DataObject);
+            }
         }
-
 
         //bruger source email til at sende en besked til nyoprettet bruger med password
         private bool SendMail(string PW)

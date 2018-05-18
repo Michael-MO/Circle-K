@@ -11,6 +11,7 @@ namespace Client.ViewModel.Controller
         public DeleteEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition) 
             : base(source, target)
         {
+                
         }
 
         public override void Run()

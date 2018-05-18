@@ -4,6 +4,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Networking.Connectivity;
 using Windows.Security.Cryptography.Core;
 using AddOns.ViewState.Implementation;
 using Client.DataTransformations.ViewData;
@@ -19,12 +20,18 @@ namespace Client.ViewModel.Page
 {
     public class CreateEmployeePageVM : EmployeePageVM 
     {
-        private IDataWrapper<EmployeeViewData> _Connection;
+        private IDataWrapper<EmployeeViewData> _connection;
 
         public CreateEmployeePageVM()
         {
-            _Connection = CreateDataViewModelFromNewViewData();
+            _connection = CreateDataViewModelFromNewViewData();
             
+        }
+
+        public IDataWrapper<EmployeeViewData> Connection
+        {
+            get { return _connection; }
+            set { _connection = value; }
         }
 
         protected override void SetupInitialViewState()

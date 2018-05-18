@@ -64,6 +64,14 @@ namespace WebService.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
+                .Property(e => e.TerminationReason)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
+                .Property(e => e.DeletionDate)
+                .HasColumnType("date");
+
+            modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Masters)
                 .WithRequired(e => e.Employee)
                 .WillCascadeOnDelete(false);

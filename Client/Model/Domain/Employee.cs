@@ -18,6 +18,8 @@ namespace Client.Model.Domain
             string mail,
             List<Station> station,
             bool isActive,
+            DateTime deletionDate,
+            string terminationReason,
             string userName,
             string userPassword,
             string accessLevel,
@@ -33,6 +35,8 @@ namespace Client.Model.Domain
             Mail = mail;
             Station = station;
             IsActive = isActive;
+            DeletionDate = deletionDate;
+            TerminationReason = terminationReason;
         }
 
         public int EmployeeNo { get; set; }
@@ -52,6 +56,10 @@ namespace Client.Model.Domain
         public List<Station> Station { get; set; }
 
         public bool IsActive { get; set; }
+
+        public DateTime DeletionDate { get; set; }
+
+        public string TerminationReason { get; set; }
 
         public void ChangeTitle(string title) //, this.accesslevel) //sørg for at få denne refference til employee objektets accesslevel fra user classen 
         {

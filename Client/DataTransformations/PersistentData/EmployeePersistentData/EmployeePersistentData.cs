@@ -30,6 +30,10 @@ namespace Client.DataTransformations.PersistentData.EmployeePersistentData
 
  //       public string ImageKey { get; set; }
 
+        public DateTime DeletionDate { get; set; }
+
+        public string TerminationReason { get; set; }
+
         public string Username { get; set; }
 
         public string Password { get; set; }

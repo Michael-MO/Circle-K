@@ -71,12 +71,53 @@ namespace Client.ViewModel.Data
             }
         }
 
+        public DateTime DeletionDate
+        {
+            get { return DataObject.DeletionDate; }
+            set
+            {
+                DataObject.DeletionDate = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string TerminationReason
+        {
+            get { return DataObject.TerminationReason; }
+            set
+            {
+                DataObject.TerminationReason = value;
+                OnPropertyChanged();
+            }
+        }
+
         public override int ImageKey
         {
             get { return DataObject.ImageKey; }
             set
             {
                 DataObject.ImageKey = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Password
+        {
+            get
+            { return DataObject.Password; }
+            set
+            {
+                DataObject.Password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Username
+        {
+            get { return DataObject.Username; }
+            set
+            {
+                DataObject.Username = value;
                 OnPropertyChanged();
             }
         }

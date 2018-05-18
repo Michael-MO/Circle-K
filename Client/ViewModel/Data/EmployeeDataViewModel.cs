@@ -71,14 +71,9 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public DateTime DeletionDate
+        public string DeletionDate
         {
-            get { return DataObject.DeletionDate; }
-            set
-            {
-                DataObject.DeletionDate = value;
-                OnPropertyChanged();
-            }
+            get { return DataObject.DeletionDate.ToString("dd/MM/yyyy"); }
         }
 
         public string TerminationReason
@@ -121,6 +116,5 @@ namespace Client.ViewModel.Data
                 OnPropertyChanged();
             }
         }
-
     }
 }

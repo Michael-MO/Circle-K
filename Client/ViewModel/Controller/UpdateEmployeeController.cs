@@ -17,9 +17,6 @@ namespace Client.ViewModel.Controller
         {
             EmployeeViewData updateObj = Source.DataObject;
             Target.Update(updateObj, Source.DataObject.Key);
-
-
-
         }
     }
 }

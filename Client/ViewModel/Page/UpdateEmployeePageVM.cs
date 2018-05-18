@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Client.DataTransformations.ViewData;
+﻿using Client.DataTransformations.ViewData;
 using Client.Model.App;
 using Client.ViewModel.Controller;
 using Commands.Implementation;
@@ -12,7 +7,7 @@ using Extensions.Commands.Interfaces;
 
 namespace Client.ViewModel.Page
 {
-    class UpdateEmployeePageVM : EmployeePageVM
+    public class UpdateEmployeePageVM : EmployeePageVM
     {
         private UpdateEmployeeController _updateEmployeeController;
         private IDataWrapper<EmployeeViewData> _updateInstance;

@@ -40,6 +40,8 @@ namespace Client.DataTransformations.ViewData
 
         public string AccessLevel { get; set; }
 
+        public bool _popupactive { get; set; }
+
         public override void SetDefaultValues()
         {
             Key = NullKey;
@@ -52,11 +54,12 @@ namespace Client.DataTransformations.ViewData
             // EmployeeNo = ; //CHANGE THIS <-- this is an random generated automaticly assigned int  
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller ej
-            DeletionDate = DateTime.Parse("");
+            //DeletionDate = DateTime.Parse("");
             TerminationReason = "(ikke angivet endnu)";
             AccessLevel = "(ikke angivet endnu)";
             Username = "(ikke angivet endnu)";
             Password = "(ikke angivet endnu)";
+            _popupactive = false;
             // ImageKey = NullKey;
         }
     }

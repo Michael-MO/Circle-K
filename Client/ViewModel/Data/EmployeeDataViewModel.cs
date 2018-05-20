@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,9 +16,20 @@ namespace Client.ViewModel.Data
     {
 
 
+
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
+        {      
+        }
+
+
+        public bool PopupActive
         {
-            
+            get { return DataObject._popupactive; }
+            set
+            {
+                DataObject._popupactive = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Name
@@ -49,8 +61,8 @@ namespace Client.ViewModel.Data
                 {
                     if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
                     {
-                        InvalidFieldException ex = new InvalidFieldException();
-                        throw ex;
+                        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
+                        PopupActive = true;
                     }
                     else
                     {
@@ -66,8 +78,13 @@ namespace Client.ViewModel.Data
             get { return DataObject.Mail; }
             set
             {
-                DataObject.Mail = value;
-                OnPropertyChanged();
+                if (value != default(string))
+                {
+                    //if (value)
+                    DataObject.Mail = value;
+                    OnPropertyChanged();
+                }
+
             }
         }
 
@@ -87,14 +104,9 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public DateTime DeletionDate
+        public string DeletionDate
         {
-            get { return DataObject.DeletionDate; }
-            set
-            {
-                DataObject.DeletionDate = value;
-                OnPropertyChanged();
-            }
+            get { return DataObject.DeletionDate.ToString("dd/MM/yyyy"); }
         }
 
         public string TerminationReason

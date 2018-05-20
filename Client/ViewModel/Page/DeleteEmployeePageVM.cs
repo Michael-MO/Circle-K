@@ -12,7 +12,7 @@ using Extensions.Commands.Interfaces;
 
 namespace Client.ViewModel.Page
 {
-    class DeleteEmployeePageVM : EmployeePageVM
+    public class DeleteEmployeePageVM : EmployeePageVM
     {
         private IDataWrapper<EmployeeViewData> _deleteInstance;
 

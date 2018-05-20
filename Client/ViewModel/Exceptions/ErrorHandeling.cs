@@ -9,25 +9,18 @@ using Client.ViewModel.Data;
 
 namespace Client.ViewModel.Exceptions
 {
-    public class ErrorHandeling
+    public static class ErrorHandeling
     {
-
-        public string _errormessage;
-
-        public void code()
+        public static void ErrorMessageField(string error)
         {
             
-            EmployeeViewData emp = null;
-
-            try
-            {
-                
-            }
-            catch (InvalidFieldException ex)
-            {
-                _errormessage = ($"Et mobil nummer skal være min. 8 tal langt og må ikke indholde bukstaver");
-            }
         }
+
+        public static void ErrorMessageMethod(string error)
+        {
+            
+        }
+
 
     }
 

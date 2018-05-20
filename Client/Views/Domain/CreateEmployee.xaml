@@ -6,6 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:page="using:Client.ViewModel.Page"
+
+
     mc:Ignorable="d">
     
     <Page.DataContext>
@@ -102,6 +104,8 @@
             <Button Content="Annuller"/>
         </StackPanel>
 
-
     </Grid>
 </Page>
+
+
+

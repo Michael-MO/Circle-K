@@ -57,12 +57,13 @@ namespace Client.ViewModel.Data
             get { return DataObject.PhoneNo; }
             set
             {
-                if (value != default(string))
+                if (value != null)
                 {
                     if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
                     {
                         ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
-                        PopupActive = true;
+                        DataObject._popupactive = true;
+                        OnPropertyChanged();
                     }
                     else
                     {
@@ -80,11 +81,18 @@ namespace Client.ViewModel.Data
             {
                 if (value != default(string))
                 {
-                    //if (value)
-                    DataObject.Mail = value;
-                    OnPropertyChanged();
+                    if (Regex.IsMatch(value, @"@"))
+                    {
+                        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
+                        DataObject._popupactive = true;
+                        OnPropertyChanged();
+                    }
+                    else
+                    {
+                        DataObject.Mail = value;
+                        OnPropertyChanged();
+                    }
                 }
-
             }
         }
 

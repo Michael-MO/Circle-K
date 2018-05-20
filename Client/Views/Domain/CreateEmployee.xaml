@@ -6,8 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:page="using:Client.ViewModel.Page"
-
-
     mc:Ignorable="d">
     
     <Page.DataContext>
@@ -71,7 +69,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
             <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
@@ -101,8 +99,14 @@
         
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Content="Opret Employee"  IsEnabled="{Binding ControlStates[CreateControl].Enabled}" Command="{Binding DataCommand[CreateCommand]}"/>
-            <Button Content="Annuller"/>
+            <Button Content="Annuller" Command="{Binding DataObject.PhoneNo, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
+
+        <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
+            <StackPanel>
+                <TextBlock Text="{Binding x:static error:ErrorHandeling.ErrorMessageFiltering}"/>
+            </StackPanel>
+        </Popup>
 
     </Grid>
 </Page>

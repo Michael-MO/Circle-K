@@ -34,7 +34,7 @@
             
                 ContinuumNavigationTransitionInfo.IsEntranceElement="True"        
                 Header="Circle K"
-                Background="{ThemeResource SystemControlAcrylicWindowBrush}"
+                Background="Red"
                 OpenPaneLength="150"
                 CompactModeThresholdWidth="1280"
                 SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"
@@ -53,7 +53,7 @@
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Preview" Content="Lønseddel" Tag="OpenCustomerView"/>
             </NavigationView.MenuItems>
 
-            <Frame x:Name="AppFrame">
+            <Frame x:Name="AppFrame" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                 <Frame.ContentTransitions>
                     <TransitionCollection>
                         <NavigationThemeTransition />

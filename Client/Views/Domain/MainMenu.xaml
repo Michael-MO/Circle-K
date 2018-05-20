@@ -83,17 +83,20 @@
                     <TextBlock Text="Tlf nummer: "/>
                     <TextBlock Text="E-mail"/>
                     <TextBlock Text="Adressse"/>
-                    <TextBlock Text=""/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
                     <TextBox PlaceholderText="Nummer"/>
                     <TextBox PlaceholderText="E-mail"/>
                     <TextBox PlaceholderText="Adresse"/>
-                    <TextBox/>
                 </StackPanel>
 
-                <Button Name="Edit" Content="Rediger" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                    <Button Name="Edit" Content="Rediger" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <Button Content="Ny adgangskode" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+                </StackPanel>
+                
+                
             </Grid>
         </Grid>
 
@@ -116,9 +119,9 @@
 
 
                 <TextBlock Text="Time info" FontSize="20" Margin="10,5,0,0" Height="auto" Width="auto" HorizontalAlignment="Left"/>
-                <TextBlock Text="Needs to be done"/>
-                <TextBlock Text="Dato/ tid start slut vagt"/>
-                <TextBlock Text="Dato/ tid for checkin"/>
+                <TextBlock Text="Du har en vagt idag" FontSize="18" Margin="10,50,10,10"/>
+                <TextBlock Text="D. 20-5-2018" FontSize="20" Margin="10"/>
+                <TextBlock Text="Fra: 12:00-18:30" Margin="10" FontSize="20"/>
             </StackPanel>
 
             <Button Margin="20" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Content="Check ind" Width="175" Height="70"/>
@@ -134,7 +137,11 @@
                     <Line X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
                     <Line Width="auto"/>
                     <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
 
@@ -143,7 +150,11 @@
                     <Line X1="0" X2="5000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
                     <Line Width="auto"/>
                     <ListView>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
 
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
             </Grid>
@@ -162,12 +173,16 @@
             <StackPanel>
                 <TextBlock Text="Statestik over lønperiode" FontSize="20" Margin="10,5,0,0" Height="auto" Width="auto"/>
                 <ListView>
-                    <Border BorderBrush="Black" BorderThickness="0,0,0,0.5" Width="1000" Margin="5,0,5,0">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="TODO dato"/>
-                            <TextBlock Text="TODO Tid"/>
-                        </StackPanel>
-                    </Border>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,0.5" Width="1000" Margin="5,0,5,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""/>
+                                    <TextBlock Text=""/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>    
                 </ListView>
             </StackPanel>
 

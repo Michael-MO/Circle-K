@@ -34,7 +34,7 @@
             
                 ContinuumNavigationTransitionInfo.IsEntranceElement="True"        
                 Header="Circle K"
-                Background="Red"
+                Background="#DA291C"
                 OpenPaneLength="150"
                 CompactModeThresholdWidth="1280"
                 SelectedItem ="{Binding SelectedMenuItem, Mode=TwoWay}"

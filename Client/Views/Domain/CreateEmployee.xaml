@@ -99,15 +99,16 @@
         
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Content="Opret Employee"  IsEnabled="{Binding ControlStates[CreateControl].Enabled}" Command="{Binding DataCommand[CreateCommand]}"/>
-            <Button Content="Annuller" Command="{Binding DataObject.PhoneNo, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Content="Annuller" Command="{Binding DataObject.PhoneNo}"/>
         </StackPanel>
 
         <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
             <StackPanel>
-                <TextBlock Text="{Binding x:static error:ErrorHandeling.ErrorMessageFiltering}"/>
+                <Border BorderThickness="3" BorderBrush="Black">
+                    <TextBlock Text="TEST123"/>
+                </Border>
             </StackPanel>
         </Popup>
-
     </Grid>
 </Page>
 

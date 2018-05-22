@@ -18,7 +18,7 @@ namespace Client.Configeration.App
 {
     public class AppConfig
     {
-        public static String ServerURL = "http://localhost:55985"; // insert url for server here
+        public static String ServerURL = "http://circlekwebservice20180522125818.azurewebsites.net"; // insert url for server here
 
         public static void Setup(Page mainPage, Frame appFrame)
         {

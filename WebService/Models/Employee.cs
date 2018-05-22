@@ -40,7 +40,6 @@ namespace WebService.Models
         [Column(TypeName = "Date")]
         public DateTime DeletionDate { get; set; }
 
-        [StringLength(500)]
         public string TerminationReason { get; set; }
 
         public int UserName { get; set; }

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Client.Configeration.App;
 using Client.ViewModel.App;
+using Client.Views.Domain;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,6 +29,16 @@ namespace Client.Views.App
         {
             this.InitializeComponent();
             AppConfig.Setup(this, AppFrame);
+        }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Login), null);
+        }
+
+        private void MainMenu(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainMenu), null);
         }
 
     }

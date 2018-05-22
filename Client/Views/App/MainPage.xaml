@@ -47,7 +47,7 @@
                 ExitDisplayModeOnAccessKeyInvoked="False">
 
             <NavigationView.MenuItems>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Globe" Content="Hovedsiden" Tag="MainMenu"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Home" Content="Hovedsiden" Tag="MainMenu"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Ansatte" Tag="OpenEmployeeView"/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Preview" Content="Lønseddel" Tag="OpenCustomerView"/>
@@ -90,8 +90,8 @@
                     <AppBarButton Icon="Setting">
                         <AppBarButton.Flyout>
                             <MenuFlyout>
-                                <MenuFlyoutItem Icon="Contact" Text="Bruger oplysninger"/>
-                                <MenuFlyoutItem Text="Log-ud"/>
+                                <MenuFlyoutItem Icon="Contact" Text="Bruger oplysninger" Click="MainMenu"/>
+                                <MenuFlyoutItem Text="Log-ud" Click="Login"/>
                             </MenuFlyout>
                         </AppBarButton.Flyout>
                     </AppBarButton>

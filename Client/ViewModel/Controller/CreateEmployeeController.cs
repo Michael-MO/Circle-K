@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 using Client.DataTransformations.ViewData;
 using Client.ViewModel.Data;
 using Controllers.Implementation;
@@ -8,9 +10,11 @@ using Model.Interfaces;
 
 namespace Client.ViewModel.Controller
 {
-    public class CreateEmployeeController : CRUDControllerBase<EmployeeDataViewModel>
+    public class CreateEmployeeController : CRUDControllerBase<EmployeeViewData>, ICommand
     {
-        public CreateEmployeeController(IDataWrapper<EmployeeDataViewModel> source, ICatalog<EmployeeDataViewModel> target, Func<bool> condition)
+        public Frame MainAppFrame { get; set; }
+
+        public CreateEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition)
             : base(source, target)
         {
         }
@@ -22,12 +26,12 @@ namespace Client.ViewModel.Controller
 
             Source.DataObject.Password = PW;
 
-
-
             if (SendMail(PW) == true)
             {
                 Target.Create(Source.DataObject);
             }
+
+            MainAppFrame.Navigate(typeof(Views.Domain.EmployeeView), null);
         }
 
         //bruger source email til at sende en besked til nyoprettet bruger med password
@@ -40,5 +44,17 @@ namespace Client.ViewModel.Controller
         {
             return "test123";
         }
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            //Run();
+        }
+
+        public event EventHandler CanExecuteChanged;
     }
 }

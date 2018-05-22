@@ -20,17 +20,17 @@ namespace Client.Configeration.App
 
         public static void Setup(Page mainPage, Frame appFrame)
         {
-            SetupAppImages("..\\..\\..\\Assets\\App\\");
+            //SetupAppImages("..\\..\\..\\Assets\\App\\");
             SetupDomainImages("..\\..\\..\\Assets\\Images\\");
             appFrame.Navigate(typeof(MainMenu));
             ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
         }
 
-        public static void SetupAppImages(string prefix)
-        {
-            ServiceProvider.Images.SetAppImageSource(AppImageType.NotFound, prefix + "NotSet.jpg");
-            ServiceProvider.Images.SetAppImageSource(AppImageType.Logo, prefix + "Logo120x60.jpg");
-        }
+        //public static void SetupAppImages(string prefix)
+        //{
+        //    ServiceProvider.Images.SetAppImageSource(AppImageType.NotFound, prefix + "NotSet.jpg");
+        //    ServiceProvider.Images.SetAppImageSource(AppImageType.Logo, prefix + "Logo120x60.jpg");
+        //}
 
         private static void SetupDomainImages(string preface)
         {

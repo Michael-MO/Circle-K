@@ -25,6 +25,8 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
+            <Image Opacity="0.2" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+
             <Line VerticalAlignment="Bottom" Grid.ColumnSpan="2" X1="0" X2="50000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
 
             <StackPanel Name="Search_Stackpanel" Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center">
@@ -61,6 +63,7 @@
             IsSwipeEnabled="False"
             CanDragItems="False"
             SelectionMode="Multiple"
+            Opacity="0.8"
             >
 
 

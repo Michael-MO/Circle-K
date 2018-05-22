@@ -68,13 +68,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding CreateInstance.DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding CreateInstance.DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding CreateInstance.DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
-            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBox PlaceholderText="Stations nummer" Text="{Binding CreateInstance.DataObject.Station, Mode=TwoWay}"/>
+            <TextBlock Text="{Binding CreateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -98,7 +98,7 @@
         </StackPanel>
         
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Employee"  IsEnabled="{Binding ControlStates[CreateControl].Enabled}" Command="{Binding DataCommand[CreateCommand]}"/>
+            <Button Content="Opret Ansat" Command="{Binding CreateEmployeeController}"/>
             <Button Content="Annuller" Command="{Binding DataObject.PhoneNo}"/>
         </StackPanel>
 

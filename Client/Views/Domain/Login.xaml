@@ -50,12 +50,8 @@
         
         
 
-        <FlipView Width="auto" Height="auto" MinHeight="1000" MinWidth="1750" Background="Black" Grid.ColumnSpan="1">
+        <FlipView Width="auto" Height="auto" Background="Black" Grid.ColumnSpan="1">
             <Image Source="/Assets/Cirkel K.PNG"/>
-            <Image Source="ms-appx:///Assets/grapes.jpg"/>
-            <Image Source="ms-appx:///Assets/rainer.jpg"/>
-            <Image Source="ms-appx:///Assets/sunset.jpg"/>
-            <Image Source="ms-appx:///Assets/valley.jpg"/>
         </FlipView>
 
 

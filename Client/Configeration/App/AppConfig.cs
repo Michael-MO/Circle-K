@@ -9,6 +9,8 @@ using AddOns.Images.Interfaces;
 using Client.ViewModel.App;
 using Client.Views.Domain;
 using Extensions.AddOns.Implementation;
+using Client.Model.Domain;
+using Client.Model.App;
 //using Client.ViewModel.App; //uncomment when Nav-view is inplementet
 //using Client.View.App; // uncomment when Nav-view is inplementet
 
@@ -24,6 +26,8 @@ namespace Client.Configeration.App
             SetupDomainImages("..\\..\\..\\Assets\\Images\\");
             appFrame.Navigate(typeof(MainMenu));
             ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
+
+            DomainModel.Instance.Employees.LoadAsync();
         }
 
         public static void SetupAppImages(string prefix)

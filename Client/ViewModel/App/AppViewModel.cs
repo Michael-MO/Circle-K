@@ -58,18 +58,15 @@ namespace Client.ViewModel.App
                 MainAppFrame.Navigate(typeof(EmployeeView));
             }));
 
-
-
-
-            // SKAL ændres når de andre Views laves.
             NavigationCommands.Add("OpenCustomerView", new RelayCommand(() =>
             {
                 MainAppFrame.Navigate(typeof(MainMenu));
             }));
 
-            //NavigationCommands.Add("OpenEmployeeView", new RelayCommand(() =>
+
+            //NavigationCommands.Add("Login", new RelayCommand(() =>
             //{
-            //    AppFrame.Navigate(typeof(EmployeeView));
+            //    MainAppFrame.Navigate(typeof(Login));
             //}));
 
             //NavigationCommands.Add("OpenSaleView", new RelayCommand(() =>

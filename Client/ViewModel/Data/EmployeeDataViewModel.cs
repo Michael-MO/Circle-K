@@ -1,18 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Client.DataTransformations.ViewData;
 using Client.Model.Domain;
 using Client.ViewModel.Base;
+using Client.ViewModel.Exceptions;
 
 namespace Client.ViewModel.Data
 {
     public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
+
+
+
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
+        {      
+        }
+
+
+        public bool PopupActive
         {
+            get { return DataObject._popupactive; }
+            set
+            {
+                DataObject._popupactive = value;
+                OnPropertyChanged();
+            }
         }
 
         public string Name
@@ -40,8 +57,20 @@ namespace Client.ViewModel.Data
             get { return DataObject.PhoneNo; }
             set
             {
-                DataObject.PhoneNo = value;
-                OnPropertyChanged();
+                if (value != null)
+                {
+                    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
+                    {
+                        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
+                        DataObject._popupactive = true;
+                        OnPropertyChanged();
+                    }
+                    else
+                    {
+                        DataObject.PhoneNo = value;
+                        OnPropertyChanged();
+                    }
+                }
             }
         }
 
@@ -50,8 +79,20 @@ namespace Client.ViewModel.Data
             get { return DataObject.Mail; }
             set
             {
-                DataObject.Mail = value;
-                OnPropertyChanged();
+                if (value != default(string))
+                {
+                    if (Regex.IsMatch(value, @"@"))
+                    {
+                        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
+                        DataObject._popupactive = true;
+                        OnPropertyChanged();
+                    }
+                    else
+                    {
+                        DataObject.Mail = value;
+                        OnPropertyChanged();
+                    }
+                }
             }
         }
 

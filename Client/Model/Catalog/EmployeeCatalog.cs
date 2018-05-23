@@ -49,8 +49,8 @@ namespace Client.Model.Catalog
                 Name = obj.Name.TrimEnd(' '),
                 Address = obj.Address.TrimEnd(' '),
                 Mail = obj.Mail.TrimEnd(' '),
-                TerminationReason = obj.TerminationReason.TrimEnd(' '),
-                Cpr = obj.Cpr.TrimEnd(' ')
+                //TerminationReason = obj.TerminationReason.TrimEnd(' '),
+                //Cpr = obj.Cpr.TrimEnd(' ')
             };
         }
 

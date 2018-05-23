@@ -7,21 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:page="using:Client.ViewModel.Page"
     mc:Ignorable="d">
-    
+
     <Page.DataContext>
         <page:CreateEmployeePageVM/>
     </Page.DataContext>
-
-    <Page.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Width" Value="auto" />
-            <Setter Property="Background" Value="#0099FF" />
-            <Setter Property="Foreground" Value="#FFF" />
-            <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="Margin" Value="20"/>
-        </Style>
-    </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ColumnDefinitions>
@@ -35,6 +24,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+
 
         <Grid.Resources>
             <Style TargetType="TextBlock">
@@ -50,31 +41,42 @@
                 <Setter Property="HorizontalAlignment" Value="Left"/>
             </Style>
 
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="auto" />
+                <Setter Property="Background" Value="#DA291C" />
+                <Setter Property="Foreground" Value="#FFF" />
+                <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="Margin" Value="20"/>
+            </Style>
         </Grid.Resources>
 
-        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
+        <Image Opacity="0.1" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+
+
+        <StackPanel HorizontalAlignment="Center" Grid.ColumnSpan="2">
             <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
             <Button Margin="10,20,0,0" Content="Vælg bilede"/>
         </StackPanel>
-        
+
         <StackPanel Grid.Row="1">
             <TextBlock Text="Navn"/>
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
             <TextBlock Text="E-mail"/>
             <TextBlock Text="Fødselsdato"/>
-            <TextBlock Text="Stations nummer"/>
             <TextBlock Text="Personale nr."/>
+            <TextBlock Text="Stations nummer"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding CreateInstance.DataObject.PhoneNo, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding CreateInstance.DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding CreateInstance.DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
-            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBlock Text="{Binding CreateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <ListBox ItemsSource="{Binding DataObject.Station}" FontSize="16" Width="200" Margin="10,6,0,0" HorizontalAlignment="Left" Opacity="0.9"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -98,10 +100,19 @@
         </StackPanel>
         
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Employee"  IsEnabled="{Binding ControlStates[CreateControl].Enabled}" Command="{Binding DataCommand[CreateCommand]}"/>
-            <Button Content="Annuller"/>
+            <Button Content="Opret Ansat" Command="{Binding CreateEmployeeController}"/>
+            <Button Content="Annuller" Click="EmployeeView"/>
         </StackPanel>
 
-
+        <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
+            <StackPanel>
+                <Border BorderThickness="3" BorderBrush="Black">
+                    <TextBlock Text="TEST123"/>
+                </Border>
+            </StackPanel>
+        </Popup>
     </Grid>
 </Page>
+
+
+

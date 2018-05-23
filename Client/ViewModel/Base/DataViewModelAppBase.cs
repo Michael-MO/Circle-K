@@ -17,7 +17,7 @@ namespace Client.ViewModel.Base
 
         protected DataViewModelAppBase(TViewData obj, string tag) : base(obj, tag)
         {
-            _notFoundImage = new TaggedImage("Image not found", ServiceProvider.Images.GetAppImageSource(AppImageType.NotFound));
+            //_notFoundImage = new TaggedImage("Image not found", ServiceProvider.Images.GetAppImageSource(AppImageType.NotFound));
         }
 
         public string ImageSource

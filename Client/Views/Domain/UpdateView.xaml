@@ -10,10 +10,11 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="auto" />
-            <Setter Property="Background" Value="#0099FF" />
+            <Setter Property="Background" Value="#DA291C" />
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
             <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="20"/>
         </Style>
     </Page.Resources>
 
@@ -29,6 +30,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
 
         <Grid.Resources>
             <Style TargetType="TextBlock">
@@ -46,13 +48,15 @@
 
         </Grid.Resources>
 
+        <Image Opacity="0.1" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="4" Grid.RowSpan="4"/>
+
+
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
-            <PersonPicture Margin="0,40,0,0" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="300" Height="300"/>
-            <Button Margin="85,20,0,0" Content="Vælg bilede"/>
+            <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
+            <Button Margin="10,20,0,0" Content="Vælg bilede"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1">
-            <TextBlock Text="Person Info" FontSize="20" HorizontalAlignment="Left" Margin="20,17,0,0"/>
             <TextBlock Text="Navn"/>
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
@@ -63,13 +67,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Margin="10,51,0,0"/>
-            <TextBox PlaceholderText="Tlf nummer"/>
-            <TextBox PlaceholderText="Adresse"/>
-            <TextBox PlaceholderText="E-mail"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer"/>
-            <TextBlock Text="Personale nummer" HorizontalAlignment="Left" Margin="10,9,0,0"/>
+            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
+            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -91,5 +95,18 @@
             <TextBox PlaceholderText="Filler4"/>
             <TextBox PlaceholderText="Filler5"/>
         </StackPanel>
+
+        <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="Opret Employee" Command="{Binding CreateInstance}"/>
+            <Button Content="Annuller" Click="EmployeeView"/>
+        </StackPanel>
+
+        <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
+            <StackPanel>
+                <Border BorderThickness="3" BorderBrush="Black">
+                    <TextBlock Text="TEST123"/>
+                </Border>
+            </StackPanel>
+        </Popup>
     </Grid>
 </Page>

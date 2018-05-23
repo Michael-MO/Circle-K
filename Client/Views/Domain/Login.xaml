@@ -10,7 +10,7 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="150" />
-            <Setter Property="Background" Value="#0099FF" />
+            <Setter Property="Background" Value="#DA291C" />
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
             <Setter Property="FontSize" Value="20" />
@@ -34,8 +34,8 @@
             </Grid.RowDefinitions>
 
             <StackPanel>
-                <Image/>
-                <TextBlock FontSize="25" Text="Login her" Margin="20,250,0,0"/>
+                <Image Source="/Assets/circle-k-jpg.jpg" Width="250" HorizontalAlignment="Left" Margin="10,20,0,0"/>
+                <TextBlock FontSize="25" Text="Login her" Margin="20,100,0,0"/>
                 <TextBlock Text="Bruger navn" Margin="20,30,20,0"/>
                 <TextBox PlaceholderText="Bruger navn" Margin="20,0,20,0"/>
                 <TextBlock Text="Kode" Margin="20,0,20,0"/>
@@ -43,17 +43,15 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Button Content="Login" Margin="60,20,20,20" Click="MainPage"/>
-                <Button Content="Annuler"/>
+                <Button Content="Login" Margin="60,20,40,20" Click="MainPage"/>
+                <Button Content="Annuller"/>
             </StackPanel>
         </Grid>
+        
+        
 
-        <FlipView Width="auto" Height="auto" MinHeight="700" MinWidth="1500">
-            <Image Source="ms-appx:///Assets/cliff.jpg"/>
-            <Image Source="ms-appx:///Assets/grapes.jpg"/>
-            <Image Source="ms-appx:///Assets/rainer.jpg"/>
-            <Image Source="ms-appx:///Assets/sunset.jpg"/>
-            <Image Source="ms-appx:///Assets/valley.jpg"/>
+        <FlipView Width="auto" Height="auto" Background="Black" Grid.ColumnSpan="1">
+            <Image Source="/Assets/Cirkel K.PNG"/>
         </FlipView>
 
 

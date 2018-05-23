@@ -31,5 +31,15 @@ namespace Client.Views.Domain
         {
             Frame.Navigate(typeof(CreateEmployee), null);
         }
+
+        private void DeleteView(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(DeleteEmployee), null);
+        }
+
+        private void UpdateView(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(UpdateView), null);
+        }
     }
 }

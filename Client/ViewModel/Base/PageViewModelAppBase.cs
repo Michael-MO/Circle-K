@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Text;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Client.DataTransformations.ViewData;
 using Data.InMemory.Interfaces;
 using Data.Transformed.Interfaces;
@@ -19,6 +20,7 @@ namespace Client.ViewModel.Base
     {
         private Dictionary<string, FontWeight> _menuFontWeights;
         public static IDataWrapper<TViewData> ItemSelectedInstance;
+        public Frame frame;
 
         protected PageViewModelAppBase(ICatalog<TViewData> catalog, List<string> immutablecontrols,
             List<string> mutablecontrols)
@@ -59,6 +61,11 @@ namespace Client.ViewModel.Base
                 base.ItemSelected = value;
                  ItemSelectedInstance = base.ItemSelected;
             }
+        }
+
+        public void Login(object sender, ResolveEventArgs e)
+        {
+            frame.Navigate(typeof(Views.Domain.Login), null);
         }
     }
 }

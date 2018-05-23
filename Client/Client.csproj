@@ -110,6 +110,8 @@
     <Compile Include="ViewModel\Controller\DeleteEmployeeController.cs" />
     <Compile Include="ViewModel\Controller\UpdateEmployeeController.cs" />
     <Compile Include="ViewModel\Data\EmployeeDataViewModel.cs" />
+    <Compile Include="ViewModel\Exceptions\ErrorHandeling.cs" />
+    <Compile Include="ViewModel\Exceptions\InvalidFieldException.cs" />
     <Compile Include="ViewModel\Page\CreateEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\DeleteEmployeePageVM.cs" />
     <Compile Include="ViewModel\Page\EmployeePageVM.cs" />
@@ -157,6 +159,10 @@
     <None Include="Client_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\circle-k-jpg.jpg" />
+    <Content Include="Assets\Cirkel K.PNG" />
+    <Content Include="Assets\CirkelK.jpg" />
+    <Content Include="Assets\unnamed.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -216,28 +222,28 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AddOns">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\AddOns.dll</HintPath>
     </Reference>
     <Reference Include="Commands">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Commands.dll</HintPath>
     </Reference>
     <Reference Include="Controllers">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Controllers.dll</HintPath>
     </Reference>
     <Reference Include="Data">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Data.dll</HintPath>
     </Reference>
     <Reference Include="DataSources">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\DataSources.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\DataSources.dll</HintPath>
     </Reference>
     <Reference Include="Extensions">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Model">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\Model.dll</HintPath>
     </Reference>
     <Reference Include="ViewModel">
-      <HintPath>..\..\MVVMStarterLibrary2018\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
+      <HintPath>..\..\..\..\OneDrive - ErhvervsAkademi Sjælland\Per's_VS_opgaver\MVVMStarter\MVVMStarterLibrary2018-master\MVVMStarterLibrary2018DLLs\ViewModel.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

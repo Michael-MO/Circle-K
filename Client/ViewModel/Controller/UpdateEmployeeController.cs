@@ -15,11 +15,8 @@ namespace Client.ViewModel.Controller
 
         public override void Run()
         {
-            EmployeeViewData updateObj = Source.DataObject.Copy() as EmployeeViewData;
+            EmployeeViewData updateObj = Source.DataObject;
             Target.Update(updateObj, Source.DataObject.Key);
-
-
-
         }
     }
 }

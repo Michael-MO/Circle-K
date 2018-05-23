@@ -17,6 +17,8 @@ CREATE TABLE Employee(
      UserName       INT NOT NULL,
      UserPassword   VARCHAR(255) NOT NULL,
      AccessLevel    VARCHAR(20),
+     TerminationReason TEXT,
+     DeletionDate	DATETIME
 
      FOREIGN KEY (PostalCode) REFERENCES City (PostalCode)
 );

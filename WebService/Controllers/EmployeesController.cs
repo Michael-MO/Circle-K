@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebService.Models;
+using WebService.Model;
 
 namespace WebService.Controllers
 {
@@ -19,7 +19,7 @@ namespace WebService.Controllers
         // GET: api/Employees
         public IQueryable<Employee> GetEmployees()
         {
-            return db.Employees;
+            return db.Employees; //.Include(i => i.Masters).Include(i => i.City);
         }
 
         // GET: api/Employees/5

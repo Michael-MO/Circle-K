@@ -1,4 +1,4 @@
-namespace WebService.Models
+namespace WebService.Model
 {
     using System;
     using System.Collections.Generic;
@@ -17,9 +17,9 @@ namespace WebService.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PostalCode { get; set; }
 
-        [Column("Name")]
         [StringLength(40)]
         public string Name { get; set; }
 

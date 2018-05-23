@@ -20,12 +20,14 @@ namespace Client.Model.Domain
             bool isActive,
             DateTime deletionDate,
             string terminationReason,
+            string cpr,
             string userName,
             string userPassword,
             string accessLevel,
             int key)
             : base(userName, userPassword, accessLevel, key)
         {
+            Key = employeeNo;
             EmployeeNo = employeeNo;
             Title = title;
             Name = name;
@@ -37,6 +39,7 @@ namespace Client.Model.Domain
             IsActive = isActive;
             DeletionDate = deletionDate;
             TerminationReason = terminationReason;
+            Cpr = cpr;
         }
 
         public int EmployeeNo { get; set; }
@@ -60,6 +63,8 @@ namespace Client.Model.Domain
         public DateTime DeletionDate { get; set; }
 
         public string TerminationReason { get; set; }
+
+        public string Cpr { get; set; }
 
         public void ChangeTitle(string title) //, this.accesslevel) //sørg for at få denne refference til employee objektets accesslevel fra user classen 
         {

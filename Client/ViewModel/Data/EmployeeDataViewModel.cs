@@ -157,6 +157,5 @@ namespace Client.ViewModel.Data
                 OnPropertyChanged();
             }
         }
-
     }
 }

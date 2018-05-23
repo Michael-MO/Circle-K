@@ -34,6 +34,8 @@ namespace Client.DataTransformations.PersistentData.EmployeePersistentData
 
         public string TerminationReason { get; set; }
 
+        public string Cpr { get; set; }
+
         public string Username { get; set; }
 
         public string Password { get; set; }

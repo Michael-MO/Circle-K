@@ -10,6 +10,8 @@ namespace WebService.Model
         public CircleKDBContext()
             : base("name=CircleKDBContext")
         {
+            base.Configuration.LazyLoadingEnabled = false;
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<City> Cities { get; set; }

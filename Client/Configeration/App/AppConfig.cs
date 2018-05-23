@@ -11,6 +11,7 @@ using Client.Views.Domain;
 using Extensions.AddOns.Implementation;
 using Client.Model.Domain;
 using Client.Model.App;
+using System.Diagnostics;
 //using Client.ViewModel.App; //uncomment when Nav-view is inplementet
 //using Client.View.App; // uncomment when Nav-view is inplementet
 
@@ -18,7 +19,8 @@ namespace Client.Configeration.App
 {
     public class AppConfig
     {
-        public static String ServerURL = "http://circlekwebservice20180522125818.azurewebsites.net"; // insert url for server here
+        public static String ServerURL = "http://circlekwebservice20180522125818.azurewebsites.net";
+        //public static String ServerURL = "http://localhost:55985";
 
         public static void Setup(Page mainPage, Frame appFrame)
         {
@@ -27,7 +29,7 @@ namespace Client.Configeration.App
             appFrame.Navigate(typeof(MainMenu));
             ((AppViewModel)mainPage.DataContext).MainAppFrame = appFrame;
 
-            DomainModel.Instance.Employees.LoadAsync();
+            DomainModel.Instance.LoadModel();
         }
 
         public static void SetupAppImages(string prefix)

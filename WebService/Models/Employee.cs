@@ -1,4 +1,4 @@
-namespace WebService.Models
+namespace WebService.Model
 {
     using System;
     using System.Collections.Generic;
@@ -37,11 +37,6 @@ namespace WebService.Models
 
         public bool IsActive { get; set; }
 
-        [Column(TypeName = "Date")]
-        public DateTime DeletionDate { get; set; }
-
-        public string TerminationReason { get; set; }
-
         public int UserName { get; set; }
 
         [Required]
@@ -50,6 +45,14 @@ namespace WebService.Models
 
         [StringLength(20)]
         public string AccessLevel { get; set; }
+
+        [Column(TypeName = "text")]
+        public string TerminationReason { get; set; }
+
+        public DateTime? DeletionDate { get; set; }
+
+        [StringLength(11)]
+        public string Cpr { get; set; }
 
         public virtual City City { get; set; }
 

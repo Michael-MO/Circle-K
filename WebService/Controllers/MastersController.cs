@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebService.Models;
+using WebService.Model;
 
 namespace WebService.Controllers
 {

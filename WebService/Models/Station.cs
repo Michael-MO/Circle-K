@@ -1,4 +1,4 @@
-namespace WebService.Models
+namespace WebService.Model
 {
     using System;
     using System.Collections.Generic;

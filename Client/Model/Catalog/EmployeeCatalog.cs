@@ -31,6 +31,7 @@ namespace Client.Model.Catalog
                 vdObj.IsActive,
                 vdObj.DeletionDate,
                 vdObj.TerminationReason,
+                vdObj.Cpr,
                 vdObj.Username,
                 vdObj.Password,
                 vdObj.AccessLevel,
@@ -48,7 +49,8 @@ namespace Client.Model.Catalog
                 Name = obj.Name.TrimEnd(' '),
                 Address = obj.Address.TrimEnd(' '),
                 Mail = obj.Mail.TrimEnd(' '),
-                TerminationReason = obj.TerminationReason.TrimEnd(' ')
+                TerminationReason = obj.TerminationReason.TrimEnd(' '),
+                Cpr = obj.Cpr.TrimEnd(' ')
             };
         }
 
@@ -63,7 +65,8 @@ namespace Client.Model.Catalog
                 Address = obj.Address,
                 Mail = obj.Mail,
                 Station = obj.Station,
-                TerminationReason = obj.TerminationReason   
+                TerminationReason = obj.TerminationReason,
+                Cpr = obj.Cpr
                 //NOTICE! -  possibly add rest of the propperties
             };
         }
@@ -83,6 +86,7 @@ namespace Client.Model.Catalog
                 pdObj.IsActive,
                 pdObj.DeletionDate,
                 pdObj.TerminationReason,
+                pdObj.Cpr,
                 pdObj.Username,
                 pdObj.Password,
                 pdObj.AccessLevel,

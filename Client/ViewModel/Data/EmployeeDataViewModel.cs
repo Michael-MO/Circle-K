@@ -57,42 +57,42 @@ namespace Client.ViewModel.Data
             get { return DataObject.PhoneNo; }
             set
             {
-                if (value != null)
-                {
-                    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
-                    {
-                        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
-                        DataObject._popupactive = true;
-                        OnPropertyChanged();
-                    }
-                    else
-                    {
+                //if (value != null)
+                //{
+                //    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
+                //    {
+                //        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
+                //        DataObject._popupactive = true;
+                //        OnPropertyChanged();
+                //    }
+                //    else
+                //    {
                         DataObject.PhoneNo = value;
                         OnPropertyChanged();
-            }
+        //    }
+        //}
         }
     }
-        }
 
-        public string EMail
+        public string Mail
         {
             get { return DataObject.Mail; }
             set
             {
-                if (value != default(string))
-                {
-                    if (Regex.IsMatch(value, @"@"))
-                    {
-                        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
-                        DataObject._popupactive = true;
-                        OnPropertyChanged();
-                    }
-                    else
-                    {
+                //if (value != default(string))
+                //{
+                //    if (Regex.IsMatch(value, @"@"))
+                //    {
+                //        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
+                //        DataObject._popupactive = true;
+                //        OnPropertyChanged();
+                //    }
+                //    else
+                //    {
                         DataObject.Mail = value;
                         OnPropertyChanged();
-                    }
-                }
+                //    }
+                //}
             }
         }
 

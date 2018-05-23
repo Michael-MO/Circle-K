@@ -54,7 +54,7 @@ namespace Client.DataTransformations.ViewData
             // EmployeeNo = ; //CHANGE THIS <-- this is an random generated automaticly assigned int  
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller ej
-            DeletionDate = DateTime.Parse("");
+            DeletionDate = DateTime.Now;
             TerminationReason = "(ikke angivet endnu)";
             Cpr = "(ikke angivet endnu)";
             AccessLevel = "(ikke angivet endnu)";

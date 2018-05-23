@@ -27,6 +27,7 @@ namespace Client.Model.Domain
             int key)
             : base(userName, userPassword, accessLevel, key)
         {
+            Key = employeeNo;
             EmployeeNo = employeeNo;
             Title = title;
             Name = name;

@@ -10,7 +10,7 @@
     <Page.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="auto" />
-            <Setter Property="Background" Value="#0099FF" />
+            <Setter Property="Background" Value="#DA291C" />
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
             <Setter Property="FontSize" Value="20" />
@@ -31,6 +31,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
+
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="Margin" Value="0,10,0,6"/>
@@ -46,6 +47,9 @@
             </Style>
 
         </Grid.Resources>
+
+        <Image Opacity="0.1" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="4" Grid.RowSpan="4"/>
+
 
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
@@ -94,7 +98,7 @@
 
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Content="Opret Employee" Command="{Binding CreateInstance}"/>
-            <Button Content="Annuller" Command="{Binding DataObject.PhoneNo}"/>
+            <Button Content="Annuller" Click="EmployeeView"/>
         </StackPanel>
 
         <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">

@@ -31,15 +31,16 @@ namespace Client.Views.App
             AppConfig.Setup(this, AppFrame);
         }
 
-        private void Login(object sender, RoutedEventArgs e)
+        public void Login(object Sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(Login), null);
         }
 
-        private void MainMenu(object sender, RoutedEventArgs e)
+        public void MainMenu(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(MainMenu), null);
+            AppFrame.Navigate(typeof(MainMenu));
         }
+
 
     }
 }

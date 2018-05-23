@@ -12,6 +12,15 @@
         <page:EmployeePageVM/>
     </Page.DataContext>
 
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="Background" Value="#DA291C" />
+            <Setter Property="Foreground" Value="#FFF" />
+            <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
+        </Style>
+    </Page.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid >
 
@@ -25,20 +34,22 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
-            <Image Opacity="0.2" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+            <Image Opacity="0.1" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
 
             <Line VerticalAlignment="Bottom" Grid.ColumnSpan="2" X1="0" X2="50000" Y1="0" Y2="0" Stroke="Black" StrokeThickness="1" Margin="10,0,10,0"/>
 
             <StackPanel Name="Search_Stackpanel" Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center">
 
-                <ComboBox Width="200" Margin="10,10,0,10">
+                <ComboBox Width="200" Margin="10,10,0,10" PlaceholderText="Område">
 
                 </ComboBox>
 
-                <AutoSuggestBox Width="200" Margin="10">
+                <AutoSuggestBox Width="200" Margin="10" PlaceholderText="Søg">
 
                 </AutoSuggestBox>
-                <Button Content="Add another search parameter"/>
+                <Button>
+                    <SymbolIcon Symbol="add"/>
+                    </Button>
             </StackPanel>
 
             <StackPanel Grid.RowSpan="2" Grid.Row="1">
@@ -50,8 +61,8 @@
 
                     <Button Name="Write_Message" Content="Skriv Besked" Margin="10,10,0,10"/>
                     <Button Name="Create_Employee" Content="Opret bruger" Margin="10,10,0,10" Click="CreateView"/>
-                    <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10"/>
-                    <Button Name="Delete_Employee" Content="Slet bruger" Margin="10,10,0,10"/>
+                    <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10" Click="UpdateView"/>
+                    <Button Name="Delete_Employee" Content="Slet bruger" Margin="10,10,0,10" Click="DeleteView"/>
                 </StackPanel>
 
                 <ListView Margin="10,0,10,10" BorderThickness="1" BorderBrush="Black"
@@ -89,6 +100,7 @@
                         <Setter Property="Height" Value="15"/>
                         <Setter Property="Width" Value="200"/>
                         <Setter Property="HorizontalAlignment" Value="Left"/>
+                        <Setter Property="IsEnabled" Value="False"/>
                     </Style>
                 </Grid.Resources>
 

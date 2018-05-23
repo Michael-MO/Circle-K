@@ -52,7 +52,7 @@ namespace Client.ViewModel.Controller
 
         public void Execute(object parameter)
         {
-            //Run();
+            Run();
         }
 
         public event EventHandler CanExecuteChanged;

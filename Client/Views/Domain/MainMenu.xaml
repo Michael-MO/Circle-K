@@ -33,7 +33,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Image Opacity="0.2" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+            <Image Opacity="0.1" Source="/Assets/Cirkel K.PNG" Width="1920" Height="1080" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
             <Grid Margin="20,20,10,10" Background="LightGray" Opacity="0.9">
                 <Grid.ColumnDefinitions>

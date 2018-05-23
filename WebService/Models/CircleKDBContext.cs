@@ -1,4 +1,4 @@
-namespace WebService.Models
+namespace WebService.Model
 {
     using System;
     using System.Data.Entity;
@@ -10,8 +10,8 @@ namespace WebService.Models
         public CircleKDBContext()
             : base("name=CircleKDBContext")
         {
-            Configuration.LazyLoadingEnabled = false;
-            Configuration.ProxyCreationEnabled = false;
+            base.Configuration.LazyLoadingEnabled = false;
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<City> Cities { get; set; }
@@ -68,8 +68,8 @@ namespace WebService.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
-                .Property(e => e.DeletionDate)
-                .HasColumnType("date");
+                .Property(e => e.Cpr)
+                .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Masters)

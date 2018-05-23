@@ -7,9 +7,6 @@ using Data.InMemory.Interfaces;
 using Extensions.Model.Implementation;
 using Client.Configeration.App;
 
-
-
-
 namespace Client.Model.Base
 {
     public abstract class CatalogAppBase<TDomainData, TViewData, TPersistentData> : RestApiPersistableCatalogAsync<TDomainData, TViewData, TPersistentData>
@@ -17,10 +14,10 @@ namespace Client.Model.Base
     where TDomainData : class, IStorable
     where TPersistentData : IStorable
     {
-    protected CatalogAppBase(string apiID)
-        : base(AppConfig.ServerURL, apiID)
-    {
+        protected CatalogAppBase(string apiID)
+            : base(AppConfig.ServerURL, apiID)
+        {
 
-    }
+        }
     }
 }

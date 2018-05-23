@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using WebService.Models;
+using WebService.Model;
 
 namespace WebService.Controllers
 {
@@ -80,7 +80,22 @@ namespace WebService.Controllers
             }
 
             db.Cities.Add(city);
-            db.SaveChanges();
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (CityExists(city.PostalCode))
+                {
+                    return Conflict();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = city.PostalCode }, city);
         }

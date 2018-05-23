@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using Windows.UI.Xaml.Controls;
 using Client.DataTransformations.ViewData;
+using Client.ViewModel.App;
 using Client.ViewModel.Data;
 using Controllers.Implementation;
 using Data.Transformed.Implementation;
@@ -12,7 +13,7 @@ namespace Client.ViewModel.Controller
 {
     public class CreateEmployeeController : CRUDControllerBase<EmployeeViewData>, ICommand
     {
-        public Frame MainAppFrame { get; set; }
+        private AppViewModel nav;
 
         public CreateEmployeeController(IDataWrapper<EmployeeViewData> source, ICatalog<EmployeeViewData> target, Func<bool> condition)
             : base(source, target)
@@ -30,8 +31,6 @@ namespace Client.ViewModel.Controller
             {
                 Target.Create(Source.DataObject);
             }
-
-            MainAppFrame.Navigate(typeof(Views.Domain.EmployeeView), null);
         }
 
         //bruger source email til at sende en besked til nyoprettet bruger med password

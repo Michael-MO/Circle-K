@@ -52,7 +52,7 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public string PhoneNumber
+        public string PhoneNo
         {
             get { return DataObject.PhoneNo; }
             set
@@ -69,9 +69,9 @@ namespace Client.ViewModel.Data
                     {
                         DataObject.PhoneNo = value;
                         OnPropertyChanged();
-                    }
-                }
             }
+        }
+    }
         }
 
         public string EMail

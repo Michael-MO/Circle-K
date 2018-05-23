@@ -75,7 +75,19 @@
             CanDragItems="False"
             SelectionMode="Multiple"
             Opacity="0.8"
+            ItemsSource="{Binding ItemCollection}"
+            SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
             >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="Black" BorderThickness="0,0,0,1" Width="5000">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding DataObject.Name}" Margin="10"/>
+                                    <TextBlock Text="{Binding DataObject.PhoneNo}" Margin="10"/>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
 
 
 
@@ -115,8 +127,8 @@
                 </StackPanel>
 
                 <StackPanel Grid.Column="1">
-                    <TextBox PlaceholderText="Navn" Margin="10,46,0,0"/>
-                    <TextBox PlaceholderText="Tlf nummer"/>
+                    <TextBox PlaceholderText="Navn" Margin="10,46,0,0" Text="{Binding DataObject.Name}"/>
+                    <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo}"/>
                     <TextBox PlaceholderText="Adresse"/>
                     <TextBox PlaceholderText="E-mail"/>
                     <TextBox PlaceholderText="Fødselsdato"/>

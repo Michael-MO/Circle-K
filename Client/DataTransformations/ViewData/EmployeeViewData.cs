@@ -57,11 +57,11 @@ namespace Client.DataTransformations.ViewData
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller e
             DeletionDate = DateTime.Now;
-            TerminationReason = "(ikke angivet endnu)";
-            Cpr = "(ikke angivet endnu)";
-            AccessLevel = "(ikke angivet endnu)";
-            Username = "(ikke angivet endnu)";
-            Password = "(ikke angivet endnu)";
+            TerminationReason = "";
+            Cpr = "";
+            AccessLevel = "";
+            Username = "";
+            Password = "";
             _popupactive = false;
             // ImageKey = NullKey;
         }

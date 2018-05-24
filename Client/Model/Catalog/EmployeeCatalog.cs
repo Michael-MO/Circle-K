@@ -49,7 +49,8 @@ namespace Client.Model.Catalog
                 Name = obj.Name.TrimEnd(' '),
                 Address = obj.Address.TrimEnd(' '),
                 Mail = obj.Mail.TrimEnd(' '),
-                //TerminationReason = obj.TerminationReason.TrimEnd(' '),
+                PhoneNo = obj.PhoneNo.TrimEnd(' '),
+                TerminationReason = obj.TerminationReason
                 //Cpr = obj.Cpr.TrimEnd(' ')
             };
         }
@@ -65,6 +66,7 @@ namespace Client.Model.Catalog
                 Address = obj.Address,
                 Mail = obj.Mail,
                 Station = obj.Station,
+                PhoneNo = obj.PhoneNo,
                 TerminationReason = obj.TerminationReason,
                 Cpr = obj.Cpr
                 //NOTICE! -  possibly add rest of the propperties

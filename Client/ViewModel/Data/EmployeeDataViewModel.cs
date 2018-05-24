@@ -14,9 +14,6 @@ namespace Client.ViewModel.Data
 {
     public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
-
-
-
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
         {      
         }
@@ -122,6 +119,19 @@ namespace Client.ViewModel.Data
             get { return DataObject.TerminationReason; }
             set
             {
+                //if (DataObject.TerminationReason == "")
+                //{
+                //    _tempSave = value;
+                //    OnPropertyChanged();
+                //}
+                //else if (_tempSave != "")
+                //{
+                //    DataObject.TerminationReason = value;
+                //    OnPropertyChanged();
+
+                //    DataObject.TerminationReason = _tempSave + DataObject.TerminationReason;
+                //}
+
                 DataObject.TerminationReason = value;
                 OnPropertyChanged();
             }

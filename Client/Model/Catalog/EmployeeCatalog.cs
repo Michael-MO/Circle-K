@@ -43,14 +43,22 @@ namespace Client.Model.Catalog
         {
             return new EmployeeViewData
             {
-                //Implementation
-                Key = obj.Key,
-                Title = obj.Title.TrimEnd(' '),
-                Name = obj.Name.TrimEnd(' '),
-                Address = obj.Address.TrimEnd(' '),
-                Mail = obj.Mail.TrimEnd(' '),
-                //TerminationReason = obj.TerminationReason.TrimEnd(' '),
-                //Cpr = obj.Cpr.TrimEnd(' ')
+                EmployeeNo = obj.EmployeeNo,
+                Title = obj.Title,
+                Name = obj.Name,
+                Address = obj.Address,
+                PostalCode = obj.PostalCode,
+                PhoneNo = obj.PhoneNo,
+                Mail = obj.Mail,
+                Station = obj.Station,
+                IsActive = obj.IsActive, // ISSUE!
+                DeletionDate = obj.DeletionDate,
+                TerminationReason = obj.TerminationReason,
+                Cpr = obj.Cpr,
+                Username = obj.Username, // ISSUE!
+                Password = obj.Password, // ISSUE!
+                AccessLevel = obj.AccessLevel,
+                Key = obj.Key
             };
         }
 
@@ -58,16 +66,22 @@ namespace Client.Model.Catalog
         {
             return new EmployeePersistentData
             {
-                //Implementation
-                Key = obj.Key,
+                EmployeeNo = obj.EmployeeNo,
                 Title = obj.Title,
                 Name = obj.Name,
                 Address = obj.Address,
+                PostalCode = obj.PostalCode,
+                PhoneNo = obj.PhoneNo,
                 Mail = obj.Mail,
                 Station = obj.Station,
+                IsActive = obj.IsActive,
+                DeletionDate = obj.DeletionDate,
                 TerminationReason = obj.TerminationReason,
-                Cpr = obj.Cpr
-                //NOTICE! -  possibly add rest of the propperties
+                Cpr = obj.Cpr,
+                Username = obj.Username,
+                Password = obj.Password,
+                AccessLevel = obj.AccessLevel,
+                Key = obj.Key
             };
         }
 

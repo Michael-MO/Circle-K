@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Client.ViewModel.Page
         {
             get { return _employeeInstance; }
             set { _employeeInstance = value; }
+        }
+
+        public IEnumerable<IDataWrapper<EmployeeViewData>> ItemCollectionActive
+        {
+            get { return ItemCollection.Where(e => e.DataObject.IsActive = true); }
         }
             
         public override IDataWrapper<EmployeeViewData> CreateDataViewModel(EmployeeViewData obj)

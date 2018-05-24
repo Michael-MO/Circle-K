@@ -12,13 +12,10 @@ namespace Client.Model.App
         private EmployeeCatalog _employeeCatalog;
        //private StationCatalog _stationCatalog;
 
-
         public event Action LoadBegins;
         public event Action LoadEnds;
         public event Action SaveBegins;
         public event Action SaveEnd;
-
-        #region Singleton implementation
 
         private static DomainModel _instance;
 
@@ -36,20 +33,11 @@ namespace Client.Model.App
             get { return Instance; }
         }
 
-        #endregion
-
-        #region Constructor
-
         private DomainModel()
         {
             _employeeCatalog = new EmployeeCatalog();
             //_stationCatalog = new StationCatalog();
         }
-
-        #endregion
-
-
-        #region Properties
 
         public EmployeeCatalog Employees
         {
@@ -61,12 +49,6 @@ namespace Client.Model.App
         //    get { return _stationCatalog; }
         //}
 
-
-        #endregion
-
-
-        #region Persistency methods
-
         public async void LoadModel()
         {
             LoadBegins?.Invoke();
@@ -77,7 +59,6 @@ namespace Client.Model.App
             LoadEnds?.Invoke();
         }
 
-
         public async void SaveModel()
         {
             SaveBegins?.Invoke();
@@ -87,7 +68,5 @@ namespace Client.Model.App
 
             SaveEnd?.Invoke();
         }
-        #endregion
-
     }
 }

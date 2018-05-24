@@ -56,6 +56,10 @@ namespace WebService.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<Employee>()
+                .Property(e => e.UserName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Employee>()
                 .Property(e => e.UserPassword)
                 .IsUnicode(false);
 

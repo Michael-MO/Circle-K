@@ -47,21 +47,21 @@ namespace Client.DataTransformations.ViewData
         public override void SetDefaultValues()
         {
             Key = NullKey;
-            Name = "(ikke angivet endnu)";
-            Address = "(ikke angivet endnu)";
+            Name = "";
+            Address = "";
             PostalCode = 1000;
-            PhoneNo = "(ikke angivet endnu)";
-            Title = "(ikke angivet endnu)";
-            Mail = "(ikke angivet endnu)";
+            PhoneNo = "";
+            Title = "";
+            Mail = "";
             // EmployeeNo = ; //CHANGE THIS <-- this is an random generated automaticly assigned int  
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller e
             DeletionDate = DateTime.Now;
-            TerminationReason = "(ikke angivet endnu)";
-            Cpr = "(ikke angivet endnu)";
-            AccessLevel = "(ikke angivet endnu)";
-            Username = "(ikke angivet endnu)";
-            Password = "(ikke angivet endnu)";
+            TerminationReason = "";
+            Cpr = "";
+            AccessLevel = "";
+            Username = "";
+            Password = "";
             _popupactive = false;
             // ImageKey = NullKey;
         }

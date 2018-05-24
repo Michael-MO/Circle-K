@@ -62,8 +62,5 @@ namespace Client.ViewModel.Page
         {
             return true;
         }
-
-        
-        
     }
 }

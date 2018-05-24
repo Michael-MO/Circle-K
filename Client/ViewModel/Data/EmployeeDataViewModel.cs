@@ -14,13 +14,9 @@ namespace Client.ViewModel.Data
 {
     public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
-
-
-
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
-        {      
+        {
         }
-
 
         public bool PopupActive
         {
@@ -69,9 +65,9 @@ namespace Client.ViewModel.Data
                     {
                         DataObject.PhoneNo = value;
                         OnPropertyChanged();
+                    }
+                }
             }
-        }
-    }
         }
 
         public string EMail
@@ -95,7 +91,6 @@ namespace Client.ViewModel.Data
                 }
             }
         }
-
 
         public int EmployeeNumber
         {

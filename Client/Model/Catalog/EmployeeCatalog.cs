@@ -32,8 +32,8 @@ namespace Client.Model.Catalog
                 vdObj.DeletionDate,
                 vdObj.TerminationReason,
                 vdObj.Cpr,
-                vdObj.Username,
-                vdObj.Password,
+                vdObj.UserName,
+                vdObj.UserPassword,
                 vdObj.AccessLevel,
                 vdObj.Key
             );
@@ -51,12 +51,12 @@ namespace Client.Model.Catalog
                 PhoneNo = obj.PhoneNo,
                 Mail = obj.Mail,
                 Station = obj.Station,
-                IsActive = obj.IsActive, // ISSUE!
+                IsActive = obj.IsActive,
                 DeletionDate = obj.DeletionDate,
                 TerminationReason = obj.TerminationReason,
                 Cpr = obj.Cpr,
-                Username = obj.Username, // ISSUE!
-                Password = obj.Password, // ISSUE!
+                UserName = obj.UserName, // ISSUE!
+                UserPassword = obj.UserPassword, // ISSUE!
                 AccessLevel = obj.AccessLevel,
                 Key = obj.Key
             };
@@ -78,8 +78,8 @@ namespace Client.Model.Catalog
                 DeletionDate = obj.DeletionDate,
                 TerminationReason = obj.TerminationReason,
                 Cpr = obj.Cpr,
-                Username = obj.Username,
-                Password = obj.Password,
+                UserName = obj.UserName,
+                UserPassword = obj.UserPassword,
                 AccessLevel = obj.AccessLevel,
                 Key = obj.Key
             };
@@ -101,8 +101,8 @@ namespace Client.Model.Catalog
                 pdObj.DeletionDate,
                 pdObj.TerminationReason,
                 pdObj.Cpr,
-                pdObj.Username,
-                pdObj.Password,
+                pdObj.UserName,
+                pdObj.UserPassword,
                 pdObj.AccessLevel,
                 pdObj.Key
             );

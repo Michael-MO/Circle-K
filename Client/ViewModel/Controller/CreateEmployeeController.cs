@@ -24,8 +24,8 @@ namespace Client.ViewModel.Controller
             string PW = GeneratePW();
             string UN = GenerateUserName(Source.DataObject.Name);
             
-            Source.DataObject.Username = UN;
-            Source.DataObject.Password = PW;
+            Source.DataObject.UserName = UN;
+            Source.DataObject.UserPassword = PW;
 
             if (SendMail(PW) == true)
             {

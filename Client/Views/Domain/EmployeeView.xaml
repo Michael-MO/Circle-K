@@ -83,7 +83,9 @@
                             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Width="5000">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding DataObject.Name}" Margin="10"/>
-                                    <TextBlock Text="{Binding DataObject.PhoneNo}" Margin="10"/>
+                                    <TextBlock Text="{Binding DataObject.IsActive}" Margin="10"/>
+                                    <TextBlock Text="{Binding DataObject.UserName}" Margin="10"/>
+                                    <TextBlock Text="{Binding DataObject.DeletionDate}" Margin="10"/>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>

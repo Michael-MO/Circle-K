@@ -24,6 +24,16 @@ namespace Client.ViewModel.Page
         public IDataWrapper<EmployeeViewData> UpdateInstance
         {
             get { return _updateInstance; }
+            set
+            {
+                _updateInstance = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public UpdateEmployeeController UpdateEmployeeController
+        {
+            get { return _updateEmployeeController; }
         }
 
         protected override void SetupInitialViewState()

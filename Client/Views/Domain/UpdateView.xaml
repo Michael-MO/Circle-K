@@ -5,7 +5,12 @@
     xmlns:local="using:Client.Views.Domain"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:page="using:Client.ViewModel.Page"
     mc:Ignorable="d">
+    
+    <Page.DataContext>
+        <page:UpdateEmployeePageVM/>
+    </Page.DataContext>
 
     <Page.Resources>
         <Style TargetType="Button">
@@ -97,7 +102,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Employee" Command="{Binding CreateInstance}"/>
+            <Button Content="Opret Employee" Command="{Binding UpdateEmployeeController}" Click="EmployeeView"/>
             <Button Content="Annuller" Click="EmployeeView"/>
         </StackPanel>
 

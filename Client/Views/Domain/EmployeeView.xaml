@@ -60,7 +60,7 @@
                     </Border>
 
                     <Button Name="Write_Message" Content="Skriv Besked" Margin="10,10,0,10"/>
-                    <Button Name="Create_Employee" Content="Opret bruger" Margin="10,10,0,10" Click="CreateView"/>
+                    <Button Name="Create_Employee" Content="Opret bruger" Margin="10,10,0,10" Click="CreateView" />
                     <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10" Click="UpdateView"/>
                     <Button Name="Delete_Employee" Content="Slet bruger" Margin="10,10,0,10" Click="DeleteView"/>
                 </StackPanel>
@@ -73,7 +73,7 @@
             IsItemClickEnabled="False"
             IsSwipeEnabled="False"
             CanDragItems="False"
-            SelectionMode="Multiple"
+            SelectionMode="Single"
             Opacity="0.8"
             ItemsSource="{Binding ItemCollectionActive}"
             SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
@@ -83,9 +83,7 @@
                             <Border BorderBrush="Black" BorderThickness="0,0,0,1" Width="5000">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{Binding DataObject.Name}" Margin="10"/>
-                                    <TextBlock Text="{Binding DataObject.IsActive}" Margin="10"/>
-                                    <TextBlock Text="{Binding DataObject.UserName}" Margin="10"/>
-                                    <TextBlock Text="{Binding DataObject.DeletionDate}" Margin="10"/>
+                                    <TextBlock Text="{Binding DataObject.TerminationReason}" Margin="10"/>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
@@ -130,7 +128,7 @@
 
                 <StackPanel Grid.Column="1">
                     <TextBox PlaceholderText="Navn" Margin="10,46,0,0" Text="{Binding DataObject.Name}"/>
-                    <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo}"/>
+                    <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.Mail}"/>
                     <TextBox PlaceholderText="Adresse"/>
                     <TextBox PlaceholderText="E-mail"/>
                     <TextBox PlaceholderText="Fødselsdato"/>

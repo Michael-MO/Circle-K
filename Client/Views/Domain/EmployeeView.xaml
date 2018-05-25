@@ -75,7 +75,7 @@
             CanDragItems="False"
             SelectionMode="Multiple"
             Opacity="0.8"
-            ItemsSource="{Binding ItemCollection}"
+            ItemsSource="{Binding ItemCollectionActive}"
             SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
             >
                     <ListView.ItemTemplate>

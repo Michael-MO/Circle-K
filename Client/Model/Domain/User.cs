@@ -10,12 +10,12 @@ namespace Client.Model.Domain
 {
     public abstract class User : DomainAppBase
     {
-        protected User(string accessLevel, string username, string password, int key) 
+        protected User(string userName, string userPassword, string accessLevel, int key) 
             : base(key)
         {
             AccessLevel = accessLevel;
-            UserName = username;
-            UserPassword = password;
+            UserName = userName;
+            UserPassword = UserPassword;
         }
 
         public string AccessLevel { get; set; }

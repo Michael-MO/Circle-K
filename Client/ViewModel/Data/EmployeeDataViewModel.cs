@@ -63,7 +63,7 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public string Adress
+        public string Address
         {
             get { return DataObject.Address; }
             set

@@ -37,7 +37,8 @@ namespace WebService.Model
 
         public bool IsActive { get; set; }
 
-        public int UserName { get; set; }
+        [StringLength(255)]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(255)]

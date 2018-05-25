@@ -56,7 +56,7 @@
 
         <StackPanel HorizontalAlignment="Center" Grid.ColumnSpan="2">
             <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
-            <Button Margin="10,20,0,0" Content="Vælg bilede"/>
+            <Button Margin="10,20,0,0" Content="Vælg billede"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1">

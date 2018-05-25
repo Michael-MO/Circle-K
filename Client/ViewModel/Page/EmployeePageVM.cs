@@ -35,6 +35,11 @@ namespace Client.ViewModel.Page
             get { return _employeeInstance; }
             set { _employeeInstance = value; }
         }
+
+        public IEnumerable<IDataWrapper<EmployeeViewData>> ItemCollectionActive
+        {
+            get { return ItemCollection.Where(e => e.DataObject.IsActive); }
+        }
             
         public override IDataWrapper<EmployeeViewData> CreateDataViewModel(EmployeeViewData obj)
         {

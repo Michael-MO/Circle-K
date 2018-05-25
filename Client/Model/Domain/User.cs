@@ -10,19 +10,19 @@ namespace Client.Model.Domain
 {
     public abstract class User : DomainAppBase
     {
-        protected User(string accessLevel, string username, string password, int key) 
+        protected User(string userName, string userPassword, string accessLevel, int key) 
             : base(key)
         {
             AccessLevel = accessLevel;
-            Username = username;
-            Password = password;
+            UserName = userName;
+            UserPassword = UserPassword;
         }
 
         public string AccessLevel { get; set; }
 
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
-        public string Password { get; set; }
+        public string UserPassword { get; set; }
 
 
         // Method for setting accesslevel

@@ -17,13 +17,17 @@ namespace Client.ViewModel.Page
 {
     public class EmployeePageVM : PageViewModelAppBase<EmployeeViewData>
     {
-        private bool _buttonBool;
+        //private bool _buttonBool;
+        //private int _selectedIndex;
+        //private List<int> _indexList;
+        //private int _tempHolding;
         private IDataWrapper<EmployeeViewData> _employeeInstance;
 
         public EmployeePageVM() : base(DomainModel.Catalogs.Employees, new List<string> {"Name"}, new List<string> {"PhoneNo", "Mail", "Address", "PostalCode", "Station", "Title", "IsActive", "TerminationReason", "Cpr", "Usename", "Password", "AccessLevel", "_popupActive"})
         {
             _employeeInstance = EmployeePageVM.ItemSelectedInstance;
-            _buttonBool = false;
+            //_buttonBool = false;
+            //_indexList = new List<int>();
         }
 
         public IDataWrapper<EmployeeViewData> EmployeeInstance
@@ -37,14 +41,48 @@ namespace Client.ViewModel.Page
             return new EmployeeDataViewModel(obj);
         }
 
-        public bool ButtonBool
-        {
-            get { return _buttonBool; }
-            set
-            {
-                _buttonBool = true;
-                OnPropertyChanged();
-            }
-        }
+        //public int SelectedItems
+        //{
+        //    get { return _selectedIndex; }
+        //    set
+        //    {
+        //        _selectedIndex = value;
+        //        if (_selectedIndex != -1)
+        //        {
+        //            _tempHolding = value;
+        //        }
+        //        if (_indexList.Contains(_selectedIndex) || _selectedIndex == -1)
+        //        {
+        //            _indexList.Remove(_tempHolding);
+        //            ButtonBool = false;
+        //            OnPropertyChanged();
+        //        }
+        //        else
+        //        {
+        //            _indexList.Add(_selectedIndex);
+        //            OnPropertyChanged();
+        //            if (_indexList.Count < 1)
+        //            {
+        //                ButtonBool = false;
+        //            }
+        //            else
+        //            {
+        //                ButtonBool = true;
+        //            }
+        //        }
+        //    }
+        //}
+
+
+
+        //public bool ButtonBool
+        //{
+        //    get { return _buttonBool; }
+        //    set
+        //    {
+        //        _buttonBool = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
     }
 }

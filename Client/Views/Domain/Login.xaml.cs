@@ -22,6 +22,7 @@ namespace Client.Views.Domain
     /// </summary>
     public sealed partial class Login : Page
     {
+
         public Login()
         {
             this.InitializeComponent();
@@ -31,5 +32,10 @@ namespace Client.Views.Domain
         {
             this.Frame.Navigate(typeof(Views.App.MainPage), null);
         }
+
+
+
+
+
     }
 }

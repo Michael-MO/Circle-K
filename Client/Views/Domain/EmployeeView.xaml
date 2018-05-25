@@ -61,7 +61,7 @@
 
                     <Button Name="Write_Message" Content="Skriv Besked" Margin="10,10,0,10"/>
                     <Button Name="Create_Employee" Content="Opret bruger" Margin="10,10,0,10" Click="CreateView" />
-                    <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10" Click="UpdateView" IsEnabled="{Binding ButtonBool, Mode=TwoWay}"/>
+                    <Button Name="Update_Employee" Content="Rediger bruger" Margin="10,10,0,10" Click="UpdateView"/>
                     <Button Name="Delete_Employee" Content="Slet bruger" Margin="10,10,0,10" Click="DeleteView"/>
                 </StackPanel>
 
@@ -73,10 +73,10 @@
             IsItemClickEnabled="False"
             IsSwipeEnabled="False"
             CanDragItems="False"
-            SelectionMode="Multiple"
+            SelectionMode="Single"
             Opacity="0.8"
             ItemsSource="{Binding ItemCollection}"
-            SelectedItem="{Binding ButtonBool, Mode=TwoWay}"
+            SelectedItem="{Binding ItemSelected, Mode=TwoWay}"
             >
                     <ListView.ItemTemplate>
                         <DataTemplate>

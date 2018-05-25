@@ -9,7 +9,7 @@
 
     <Page.Resources>
         <Style TargetType="Button">
-            <Setter Property="Width" Value="150" />
+            <Setter Property="Width" Value="175" />
             <Setter Property="Background" Value="#DA291C" />
             <Setter Property="Foreground" Value="#FFF" />
             <Setter Property="FontFamily" Value="Assets/Fonts/Exo2/Exo2-SemiBold.ttf#Exo 2 Semi Bold" />
@@ -43,8 +43,8 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Button Content="Login" Margin="60,20,40,20" Click="MainPage"/>
-                <Button Content="Annuller"/>
+                <Button Content="Login" Margin="40,20,20,20" Click="MainPage"/>
+                <Button Content="Glemt Password"/>
             </StackPanel>
         </Grid>
         

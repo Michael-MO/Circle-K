@@ -14,13 +14,9 @@ namespace Client.ViewModel.Data
 {
     public class EmployeeDataViewModel : DataViewModelAppBase<EmployeeViewData>
     {
-
-
-
         public EmployeeDataViewModel(EmployeeViewData obj) : base(obj, "Employees")
-        {      
+        {
         }
-
 
         public bool PopupActive
         {
@@ -30,6 +26,11 @@ namespace Client.ViewModel.Data
                 DataObject._popupactive = value;
                 OnPropertyChanged();
             }
+        }
+
+        public int EmployeeNo
+        {
+            get { return DataObject.EmployeeNo; }
         }
 
         public string Name
@@ -42,7 +43,27 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public string Adress
+        public string Title
+        {
+            get { return DataObject.Title; }
+            set
+            {
+                DataObject.Title = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int PostalCode
+        {
+            get { return DataObject.PostalCode; }
+            set
+            {
+                DataObject.PostalCode = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Address
         {
             get { return DataObject.Address; }
             set
@@ -57,49 +78,43 @@ namespace Client.ViewModel.Data
             get { return DataObject.PhoneNo; }
             set
             {
-                if (value != null)
-                {
-                    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
-                    {
-                        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
-                        DataObject._popupactive = true;
-                        OnPropertyChanged();
-                    }
-                    else
-                    {
+                //if (value != null)
+                //{
+                //    if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
+                //    {
+                //        ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
+                //        DataObject._popupactive = true;
+                //        OnPropertyChanged();
+                //    }
+                //    else
+                //    {
                         DataObject.PhoneNo = value;
                         OnPropertyChanged();
+            //    }
+            //}
             }
         }
-    }
-        }
 
-        public string EMail
+        public string Mail
         {
             get { return DataObject.Mail; }
             set
             {
-                if (value != default(string))
-                {
-                    if (Regex.IsMatch(value, @"@"))
-                    {
-                        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
-                        DataObject._popupactive = true;
-                        OnPropertyChanged();
-                    }
-                    else
-                    {
+                //if (value != default(string))
+                //{
+                //    if (Regex.IsMatch(value, @"@"))
+                //    {
+                //        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
+                //        DataObject._popupactive = true;
+                //        OnPropertyChanged();
+                //    }
+                //    else
+                //    {
                         DataObject.Mail = value;
                         OnPropertyChanged();
-                    }
-                }
+                //    }
+                //}
             }
-        }
-
-
-        public int EmployeeNumber
-        {
-            get { return DataObject.EmployeeNo; }
         }
 
         public List<Station> Station
@@ -112,9 +127,19 @@ namespace Client.ViewModel.Data
             }
         }
 
-        public string DeletionDate
+        public bool IsActive
         {
-            get { return DataObject.DeletionDate.ToString("dd/MM/yyyy"); }
+            get { return DataObject.IsActive; }
+            set
+            {
+                DataObject.IsActive = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime DeletionDate
+        {
+            get { return DataObject.DeletionDate; }
         }
 
         public string TerminationReason
@@ -122,7 +147,61 @@ namespace Client.ViewModel.Data
             get { return DataObject.TerminationReason; }
             set
             {
+                //if (DataObject.TerminationReason == "")
+                //{
+                //    _tempSave = value;
+                //    OnPropertyChanged();
+                //}
+                //else if (_tempSave != "")
+                //{
+                //    DataObject.TerminationReason = value;
+                //    OnPropertyChanged();
+
+                //    DataObject.TerminationReason = _tempSave + DataObject.TerminationReason;
+                //}
+
                 DataObject.TerminationReason = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Cpr
+        {
+            get { return DataObject.Cpr; }
+            set
+            {
+                DataObject.Cpr = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string UserName
+        {
+            get { return DataObject.UserName; }
+            set
+            {
+                DataObject.UserName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string UserPassword
+        {
+            get
+            { return DataObject.UserPassword; }
+            set
+            {
+                DataObject.UserPassword = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string AccessLevel
+        {
+            get { return DataObject.AccessLevel; }
+            set
+            {
+                DataObject.AccessLevel = value;
                 OnPropertyChanged();
             }
         }
@@ -133,27 +212,6 @@ namespace Client.ViewModel.Data
             set
             {
                 DataObject.ImageKey = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Password
-        {
-            get
-            { return DataObject.Password; }
-            set
-            {
-                DataObject.Password = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Username
-        {
-            get { return DataObject.Username; }
-            set
-            {
-                DataObject.Username = value;
                 OnPropertyChanged();
             }
         }

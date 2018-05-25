@@ -41,6 +41,5 @@ namespace Client.Views.App
             AppFrame.Navigate(typeof(MainMenu));
         }
 
-
     }
 }

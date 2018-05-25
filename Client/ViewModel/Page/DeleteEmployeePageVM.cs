@@ -29,6 +29,16 @@ namespace Client.ViewModel.Page
         public IDataWrapper<EmployeeViewData> DeleteInstance    
         {
             get { return _deleteInstance; }
+            set
+            {
+                _deleteInstance = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DeleteEmployeeController DeleteEmployeeController
+        {
+            get { return _deleteEmployeeController; }
         }
 
         protected override void SetupInitialViewState()

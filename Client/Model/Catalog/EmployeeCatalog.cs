@@ -55,8 +55,8 @@ namespace Client.Model.Catalog
                 DeletionDate = obj.DeletionDate,
                 TerminationReason = obj.TerminationReason,
                 Cpr = obj.Cpr,
-                UserName = obj.UserName, // ISSUE!
-                UserPassword = obj.UserPassword, // ISSUE!
+                UserName = obj.UserName,
+                UserPassword = obj.UserPassword,
                 AccessLevel = obj.AccessLevel,
                 Key = obj.Key
             };

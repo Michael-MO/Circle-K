@@ -30,7 +30,7 @@ namespace Client.ViewModel.Page
 
         public IEnumerable<IDataWrapper<EmployeeViewData>> ItemCollectionActive
         {
-            get { return ItemCollection.Where(e => e.DataObject.IsActive == false); }
+            get { return ItemCollection.Where(e => e.DataObject.IsActive); }
         }
             
         public override IDataWrapper<EmployeeViewData> CreateDataViewModel(EmployeeViewData obj)

@@ -1,3 +1,5 @@
+using WebService.Models;
+
 namespace WebService.Model
 {
     using System;
@@ -7,7 +9,7 @@ namespace WebService.Model
     using System.Data.Entity.Spatial;
 
     [Table("Station")]
-    public partial class Station
+    public partial class Station : PersistentDataAppBase
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Station()
@@ -30,5 +32,7 @@ namespace WebService.Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Master> Masters { get; set; }
+
+        public override int Key { get; set; }
     }
 }

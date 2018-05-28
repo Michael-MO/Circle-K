@@ -72,13 +72,13 @@
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding UpdateInstance.DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding UpdateInstance.DataObject.PhoneNo, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding UpdateInstance.DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding UpdateInstance.DataObject.Mail, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
-            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBox PlaceholderText="Stations nummer" Text="{Binding UpdateInstance.DataObject.Station, Mode=TwoWay}"/>
+            <TextBlock Text="{Binding UpdateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -102,7 +102,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Employee" Command="{Binding UpdateEmployeeController}" Click="EmployeeView"/>
+            <Button Content="Opret Employee" Command="{Binding UpdateEmployeeController}"/>
             <Button Content="Annuller" Click="EmployeeView"/>
         </StackPanel>
 

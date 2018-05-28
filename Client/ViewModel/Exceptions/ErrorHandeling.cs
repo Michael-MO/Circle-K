@@ -9,8 +9,14 @@ using Client.ViewModel.Data;
 
 namespace Client.ViewModel.Exceptions
 {
-    public static class ErrorHandeling
+    public class ErrorHandeling
     {
+
+        public ErrorHandeling()
+        {
+
+        }
+
         public static void ErrorMessageField(string error)
         {
             

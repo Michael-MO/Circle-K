@@ -15,34 +15,66 @@ namespace Client.DataTransformations.ViewData
 {
     public class EmployeeViewData : ViewDataAppBase, INotifyPropertyChanged
     {
+        private string phoneNo;
+        private string mail;
+        private string name;
+
         public int EmployeeNo { get; set; }
 
         public string Title { get; set; }
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (value != "" && value != null)
+                {
+
+                    if (Regex.IsMatch(value, "^[a-åA-Å0-9]+$") || Regex.IsMatch(value, "^[0-9]+$"))
+                    {
+                        //ErrorHandeling.ErrorMessageField("Navne må ikke indeholde tal");
+                        _nameError = "Navne må ikke indeholde tal eller special tegn";
+                        OnPropertyChanged();
+                        OnPropertyChanged(_nameError);
+                    }
+                    else
+                    {
+                        name = value;
+                        _nameError = "";
+                        OnPropertyChanged();
+                    }
+                }
+            }
+        }
 
         public string Address { get; set; }
-        
+
         public int PostalCode { get; set; }
 
         public string PhoneNo
         {
-            get { return PhoneNo;}
+            get
+            {
+                return phoneNo;
+            }
             set
             {
                 {
-                    if (value != "")
+                    if (value != "" && value != null)
                     {
-                        if (value.Length > 8 || Regex.IsMatch(value, @"^[a-åA-Å]+$"))
+                        int parsedValue;
+                        if (!int.TryParse(value, out parsedValue) || value.Length < 8)
                         {
-                            ErrorHandeling.ErrorMessageField("Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.");
-                            _popupactive = true;
+                            _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
                             OnPropertyChanged();
                         }
                         else
                         {
-                            PhoneNo = value;
+                            phoneNo = value;
+                            _phoneError = "";
                             OnPropertyChanged();
+
                         }
                     }
                 }
@@ -51,21 +83,25 @@ namespace Client.DataTransformations.ViewData
 
         public string Mail
         {
-            get { return Mail;}
+            get { return mail; }
             set
             {
-                if (value != "")
+                if (value != "" && value != null)
                 {
-                    if (Regex.IsMatch(value, @"@"))
+                    if (Regex.IsMatch(value, "@"))
                     {
-                        ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
-                        _popupactive = true;
+                        mail = value;
+                        _mailError = "";
                         OnPropertyChanged();
                     }
                     else
                     {
-                        Mail = value;
+                        //ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
+                        //OnPropertyChanged(nameof(ErrorHandeling.ErrorMessageField));
+
+                        _mailError = "En E-mail skal indeholde et @";
                         OnPropertyChanged();
+
                     }
                 }
             }
@@ -89,7 +125,15 @@ namespace Client.DataTransformations.ViewData
 
         public string AccessLevel { get; set; }
 
-        public bool _popupactive { get; set; }
+        public string _phoneError { get; set; }
+
+        public string _mailError { get; set;}
+
+        public string _nameError { get; set; }
+
+
+
+
 
         public override void SetDefaultValues()
         {
@@ -109,7 +153,9 @@ namespace Client.DataTransformations.ViewData
             AccessLevel = "";
             UserName = "";
             UserPassword = "";
-            _popupactive = false;
+            _phoneError = "";
+            _mailError = "";
+            _nameError = "";
             // ImageKey = NullKey;
         }
 

@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:page="using:Client.ViewModel.Page"
+    xmlns:app="using:Client.ViewModel.Exceptions"
     mc:Ignorable="d">
 
     <Page.DataContext>
@@ -64,17 +65,21 @@
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
             <TextBlock Text="E-mail"/>
-            <TextBlock Text="Fødselsdato"/>
+            <TextBlock Text="Cpr-Nr"/>
             <TextBlock Text="Personale nr."/>
             <TextBlock Text="Stations nummer"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                <TextBlock Text="{Binding DataObject._nameError, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+
             <TextBox PlaceholderText="Tlf nummer" Text="{Binding CreateInstance.DataObject.PhoneNo, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Adresse" Text="{Binding CreateInstance.DataObject.Address, Mode=TwoWay}"/>
             <TextBox PlaceholderText="E-mail" Text="{Binding CreateInstance.DataObject.Mail, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Fødselsdato"/>
+            <TextBox PlaceholderText="Cpr-Nr"/>
             <TextBlock Text="{Binding CreateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
             <ListBox ItemsSource="{Binding DataObject.Station}" FontSize="16" Width="200" Margin="10,6,0,0" HorizontalAlignment="Left" Opacity="0.9"/>
         </StackPanel>
@@ -104,12 +109,13 @@
             <Button Content="Annuller" Click="EmployeeView"/>
         </StackPanel>
 
-        <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
-            <StackPanel>
-                <Border BorderThickness="3" BorderBrush="Black">
-                    <TextBlock Text="TEST123"/>
-                </Border>
-            </StackPanel>
+        <Popup x:Name="pop" IsOpen="{Binding DataObject.PopupActive, Mode=TwoWay}" Width="150" Height="150">
+            <Border BorderThickness="1" BorderBrush="Black">
+                <StackPanel>
+                    <TextBlock Text="{Binding DataObject.FullError}"/>
+                    <Button Command="{Binding ElementName=pop}" Width="25" Height="15"/>
+                </StackPanel>
+            </Border>
         </Popup>
     </Grid>
 </Page>

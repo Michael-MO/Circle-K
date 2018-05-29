@@ -35,25 +35,28 @@ namespace Client.ViewModel.Controller
         
         private bool SendMail(string PW)
         {
-            MailMessage message = new MailMessage();
-            message.To.Add(Source.DataObject.Mail);
-            message.Subject = "Circle K - Your account was successfully created!";
-            message.From = new System.Net.Mail.MailAddress("michaelmollerolson@gmail.com");
-            message.Body = $"Your account was successfully created! \n\t Your password is: {PW}";
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            smtp.EnableSsl = true;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new System.Net.NetworkCredential("michaelmollerolson@gmail.com", "password");
 
-            try
-            {
-                smtp.Send(message);
-                return true;
-            }
-            catch (SmtpFailedRecipientsException)
-            {
-                return false;
-            }
+            return true;
+
+            //MailMessage message = new MailMessage();
+            //message.To.Add(Source.DataObject.Mail);
+            //message.Subject = "Circle K - Your account was successfully created!";
+            //message.From = new System.Net.Mail.MailAddress("michaelmollerolson@gmail.com");
+            //message.Body = $"Your account was successfully created! \n\t Your password is: {PW}";
+            //SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            //smtp.EnableSsl = true;
+            //smtp.UseDefaultCredentials = false;
+            //smtp.Credentials = new System.Net.NetworkCredential("michaelmollerolson@gmail.com", "password");
+
+            //try
+            //{
+            //    smtp.Send(message);
+            //    return true;
+            //}
+            //catch (SmtpFailedRecipientsException)
+            //{
+            //    return false;
+            //}
         }
 
         private string GenerateUserName(string name)

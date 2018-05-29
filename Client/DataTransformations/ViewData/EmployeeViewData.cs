@@ -71,18 +71,18 @@ namespace Client.DataTransformations.ViewData
                             value = value.Replace(" " , "");
                         }
 
-                        if (value.Length < 8 || int.TryParse(value, out parsedValue))
-                            {
-                                _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
-                                OnPropertyChanged();
-                            }
-                            else
-                            {
-                                phoneNo = tempHold;
-                                _phoneError = "";
-                                OnPropertyChanged();
+                        if (value.Length >= 8 && int.TryParse(value, out parsedValue))
+                        {
+                            phoneNo = tempHold;
+                            _phoneError = "";
+                            OnPropertyChanged();
+                        }
+                        else
+                        {
+                            _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
+                            OnPropertyChanged();
 
-                            }
+                        }
                     }
                 }
             }

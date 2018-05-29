@@ -198,7 +198,6 @@
     <Compile Include="Models\City.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Models\PersistentDataAppBase.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

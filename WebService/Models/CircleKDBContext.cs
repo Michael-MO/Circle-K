@@ -98,6 +98,7 @@ namespace WebService.Model
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Station>().Ignore(e => e.Key);
+
         }
     }
 }

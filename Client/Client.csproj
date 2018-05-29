@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Configeration\App\AppConfig.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\Controller\CreateEmployeeController.cs" />
     <Compile Include="DataTransformations\Base\PersistentDataAppBase.cs" />
     <Compile Include="DataTransformations\Base\ViewDataAppBase.cs" />

@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.InMemory.Implementation;
+using Data.InMemory.Interfaces;
 
 namespace Client.DataTransformations.Base
 {
-    public class PersistentDataAppBase : StorableBase
+    public abstract class PersistentDataAppBase : IStorable
     {
-        public int Id
-        {
-            get { return Key; }
-            set { Key = value; }
-        }
-
+        public abstract int Key { get; set; }
     }
 }

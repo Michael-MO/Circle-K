@@ -18,12 +18,12 @@ namespace Client.ViewModel.Data
         {
         }
 
-        public bool PopupActive
+        public string PopupActive
         {
-            get { return DataObject._popupactive; }
+            get { return DataObject._phoneError; }
             set
             {
-                DataObject._popupactive = value;
+                DataObject._phoneError = value;
                 OnPropertyChanged();
             }
         }

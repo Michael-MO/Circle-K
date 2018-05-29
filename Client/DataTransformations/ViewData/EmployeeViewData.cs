@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using Client.Annotations;
 using Client.DataTransformations.Base;
 using Client.Model.Domain;
@@ -14,11 +15,14 @@ using Client.ViewModel.Exceptions;
 namespace Client.DataTransformations.ViewData
 {
     public class EmployeeViewData : ViewDataAppBase, INotifyPropertyChanged
-    {
+    {   
         private string phoneNo;
         private string mail;
         private string name;
-
+        private int postalCode;
+        private string cpr;
+        private bool isActiveButton = true;
+        
         public int EmployeeNo { get; set; }
 
         public string Title { get; set; }
@@ -31,18 +35,17 @@ namespace Client.DataTransformations.ViewData
                 if (!string.IsNullOrEmpty(value))
                 {
 
-                    if (Regex.IsMatch(value, "^[a-åA-Å0-9]+$") || Regex.IsMatch(value, "^[0-9]+$"))
+                    if (Regex.IsMatch(value.Replace(" ", ""), "^[a-zøæå A-ZØÆÅ]+$"))
                     {
-                        //ErrorHandeling.ErrorMessageField("Navne må ikke indeholde tal");
-                        _nameError = "Navne må ikke indeholde tal eller special tegn";
+                        name = value;
+                        IsActiveButton = true;
                         OnPropertyChanged();
-                        OnPropertyChanged(_nameError);
                     }
                     else
                     {
-                        name = value;
-                        _nameError = "";
-                        OnPropertyChanged();
+                        IsActiveButton = false;
+                        MessageDialog md = new MessageDialog("Navne må ikke indeholde tal eller special tegn");
+                        md.ShowAsync();
                     }
                 }
             }
@@ -50,7 +53,26 @@ namespace Client.DataTransformations.ViewData
 
         public string Address { get; set; }
 
-        public int PostalCode { get; set; }
+        public int PostalCode
+        {
+            get { return postalCode;}
+            set
+            {
+                if (value.ToString().Length == 4)
+                {
+                    postalCode = value;
+                    IsActiveButton = true;
+                    OnPropertyChanged();
+                }
+                else
+                {
+                    IsActiveButton = false;
+                    MessageDialog md = new MessageDialog("Et Post nummer skal være 4 cifre langt.");
+                    md.ShowAsync();
+                }
+
+            }
+        }
 
         public string PhoneNo
         {
@@ -63,26 +85,31 @@ namespace Client.DataTransformations.ViewData
                 {
                     if (!string.IsNullOrEmpty(value))
                     {
-                        int parsedValue;
+                        long parsedValue;
                         string tempHold = value;
                         if (Regex.IsMatch(value, "[+]"))
                         {
-                            value = value.Trim(new char[]{'+'});
+                            value = value.Substring(3);
                             value = value.Replace(" " , "");
                         }
 
-                        if (value.Length < 8 || int.TryParse(value, out parsedValue))
-                            {
-                                _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
-                                OnPropertyChanged();
-                            }
-                            else
-                            {
-                                phoneNo = tempHold;
-                                _phoneError = "";
-                                OnPropertyChanged();
+                        if (value.Length >= 8 && value.Length <= 12 && long.TryParse(value, out parsedValue))
+                        {
+                            phoneNo = tempHold;
+                            IsActiveButton = true;
+                            OnPropertyChanged();
+                        }
+                        else
+                        {
+                            IsActiveButton = false;
+                            MessageDialog md = new MessageDialog("Tlf. nummer skal indholde mellem 8 og 12 tegn og må ikke indeholde bogstaver.");
+                            md.ShowAsync();
+                        }
 
-                            }
+                        //    {
+
+                        //    }
+
                     }
                 }
             }
@@ -98,16 +125,14 @@ namespace Client.DataTransformations.ViewData
                     if (Regex.IsMatch(value, "@"))
                     {
                         mail = value;
-                        _mailError = "";
+                        IsActiveButton = true;
                         OnPropertyChanged();
                     }
                     else
                     {
-                        //ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
-                        //OnPropertyChanged(nameof(ErrorHandeling.ErrorMessageField));
-
-                        _mailError = "En E-mail skal indeholde et @";
-                        OnPropertyChanged();
+                        IsActiveButton = false;
+                        MessageDialog md = new MessageDialog("En E-mail skal indeholde et @");
+                        md.ShowAsync();
 
                     }
                 }
@@ -122,7 +147,38 @@ namespace Client.DataTransformations.ViewData
 
         public string TerminationReason { get; set; }
 
-        public string Cpr { get; set; }
+        public string Cpr
+        {
+            get { return cpr;}
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    string temphold = value;
+                    long praseinto;
+
+                    if (value.Contains('-'))
+                    {
+                       value = value.Replace("-", "");
+                    }
+
+                    if (value.Length >= 10 && value.Length <= 12 && long.TryParse(value, out praseinto))
+                    {
+                        cpr = temphold;
+                        IsActiveButton = true;
+                        OnPropertyChanged();
+                    }
+                    else
+                    {
+                        IsActiveButton = false;
+                        MessageDialog md = new MessageDialog("Et Cpr skal indeholde din fødselsdag og de sidste 4 control cifre.");
+                        md.ShowAsync();
+                    }
+                }
+
+            }
+
+        }
 
         public int ImageKey { get; set; }
 
@@ -132,15 +188,15 @@ namespace Client.DataTransformations.ViewData
 
         public string AccessLevel { get; set; }
 
-        public string _phoneError { get; set; }
-
-        public string _mailError { get; set;}
-
-        public string _nameError { get; set; }
-
-
-
-
+        public bool IsActiveButton
+        {
+            get { return isActiveButton; }
+            set
+            {
+                isActiveButton = value;
+                OnPropertyChanged();
+            }
+        }
 
         public override void SetDefaultValues()
         {
@@ -160,9 +216,6 @@ namespace Client.DataTransformations.ViewData
             AccessLevel = "";
             UserName = "";
             UserPassword = "";
-            _phoneError = "";
-            _mailError = "";
-            _nameError = "";
             // ImageKey = NullKey;
         }
 

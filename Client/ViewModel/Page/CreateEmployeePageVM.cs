@@ -29,7 +29,7 @@ namespace Client.ViewModel.Page
         public CreateCommandBase<EmployeeViewData> _createCommand 
             = new CreateCommandBase<EmployeeViewData>(ItemSelectedInstance, DomainModel.Instance.Employees, CanDoCreate);
 
-        public CreateEmployeePageVM()
+        public CreateEmployeePageVM()   
         {
             
             _createInstance = CreateDataViewModelFromNewViewData();

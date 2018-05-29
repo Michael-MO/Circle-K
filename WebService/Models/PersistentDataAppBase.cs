@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Data.InMemory.Implementation;
-using Data.InMemory.Interfaces;
 
 namespace WebService.Models
 {

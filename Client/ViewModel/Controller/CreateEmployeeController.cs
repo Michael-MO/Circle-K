@@ -1,10 +1,15 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Input;
 using System.Net.Mail;
+using System.Runtime.CompilerServices;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
+using Client.Annotations;
 using Client.DataTransformations.ViewData;
 using Client.ViewModel.App;
 using Client.ViewModel.Data;
+using Client.ViewModel.Exceptions;
 using Controllers.Implementation;
 using Data.Transformed.Implementation;
 using Data.Transformed.Interfaces;
@@ -30,6 +35,9 @@ namespace Client.ViewModel.Controller
             if (SendMail(PW) == true)
             {
                 Target.Create(Source.DataObject);
+                Source.DataObject.IsActiveButton = false;
+                MessageDialog md = new MessageDialog("Ansat oprettet - Tryk på tilbage for at komme ud igen.");
+                md.ShowAsync();
             }
         }
         

@@ -64,59 +64,39 @@
             <TextBlock Text="Navn"/>
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
+            <TextBlock Text="Post nummer"/>
             <TextBlock Text="E-mail"/>
-            <TextBlock Text="Cpr-Nr"/>
+            <TextBlock Text="Cpr nummer"/>
             <TextBlock Text="Personale nr."/>
-            <TextBlock Text="Stations nummer"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel Orientation="Horizontal">
-                <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
-                <TextBlock Text="{Binding DataObject._nameError, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-
+            <TextBox PlaceholderText="Navn" Text="{Binding CreateInstance.DataObject.Name, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Tlf nummer" Text="{Binding CreateInstance.DataObject.PhoneNo, Mode=TwoWay}"/>
             <TextBox PlaceholderText="Adresse" Text="{Binding CreateInstance.DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Post nummer"  Text="{Binding CreateInstance.DataObject.PostalCode, Mode=TwoWay}"/>
             <TextBox PlaceholderText="E-mail" Text="{Binding CreateInstance.DataObject.Mail, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Cpr-Nr"/>
+            <TextBox PlaceholderText="dd-MM-yyyy-xxxx" Text="{Binding CreateInstance.DataObject.Cpr, Mode=TwoWay}"/>
             <TextBlock Text="{Binding CreateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Margin="0,50,0,0">
+            <TextBlock Text="Konto Nummer"/>
+            <TextBlock Text="Reg. nummer"/>
+            <TextBlock Text="Stations nummer"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="3" Margin="0,50,0,0">
+            <TextBox PlaceholderText="Konto Nummer"/>
+            <TextBox PlaceholderText="Reg. Nummer"/>
             <ListBox ItemsSource="{Binding DataObject.Station}" FontSize="16" Width="200" Margin="10,6,0,0" HorizontalAlignment="Left" Opacity="0.9"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Konto Nummer"/>
-            <TextBlock Text="Reg. nummer"/>
-            <TextBlock Text="filler1"/>
-            <TextBlock Text="filler2"/>
-            <TextBlock Text="filler3"/>
-            <TextBlock Text="filler4"/>
-            <TextBlock Text="filler5"/>
-        </StackPanel>
-
-        <StackPanel Grid.Column="3">
-            <TextBox PlaceholderText="Konto Nummer"/>
-            <TextBox PlaceholderText="Reg. Nummer"/>
-            <TextBox PlaceholderText="Filler1"/>
-            <TextBox PlaceholderText="Filler2"/>
-            <TextBox PlaceholderText="Filler3"/>
-            <TextBox PlaceholderText="Filler4"/>
-            <TextBox PlaceholderText="Filler5"/>
-        </StackPanel>
-        
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Ansat" Command="{Binding CreateEmployeeController}" Click="EmployeeView"/>
-            <Button Content="Annuller" Click="EmployeeView"/>
+            <Button Content="Opret Ansat" Command="{Binding CreateEmployeeController}" IsEnabled="{Binding CreateInstance.DataObject.IsActiveButton}"/>
+            <Button Content="Tilbage" Click="EmployeeView"/>
         </StackPanel>
-
-        <Popup x:Name="pop" IsOpen="{Binding DataObject.PopupActive, Mode=TwoWay}" Width="150" Height="150">
-            <Border BorderThickness="1" BorderBrush="Black">
-                <StackPanel>
-                    <TextBlock Text="{Binding DataObject.FullError}"/>
-                    <Button Command="{Binding ElementName=pop}" Width="25" Height="15"/>
-                </StackPanel>
-            </Border>
-        </Popup>
     </Grid>
 </Page>
 

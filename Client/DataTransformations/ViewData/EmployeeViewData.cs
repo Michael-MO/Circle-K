@@ -28,7 +28,7 @@ namespace Client.DataTransformations.ViewData
             get { return name; }
             set
             {
-                if (value != "" && value != null)
+                if (!string.IsNullOrEmpty(value))
                 {
 
                     if (Regex.IsMatch(value, "^[a-åA-Å0-9]+$") || Regex.IsMatch(value, "^[0-9]+$"))
@@ -61,21 +61,28 @@ namespace Client.DataTransformations.ViewData
             set
             {
                 {
-                    if (value != "" && value != null)
+                    if (!string.IsNullOrEmpty(value))
                     {
                         int parsedValue;
-                        if (!int.TryParse(value, out parsedValue) || value.Length < 8)
+                        string tempHold = value;
+                        if (Regex.IsMatch(value, "[+]"))
                         {
-                            _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
-                            OnPropertyChanged();
+                            value = value.Trim(new char[]{'+'});
+                            value = value.Replace(" " , "");
                         }
-                        else
-                        {
-                            phoneNo = value;
-                            _phoneError = "";
-                            OnPropertyChanged();
 
-                        }
+                        if (value.Length < 8 || int.TryParse(value, out parsedValue))
+                            {
+                                _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
+                                OnPropertyChanged();
+                            }
+                            else
+                            {
+                                phoneNo = tempHold;
+                                _phoneError = "";
+                                OnPropertyChanged();
+
+                            }
                     }
                 }
             }
@@ -86,7 +93,7 @@ namespace Client.DataTransformations.ViewData
             get { return mail; }
             set
             {
-                if (value != "" && value != null)
+                if (!string.IsNullOrEmpty(value))
                 {
                     if (Regex.IsMatch(value, "@"))
                     {

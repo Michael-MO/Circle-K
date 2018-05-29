@@ -203,6 +203,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Master.cs" />
+    <Compile Include="Models\PersistentDataAppBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Station.cs" />
   </ItemGroup>

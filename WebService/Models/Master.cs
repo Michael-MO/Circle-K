@@ -1,4 +1,4 @@
-using WebService.Models;
+using WebService.Model;
 
 namespace WebService.Model
 {
@@ -9,7 +9,7 @@ namespace WebService.Model
     using System.Data.Entity.Spatial;
 
     [Table("Master")]
-    public partial class Master : PersistentDataAppBase
+    public partial class Master
     {
         public int MasterID { get; set; }
 
@@ -20,7 +20,5 @@ namespace WebService.Model
         public virtual Employee Employee { get; set; }
 
         public virtual Station Station { get; set; }
-
-        public override int Key { get; set; }
     }
 }

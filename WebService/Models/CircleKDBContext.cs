@@ -35,8 +35,6 @@ namespace WebService.Model
                 .WithRequired(e => e.City)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<City>().Ignore(e => e.Key);
-
             modelBuilder.Entity<Employee>()
                 .Property(e => e.Name)
                 .IsUnicode(false);
@@ -82,8 +80,6 @@ namespace WebService.Model
                 .WithRequired(e => e.Employee)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Employee>().Ignore(e => e.Key);
-
             modelBuilder.Entity<Station>()
                 .Property(e => e.PhoneNo)
                 .IsUnicode(false);
@@ -96,9 +92,6 @@ namespace WebService.Model
                 .HasMany(e => e.Masters)
                 .WithRequired(e => e.Station)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Station>().Ignore(e => e.Key);
-
         }
     }
 }

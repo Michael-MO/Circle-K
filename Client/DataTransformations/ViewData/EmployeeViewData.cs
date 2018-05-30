@@ -157,9 +157,10 @@ namespace Client.DataTransformations.ViewData
                     string temphold = value;
                     long praseinto;
 
-                    if (value.Contains('-'))
+                    if (value.Contains('-') || value.Contains(' '))
                     {
                        value = value.Replace("-", "");
+                       value = value.Replace(" ", "");
                     }
 
                     if (value.Length >= 10 && value.Length <= 12 && long.TryParse(value, out praseinto))

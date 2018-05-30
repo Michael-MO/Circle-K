@@ -7,6 +7,7 @@ using Windows.UI.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Client.DataTransformations.ViewData;
+using Client.ViewModel.Page;
 using Data.InMemory.Interfaces;
 using Data.Transformed.Interfaces;
 using Extensions.Commands.Interfaces;
@@ -33,6 +34,7 @@ namespace Client.ViewModel.Base
             {
                 UpdateFontWeights();
                 OnPropertyChanged(nameof(MenuFontWeights));
+                
                 
             };
         }

@@ -41,5 +41,11 @@ namespace Client.DataTransformations.PersistentData.EmployeePersistentData
         public string UserPassword { get; set; }
 
         public string AccessLevel { get; set; }
+
+        public override int Key
+        {
+            get { return EmployeeNo;}
+            set { }
+        }
     }
 }

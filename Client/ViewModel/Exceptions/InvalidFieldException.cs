@@ -17,5 +17,10 @@ namespace Client.ViewModel.Exceptions
         {
             
         }
+
+        public InvalidFieldException(string message, Exception inner) : base(message, inner)
+        {
+
+        }
     }
 }

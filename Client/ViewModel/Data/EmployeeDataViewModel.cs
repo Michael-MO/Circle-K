@@ -18,16 +18,6 @@ namespace Client.ViewModel.Data
         {
         }
 
-        public bool PopupActive
-        {
-            get { return DataObject._popupactive; }
-            set
-            {
-                DataObject._popupactive = value;
-                OnPropertyChanged();
-            }
-        }
-
         public int EmployeeNo
         {
             get { return DataObject.EmployeeNo; }

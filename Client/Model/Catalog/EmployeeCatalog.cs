@@ -43,7 +43,7 @@ namespace Client.Model.Catalog
         {
             return new EmployeeViewData
             {
-                EmployeeNo = obj.EmployeeNo,
+                EmployeeNo = obj.Key,
                 Title = obj.Title,
                 Name = obj.Name,
                 Address = obj.Address,

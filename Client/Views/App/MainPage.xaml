@@ -50,7 +50,7 @@
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Home" Content="Hovedsiden" Tag="MainMenu"/>
                 <NavigationViewItemSeparator/>
                 <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="People" Content="Ansatte" Tag="OpenEmployeeView"/>
-                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Preview" Content="Lønseddel" Tag="OpenCustomerView"/>
+                <NavigationViewItem Style="{StaticResource NavigationViewItemStyle}" Icon="Preview" Content="Lønseddel" Tag="OpenPayCheckView"/>
             </NavigationView.MenuItems>
 
             <Frame x:Name="AppFrame" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

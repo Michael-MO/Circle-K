@@ -58,60 +58,45 @@
 
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Center">
             <PersonPicture Margin="0,40,0,10" ProfilePicture="https://docs.microsoft.com/en-us/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png" Width="150" Height="150"/>
-            <Button Margin="10,20,0,0" Content="Vælg bilede"/>
+            <Button Margin="10,20,0,0" Content="Vælg billede"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1">
             <TextBlock Text="Navn"/>
             <TextBlock Text="Tlf nummer"/>
             <TextBlock Text="Adresse"/>
+            <TextBlock Text="Post nummer"/>
             <TextBlock Text="E-mail"/>
-            <TextBlock Text="Fødselsdato"/>
-            <TextBlock Text="Stations nummer"/>
+            <TextBlock Text="Cpr nummer"/>
             <TextBlock Text="Personale nr."/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <TextBox PlaceholderText="Navn" Text="{Binding DataObject.Name, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Tlf nummer" Text="{Binding DataObject.PhoneNo, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox PlaceholderText="Adresse" Text="{Binding DataObject.Address, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="E-mail" Text="{Binding DataObject.Mail, Mode=TwoWay}"/>
-            <TextBox PlaceholderText="Fødselsdato"/>
-            <TextBox PlaceholderText="Stations nummer" Text="{Binding DataObject.Station, Mode=TwoWay}"/>
-            <TextBlock Text="{Binding DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
+            <TextBox PlaceholderText="Navn" Text="{Binding UpdateInstance.DataObject.Name, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Tlf nummer" Text="{Binding UpdateInstance.DataObject.PhoneNo, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Adresse" Text="{Binding UpdateInstance.DataObject.Address, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="Post nummer" Text="{Binding UpdateInstance.DataObject.PostalCode, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="E-mail" Text="{Binding UpdateInstance.DataObject.Mail, Mode=TwoWay}"/>
+            <TextBox PlaceholderText="dd-MM-yyyy-xxxx" Text="{Binding UpdateInstance.DataObject.Cpr, Mode=TwoWay}"/>
+            <TextBlock Text="{Binding UpdateInstance.DataObject.EmployeeNo, Mode=OneWay}" HorizontalAlignment="Left" Margin="10,10,0,0"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2">
+        <StackPanel Grid.Column="2" Margin="0,50,0,0">  
             <TextBlock Text="Konto Nummer"/>
             <TextBlock Text="Reg. nummer"/>
-            <TextBlock Text="filler1"/>
-            <TextBlock Text="filler2"/>
-            <TextBlock Text="filler3"/>
-            <TextBlock Text="filler4"/>
-            <TextBlock Text="filler5"/>
+            <TextBlock Text="Stations nummer"/>
+
         </StackPanel>
 
-        <StackPanel Grid.Column="3">
+        <StackPanel Grid.Column="3" Margin="0,50,0,0">
             <TextBox PlaceholderText="Konto Nummer"/>
             <TextBox PlaceholderText="Reg. Nummer"/>
-            <TextBox PlaceholderText="Filler1"/>
-            <TextBox PlaceholderText="Filler2"/>
-            <TextBox PlaceholderText="Filler3"/>
-            <TextBox PlaceholderText="Filler4"/>
-            <TextBox PlaceholderText="Filler5"/>
+            <ListBox ItemsSource="{Binding UpdateInstance.DataObject.Station}" FontSize="16" Width="200" Margin="10,6,0,0" HorizontalAlignment="Left" Opacity="0.9"/>
         </StackPanel>
 
         <StackPanel Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Content="Opret Employee" Command="{Binding UpdateEmployeeController}" Click="EmployeeView"/>
-            <Button Content="Annuller" Click="EmployeeView"/>
+            <Button Content="Opdater" Command="{Binding UpdateEmployeeController}" IsEnabled="{Binding UpdateInstance.DataObject.IsActiveButton}"/>
+            <Button Content="Tilbage" Click="EmployeeView"/>
         </StackPanel>
-
-        <Popup IsOpen="{Binding DataObject._popupactive, Mode=TwoWay}">
-            <StackPanel>
-                <Border BorderThickness="3" BorderBrush="Black">
-                    <TextBlock Text="TEST123"/>
-                </Border>
-            </StackPanel>
-        </Popup>
     </Grid>
 </Page>

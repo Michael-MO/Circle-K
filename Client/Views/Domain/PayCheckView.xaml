@@ -8,6 +8,69 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image Source="/Assets/Cirkel K.PNG" Height="1008" Width="1920" Opacity="0.1"/>
+        <Grid Margin="20" Opacity="0.8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
 
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <AutoSuggestBox PlaceholderText="Søg" Width="300" QueryIcon="Find" Margin="10,10,0,0" />
+
+                <ComboBox PlaceholderText="Årstal" Width="300" Margin="10,10,0,0">
+                    <x:String>2018</x:String>
+                    <x:String>2017</x:String>
+                    <x:String>2016</x:String>
+                    <x:String>2015</x:String>
+                    <x:String>2014</x:String>
+                </ComboBox>
+            </StackPanel>
+
+            <Grid Grid.Row="1">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                        <Button Content="Dato" Width="315"/>
+                        <Button Content="Årstal" Width="315"/>
+                        <Button Content="Afsender" Width="315"/>
+                        <Button Content="Beløb" Width="313"/>
+                    </StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,10,0" >
+                        <ListView Height="530" Background="LightGray">
+                            <ListView.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Margin" Value="0,10,0,10"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </ListView.Resources>
+                            <!--<ListView.ItemTemplate>
+                                <DataTemplate>-->
+                            <Border BorderThickness="0,0,0,1" BorderBrush="Black" Width="1416" Grid.ColumnSpan="3">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1.8*"/>
+                                        <ColumnDefinition Width="1.8*"/>
+                                        <ColumnDefinition Width="1.8*"/>
+                                        <ColumnDefinition Width="1.8*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="01/06"/>
+                                    <TextBlock Text="2018" Grid.Column="1"/>
+                                    <TextBlock Text="Circle K" Grid.Column="2"/>
+                                    <TextBlock Text="10.000" Grid.Column="3"/>
+                                </Grid>
+                            </Border>
+                            <!--</DataTemplate>
+                            </ListView.ItemTemplate>-->
+                        </ListView>
+                    </Border>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
     </Grid>
 </Page>

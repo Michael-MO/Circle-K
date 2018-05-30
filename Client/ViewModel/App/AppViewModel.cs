@@ -58,9 +58,9 @@ namespace Client.ViewModel.App
                 MainAppFrame.Navigate(typeof(EmployeeView));
             }));
 
-            NavigationCommands.Add("OpenCustomerView", new RelayCommand(() =>
+            NavigationCommands.Add("OpenPayCheckView", new RelayCommand(() =>
             {
-                MainAppFrame.Navigate(typeof(MainMenu));
+                MainAppFrame.Navigate(typeof(Views.Domain.PayCheckView));
             }));
 
 

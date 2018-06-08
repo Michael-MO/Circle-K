@@ -10,7 +10,9 @@ namespace Client.Model.App
     public class DomainModel
     {
         private EmployeeCatalog _employeeCatalog;
-       //private StationCatalog _stationCatalog;
+        private StationCatalog _stationCatalog;
+        private CityCatalog _cityCatalog;
+        private EmployeeStationCatalog _employeeStationCatalog;
 
         public event Action LoadBegins;
         public event Action LoadEnds;
@@ -44,17 +46,59 @@ namespace Client.Model.App
             get { return _employeeCatalog; }
         }
 
-        //public StationCatalog Stations
-        //{
-        //    get { return _stationCatalog; }
-        //}
+        public StationCatalog Stations
+        {
+            get { return _stationCatalog; }
+        }
+
+        public CityCatalog Cities
+        {
+            get { return _cityCatalog; }
+        }
+
+        public EmployeeStationCatalog EmployeesStations
+        {
+            get { return _employeeStationCatalog; }
+        }
 
         public async void LoadModel()
         {
             LoadBegins?.Invoke();
 
-            await _employeeCatalog.LoadAsync();
-            //await _stationCatalog.LoadAsync();
+            await Employees.LoadAsync();
+            await Cities.LoadAsync();
+            await Stations.LoadAsync();
+            await EmployeesStations.LoadAsync();
+
+            // For hvert objekt i kataloget 'Employees', gør det følgende:
+            foreach (var emp in Employees.All)
+            {
+                // For hvert objekt i kataloget 'Employees', kør listen af 'Cities' igennem.
+                foreach (var city in Cities.All)
+                {
+                    // Hvis, postalCode propertien i 'Employee' er ens med en by's 'Key/postalCode', gør følgende:
+                    if(city.Key == emp.PostalCode)
+                    {
+                        // Sæt 'Employee' propertien 'City' som en direkte reference til det bestemte 'City' objekt.
+                        emp.City = city;
+                        // Opdater det originale domæne objekt.
+                        Employees.Update(emp, emp.Key);
+                    }
+                    // Fortsæt til næste 'Employee'
+                }
+            }
+
+            foreach (var stat in Stations.All)
+            {
+                foreach (var city in Cities.All)
+                {
+                    if (city.Key == stat.PostalCode)
+                    {
+                        stat.City = city;
+                        Stations.Update(stat, stat.Key);
+                    }
+                }
+            }
 
             LoadEnds?.Invoke();
         }

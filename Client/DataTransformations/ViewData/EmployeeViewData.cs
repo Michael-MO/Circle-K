@@ -30,19 +30,14 @@ namespace Client.DataTransformations.ViewData
             {
                 if (!string.IsNullOrEmpty(value))
                 {
-
-                    if (Regex.IsMatch(value, "^[a-åA-Å0-9]+$") || Regex.IsMatch(value, "^[0-9]+$"))
+                    if (Regex.IsMatch(value, @"^[a-zæøåA-ZÆØÅ ]+$"))
                     {
-                        //ErrorHandeling.ErrorMessageField("Navne må ikke indeholde tal");
-                        _nameError = "Navne må ikke indeholde tal eller special tegn";
+                        name = value;
                         OnPropertyChanged();
-                        OnPropertyChanged(_nameError);
                     }
                     else
                     {
-                        name = value;
-                        _nameError = "";
-                        OnPropertyChanged();
+                        throw new Exception("Navne må ikke indeholde tal eller special tegn.");
                     }
                 }
             }
@@ -51,6 +46,8 @@ namespace Client.DataTransformations.ViewData
         public string Address { get; set; }
 
         public int PostalCode { get; set; }
+
+        public CityViewData City { get; set; }
 
         public string PhoneNo
         {
@@ -63,25 +60,22 @@ namespace Client.DataTransformations.ViewData
                 {
                     if (!string.IsNullOrEmpty(value))
                     {
-                        int parsedValue;
-                        string tempHold = value;
+                        string tempValue = value;
+
                         if (Regex.IsMatch(value, "[+]"))
                         {
                             value = value.Trim(new char[]{'+'});
                             value = value.Replace(" " , "");
                         }
 
-                        if (value.Length >= 8 && int.TryParse(value, out parsedValue))
+                        if (value.Length == 10 && Regex.IsMatch(value, @"^\d+$"))
                         {
-                            phoneNo = tempHold;
-                            _phoneError = "";
+                            phoneNo = tempValue;
                             OnPropertyChanged();
                         }
                         else
                         {
-                            _phoneError = "Tlf. nummer skal indholde min. 8 tal og må ikke indeholde bogstaver.";
-                            OnPropertyChanged();
-
+                            throw new Exception("Formattet for telefonnummer SKAL være: '+45 11 22 33 44'");
                         }
                     }
                 }
@@ -103,12 +97,7 @@ namespace Client.DataTransformations.ViewData
                     }
                     else
                     {
-                        //ErrorHandeling.ErrorMessageField("En E-mail skal indeholde et @");
-                        //OnPropertyChanged(nameof(ErrorHandeling.ErrorMessageField));
-
-                        _mailError = "En E-mail skal indeholde et @";
-                        OnPropertyChanged();
-
+                        throw new Exception("En E-mail skal indeholde et @");
                     }
                 }
             }
@@ -137,10 +126,6 @@ namespace Client.DataTransformations.ViewData
         public string _mailError { get; set;}
 
         public string _nameError { get; set; }
-
-
-
-
 
         public override void SetDefaultValues()
         {

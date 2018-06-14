@@ -44,6 +44,7 @@ namespace Client.Model.Catalog
             return new EmployeeViewData
             {
                 EmployeeNo = obj.Key,
+                //EmployeeNo = obj.EmployeeNo,
                 Title = obj.Title,
                 Name = obj.Name,
                 Address = obj.Address,
@@ -73,7 +74,7 @@ namespace Client.Model.Catalog
                 PostalCode = obj.PostalCode,
                 PhoneNo = obj.PhoneNo,
                 Mail = obj.Mail,
-                Station = obj.Station,
+                //Station = obj.Station,
                 IsActive = obj.IsActive,
                 DeletionDate = obj.DeletionDate,
                 TerminationReason = obj.TerminationReason,
@@ -96,7 +97,8 @@ namespace Client.Model.Catalog
                 pdObj.PostalCode,
                 pdObj.PhoneNo,
                 pdObj.Mail,
-                pdObj.Station,
+                //pdObj.Station,
+                null,
                 pdObj.IsActive,
                 pdObj.DeletionDate,
                 pdObj.TerminationReason,

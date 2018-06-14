@@ -77,7 +77,7 @@ namespace Client.Model.App
                 foreach (var city in Cities.All)
                 {
                     // Hvis, postalCode propertien i 'Employee' er ens med en by's 'Key/postalCode', gør følgende:
-                    if(city.Key == emp.PostalCode)
+                    if (city.Key == emp.PostalCode)
                     {
                         // Sæt 'Employee' propertien 'City' som en direkte reference til det bestemte 'City' objekt.
                         emp.City = city;
@@ -100,6 +100,49 @@ namespace Client.Model.App
                 }
             }
 
+            foreach (var empStat in EmployeesStations.All)
+            {
+                foreach (var emp in Employees.All)
+                {
+                    foreach (var stat in Stations.All)
+                    {
+                        if (emp.Key == empStat.EmployeeNo && stat.Key == empStat.StationNo)
+                        {
+                            emp.Station.Add(stat);
+                            Employees.Update(emp, emp.Key);
+                        }
+
+                        if (stat.Key == empStat.StationNo && emp.Key == empStat.EmployeeNo)
+                        {
+                            stat.Employee.Add(emp);
+                            Stations.Update(stat, stat.key);
+                        }
+                    }
+                }
+            }
+
+            using (var db = new CircleKDBContext())
+            {
+                var empStatQuery =
+                from empStat in EmployeesStations.All
+
+                join emp in Employees.All
+                    on empStat.EmployeeNo equals emp.Key
+
+                join stat in Stations.All
+                    on empStat.StationNo equals stat.Key
+
+                select new { emp, stat };
+
+                foreach (var empStat in empStatQuery)
+                {
+                    empStat.emp.Station.Add(empStat.stat);
+                    Employees.Update(empStat.emp, empStat.emp.Key);
+                    empStat.stat.Employee.Add(empStat.emp);
+                    Stations.Update(empStat.stat, empStat.stat.Key);
+                }
+            }
+
             LoadEnds?.Invoke();
         }
 
@@ -107,7 +150,7 @@ namespace Client.Model.App
         {
             SaveBegins?.Invoke();
 
-            await _employeeCatalog.SaveAsync();
+            await Employees.SaveAsync();
             //await _stationCatalog.SaveAsync();
 
             SaveEnd?.Invoke();

@@ -47,7 +47,7 @@ namespace Client.DataTransformations.ViewData
 
         public int PostalCode { get; set; }
 
-        public CityViewData City { get; set; }
+        //public CityViewData City { get; set; }
 
         public string PhoneNo
         {
@@ -136,7 +136,7 @@ namespace Client.DataTransformations.ViewData
             PhoneNo = "";
             Title = "";
             Mail = "";
-            // EmployeeNo = ; //CHANGE THIS <-- this is an random generated automaticly assigned int  
+            EmployeeNo = Key;
             Station = null;
             IsActive = true; //(måske?) - ændre det så at der er et andet sted som bestemmer om brugeren er aktiv eller e
             DeletionDate = DateTime.Now;

@@ -9,6 +9,8 @@ using Controllers.Implementation;
 using Data.Transformed.Implementation;
 using Data.Transformed.Interfaces;
 using Model.Interfaces;
+using Data.InMemory.Interfaces;
+using Client.Model.App;
 
 namespace Client.ViewModel.Controller
 {
@@ -30,6 +32,7 @@ namespace Client.ViewModel.Controller
             if (SendMail(PW) == true)
             {
                 Target.Create(Source.DataObject);
+                DomainModel.Instance.SaveModel();
             }
         }
         

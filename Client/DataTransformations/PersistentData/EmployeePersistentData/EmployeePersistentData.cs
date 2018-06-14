@@ -24,7 +24,7 @@ namespace Client.DataTransformations.PersistentData.EmployeePersistentData
 
         public string Mail { get; set; }
 
-        public List<Station> Station { get; set; }
+        //public List<Station> Station { get; set; }
 
         public bool IsActive { get; set; }
 
@@ -34,7 +34,7 @@ namespace Client.DataTransformations.PersistentData.EmployeePersistentData
 
         public string Cpr { get; set; }
 
-        public int ImageKey { get; set; }
+        //public int ImageKey { get; set; }
 
         public string UserName { get; set; }
 
